@@ -1,0 +1,18 @@
+# Terraform state — these should never live in the testbed repo
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Variable overrides — keep schema only
+*.auto.tfvars
+*.auto.tfvars.json
+
+# CLI / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
