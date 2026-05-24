@@ -34,8 +34,9 @@ real-PR time, not synthetic time.
 | Directory | What it validates |
 |---|---|
 | `smoke-test/` | Minimal smoke test — does audytx post a comment on a new PR at all? |
+| `network-exposure/` | Two ALBs, one public and one internal — the same noisy LB rule fires on one and is suppressed on the other via the `network_exposure` reasoning axis. |
 
-(more scenarios will land as separate PRs)
+(more scenarios will land as separate PRs — each stays open as a live demo asset, not merged)
 
 ## How to add a scenario
 
