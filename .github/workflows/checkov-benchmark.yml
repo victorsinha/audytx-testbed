@@ -1,0 +1,96 @@
+name: checkov-benchmark
+
+# Head-to-head reference scanner for the audytx benchmark corpus.
+# Each `bench/<repo>` PR adds a corpus/<repo>/ folder of real AWS Terraform;
+# audytx (the GitHub App) auto-comments its findings, and this workflow runs
+# Checkov on the same files and posts ITS findings, so every PR is a live
+# audytx-vs-Checkov comparison on the same diff.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  checkov:
+    name: Checkov (reference)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Checkov
+        run: pip install --quiet checkov
+
+      - name: Run Checkov on corpus/
+        id: scan
+        run: |
+          if [ ! -d corpus ]; then
+            echo "No corpus/ on this branch — nothing to benchmark."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Soft-fail so the check stays green; we only want the numbers.
+          checkov -d corpus --compact --quiet --soft-fail 2>&1 | tee checkov_cli.txt || true
+          SUMMARY=$(grep -aoE "Passed checks: [0-9]+, Failed checks: [0-9]+, Skipped checks: [0-9]+" checkov_cli.txt | tail -1)
+          [ -z "$SUMMARY" ] && SUMMARY="Checkov produced no summary (no parseable Terraform found?)"
+          # Per-rule failed counts: capture the most recent "Check:" line whenever a FAILED line appears.
+          awk '/^Check: /{c=$0} /FAILED for resource/{print c}' checkov_cli.txt \
+            | sed -E 's/Check: (CKV[0-9A-Za-z_]+).*/\1/' | sort | uniq -c | sort -rn | head -40 > checkov_failed.txt || true
+          {
+            echo "summary=$SUMMARY"
+            echo "skip=false"
+          } >> "$GITHUB_OUTPUT"
+          # Always-visible fallback (no permissions needed): job summary.
+          {
+            echo "## 🔍 Checkov benchmark (reference)"
+            echo ""
+            echo "**$SUMMARY**"
+            echo ""
+            echo '```'
+            cat checkov_failed.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment results on the PR
+        if: steps.scan.outputs.skip != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = `${{ steps.scan.outputs.summary }}`;
+            let failed = '(none)';
+            try { const t = fs.readFileSync('checkov_failed.txt','utf8').trim(); if (t) failed = t; } catch (e) {}
+            const body = [
+              '## 🔍 Checkov benchmark (reference — head-to-head with audytx)',
+              '',
+              '**' + summary + '**',
+              '',
+              'Compare *Failed checks* + the rule list below against audytx\'s comment on this PR.',
+              'On **precision** repos (terraform-aws-modules, secure-baseline) Checkov failures here are candidate **false positives**; on the **\\*goat** repos they are recall ground truth.',
+              '',
+              '<details><summary>Top failed Checkov rules (count × rule id)</summary>',
+              '',
+              '```',
+              failed,
+              '```',
+              '</details>',
+              '',
+              '_Reference run by `.github/workflows/checkov-benchmark.yml`._',
+            ].join('\n');
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+            });
+            const mine = comments.find(c => c.body && c.body.includes('Checkov benchmark (reference'));
+            if (mine) {
+              await github.rest.issues.updateComment({ owner: context.repo.owner, repo: context.repo.repo, comment_id: mine.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body });
+            }
