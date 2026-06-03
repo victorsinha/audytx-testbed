@@ -1,4 +1,4 @@
-# idgen-reproduction
+# serverless-messaging
 
 The scenario that motivated audytx's existence: a hypothetical messaging app
 ("chirp") whose Terraform plan would be hammered by **at least four**

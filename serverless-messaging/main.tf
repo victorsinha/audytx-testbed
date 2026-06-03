@@ -1,6 +1,6 @@
 # FIXTURE — NOT PRODUCTION CODE.
 #
-# Mirrors the IDGenV0 #53 false-positive pattern that motivated the
+# Mirrors the a real-world false-positive pattern that motivated the
 # entire audytx context-reasoning layer. Five intentional patterns, each
 # of which a naive scanner flags but audytx context-suppresses with a
 # stated reason:
