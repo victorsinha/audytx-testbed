@@ -37,27 +37,20 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # Soft-fail so the check stays green; we only want the numbers.
-          checkov -d corpus --compact --quiet --soft-fail 2>&1 | tee checkov_cli.txt || true
-          SUMMARY=$(grep -aoE "Passed checks: [0-9]+, Failed checks: [0-9]+, Skipped checks: [0-9]+" checkov_cli.txt | tail -1)
-          [ -z "$SUMMARY" ] && SUMMARY="Checkov produced no summary (no parseable Terraform found?)"
-          # Per-rule failed counts: capture the most recent "Check:" line whenever a FAILED line appears.
-          awk '/^Check: /{c=$0} /FAILED for resource/{print c}' checkov_cli.txt \
-            | sed -E 's/Check: (CKV[0-9A-Za-z_]+).*/\1/' | sort | uniq -c | sort -rn | head -40 > checkov_failed.txt || true
-          {
-            echo "summary=$SUMMARY"
-            echo "skip=false"
-          } >> "$GITHUB_OUTPUT"
+          # JSON output → robust per-framework counts. (The old CLI `tail -1`
+          # grabbed the LAST framework summary — e.g. the near-empty `secrets`
+          # framework — instead of the terraform total.)
+          checkov -d corpus -o json --quiet --soft-fail > checkov.json 2>/dev/null || true
+          # Terraform framework = the IaC-misconfig comparison (excludes the secrets framework).
+          TF_FAILED=$(jq '[.. | objects | select(.check_type=="terraform") | .summary.failed] | add // 0' checkov.json 2>/dev/null || echo 0)
+          TF_PASSED=$(jq '[.. | objects | select(.check_type=="terraform") | .summary.passed] | add // 0' checkov.json 2>/dev/null || echo 0)
+          ALL_FAILED=$(jq '[.. | objects | select(has("summary")) | .summary.failed] | add // 0' checkov.json 2>/dev/null || echo 0)
+          SUMMARY="Terraform framework — Passed: ${TF_PASSED}, Failed: ${TF_FAILED}  (all frameworks failed: ${ALL_FAILED})"
+          jq -r '[.. | objects | select(.check_type=="terraform") | .results.failed_checks[]?.check_id] | .[]' checkov.json 2>/dev/null \
+            | sort | uniq -c | sort -rn | head -40 > checkov_failed.txt || true
+          { echo "summary=$SUMMARY"; echo "skip=false"; } >> "$GITHUB_OUTPUT"
           # Always-visible fallback (no permissions needed): job summary.
-          {
-            echo "## 🔍 Checkov benchmark (reference)"
-            echo ""
-            echo "**$SUMMARY**"
-            echo ""
-            echo '```'
-            cat checkov_failed.txt
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+          { echo "## 🔍 Checkov benchmark (reference)"; echo ""; echo "**$SUMMARY**"; echo ""; echo '```'; cat checkov_failed.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment results on the PR
         if: steps.scan.outputs.skip != 'true'
@@ -73,10 +66,10 @@ jobs:
               '',
               '**' + summary + '**',
               '',
-              'Compare *Failed checks* + the rule list below against audytx\'s comment on this PR.',
+              'Compare *Terraform Failed* + the rule list below against audytx\'s comment on this PR.',
               'On **precision** repos (terraform-aws-modules, secure-baseline) Checkov failures here are candidate **false positives**; on the **\\*goat** repos they are recall ground truth.',
               '',
-              '<details><summary>Top failed Checkov rules (count × rule id)</summary>',
+              '<details><summary>Top failed Checkov terraform rules (count × rule id)</summary>',
               '',
               '```',
               failed,
