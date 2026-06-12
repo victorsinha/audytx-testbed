@@ -1,16 +1,37 @@
 {
   "results": {
-    "violations": null,
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/trussworks-s3-private/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/trussworks-s3-private/examples' has no terraform config files"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "aws_logs",
+        "resource_type": "aws_s3_bucket_versioning",
+        "module_name": "s3_logs",
+        "file": "git::https://github.com/trussworks/terraform-aws-logs?ref=ceccbe384ff9a1bfe15efc845d104ffe0c701378/main.tf",
+        "plan_root": "examples/bucket-inventory",
+        "line": 472
+      }
+    ],
     "skipped_violations": null,
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/trussworks-s3-private",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:38:10.475600003 +0000 UTC",
-      "policies_validated": 16,
-      "violated_policies": 0,
+      "scanned_at": "2026-06-12 21:54:48.362568999 +0000 UTC",
+      "policies_validated": 20,
+      "violated_policies": 1,
       "low": 0,
       "medium": 0,
-      "high": 0
+      "high": 1
     }
   }
 }

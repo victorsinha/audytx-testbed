@@ -1,0 +1,1192 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/active-directory-administrator",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/active-directory-administrator' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/application-gateway",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/application-gateway' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/container-registry",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/container-registry' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/cosmosdb-account",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/cosmosdb-account' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/flow-logs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/flow-logs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-key",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-key' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-secret",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-secret' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-with-logging",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/key-vault-with-logging' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/kubernetes-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/kubernetes-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/managed-disk",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/managed-disk' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/mssql-server",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/mssql-server' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/mysql-server",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/mysql-server' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/network-security-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/network-security-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/postgresql-servers",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/postgresql-servers' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/redis-cache",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/redis-cache' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/resource-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/resource-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/role-assignment",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/role-assignment' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/security-center",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/security-center' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/sql-firewall-rule",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/sql-firewall-rule' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/storage-account",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/storage-account' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/virtual-machine",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/virtual-machine' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/virtual-network",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/arm/virtual-network' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-method-settings",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-method-settings' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-rest-api",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-rest-api' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-stage",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gateway-stage' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gatewayv2-stage",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/api-gateway/api-gatewayv2-stage' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appautoscaling",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appautoscaling' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appautoscaling/policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appautoscaling/policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appmesh",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appmesh' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appmesh/mesh",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/appmesh/mesh' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/autoscaling",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/autoscaling' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/autoscaling/launch-configuration",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/autoscaling/launch-configuration' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/backup",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/backup' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/backup/backup-vault",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/backup/backup-vault' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/certificatemanager",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/certificatemanager' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/certificatemanager/certificate",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/certificatemanager/certificate' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/codebuild",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/codebuild' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/codebuild/project",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/codebuild/project' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/cognito",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/cognito' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/cognito/user-pool",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/cognito/user-pool' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config/config-configrule",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config/config-configrule' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config/config-configuration-aggregator",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/config/config-configuration-aggregator' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dms",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dms' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dms/replication-instance",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dms/replication-instance' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dynamodb",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dynamodb' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dynamodb/table",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/dynamodb/table' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/ebs-volume",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/ebs-volume' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/instance",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/instance' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/natgateway",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/natgateway' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route-table",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route-table' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route-table-association",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/route-table-association' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/security-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/security-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/subnet",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/subnet' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/vpc",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ec2/vpc' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecr",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecr' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecr/repository",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecr/repository' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs/ecs-service",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs/ecs-service' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs/ecs-task-definition",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ecs/ecs-task-definition' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks/cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks/cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks/nodegroup",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/eks/nodegroup' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache/elasticache-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache/elasticache-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache/elasticache-replication-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/elasticache/elasticache-replication-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/emr",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/emr' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/emr/cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/emr/cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-group-policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-group-policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-role",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-role' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-role-policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-role-policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-user",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/iam/iam-user' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis/kinesis-firehose-delivery-stream",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis/kinesis-firehose-delivery-stream' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis/kinesis-stream",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/kinesis/kinesis-stream' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/lambda",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/lambda' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/lambda/function",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/lambda/function' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudformation-stack",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudformation-stack' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudfront-distribution",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudfront-distribution' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudtrail",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudtrail' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudwatch-log-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/cloudwatch-log-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/dax-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/dax-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/docdb-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/docdb-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/dynamodb-table",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/dynamodb-table' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/ecr-repository",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/ecr-repository' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/efs-filesystem",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/efs-filesystem' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/elasticsearch-domain",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/elasticsearch-domain' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/guardduty-detector",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/guardduty-detector' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/kms-key",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/kms-key' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/mq-borker",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/mq-borker' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/neptune-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/neptune-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/redshift_cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/redshift_cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/workspaces-workspace",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/misc/workspaces-workspace' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/msk",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/msk' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/msk/cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/msk/cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancerv2-listener",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancerv2-listener' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancerv2-target-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancerv2-target-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancing-loadbalancer",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/elasticloadbalancing-loadbalancer' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/route53-record",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/network/route53-record' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ram",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ram' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ram/resource-share",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ram/resource-share' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/db-instance",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/db-instance' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/db-security-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/db-security-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/rds-cluster",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/rds/rds-cluster' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/redshift",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/redshift' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/redshift/parameter-group",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/redshift/parameter-group' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker/model",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker/model' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker/notebookinstance",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sagemaker/notebookinstance' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/rotation-schedule",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/rotation-schedule' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/secretsmanager-secret",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/secretsmanager-secret' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/secretsmanager-secret-policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/secretsmanager/secretsmanager-secret-policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/serverless",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/serverless' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/serverless/function",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/serverless/function' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns/policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns/policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns/topic",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sns/topic' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs/policy",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs/policy' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs/queue",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/sqs/queue' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ssm",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ssm' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ssm/parameters",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/cft/ssm/parameters' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/modules",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/modules' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios/ssrf-iam-breach/assets",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios/ssrf-iam-breach/assets' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios/ssrf-iam-breach/assets/ssrf_app",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey/terraform/aws/scenarios/ssrf-iam-breach/assets/ssrf_app' has no terraform config files"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "mybucket",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "root",
+        "file": "cft/misc/s3-bucket/test.tf",
+        "plan_root": "cft/misc/s3-bucket",
+        "line": 1
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "km_blob_storage",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 104
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "km_blob_storage",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "root",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws/modules/storage",
+        "line": 104
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "km_public_blob",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 112
+      },
+      {
+        "rule_name": "port80OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (HTTP,80)",
+        "rule_id": "AC_AWS_0228",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "km_alb_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "network",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 102
+      },
+      {
+        "rule_name": "port80OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (HTTP,80)",
+        "rule_id": "AC_AWS_0228",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "km_alb_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws/modules/network",
+        "line": 102
+      },
+      {
+        "rule_name": "port80OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (HTTP,80)",
+        "rule_id": "AC_AWS_0228",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-security-group",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 225
+      },
+      {
+        "rule_name": "port8080AlbNetworkPortSecurity",
+        "description": "Security Groups - Unrestricted Specific Ports - Known internal web port (TCP,8080)",
+        "rule_id": "AC_AWS_0242",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-security-group",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 225
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "demo-vpc",
+        "resource_type": "aws_vpc",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 151
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_vpc",
+        "resource_type": "aws_vpc",
+        "module_name": "network",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 4
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_vpc",
+        "resource_type": "aws_vpc",
+        "module_name": "root",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws/modules/network",
+        "line": 4
+      },
+      {
+        "rule_name": "port443OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (HTTPS,443)",
+        "rule_id": "AC_AWS_0229",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "km_alb_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "network",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 102
+      },
+      {
+        "rule_name": "port443OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (HTTPS,443)",
+        "rule_id": "AC_AWS_0229",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "km_alb_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws/modules/network",
+        "line": 102
+      },
+      {
+        "rule_name": "s3PublicAclNoAccessBlock",
+        "description": "Ensure S3 buckets do not have, a both public ACL on the bucket and a public access block.",
+        "rule_id": "AC_AWS_0496",
+        "severity": "HIGH",
+        "category": "Identity and Access Management",
+        "resource_name": "mybucket",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "root",
+        "file": "cft/misc/s3-bucket/test.tf",
+        "plan_root": "cft/misc/s3-bucket",
+        "line": 1
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "km_frontend_listener",
+        "resource_type": "aws_lb_listener",
+        "module_name": "network",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 172
+      },
+      {
+        "rule_name": "instanceExposedToInternet",
+        "description": "Security group attached to launch configuration is wide open to internet and this can be related to reconnaissance phase",
+        "rule_id": "AC_AWS_0478",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "privileged-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 369
+      },
+      {
+        "rule_name": "instanceExposedToInternet",
+        "description": "Security group attached to launch configuration is wide open to internet and this can be related to reconnaissance phase",
+        "rule_id": "AC_AWS_0478",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 292
+      },
+      {
+        "rule_name": "rdsIamAuthEnabled",
+        "description": "Ensure that your RDS database has IAM Authentication enabled.",
+        "rule_id": "AC_AWS_0053",
+        "severity": "MEDIUM",
+        "category": "Data Protection",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 45
+      },
+      {
+        "rule_name": "rdsIamAuthEnabled",
+        "description": "Ensure that your RDS database has IAM Authentication enabled.",
+        "rule_id": "AC_AWS_0053",
+        "severity": "MEDIUM",
+        "category": "Data Protection",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "root",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws/modules/storage",
+        "line": 45
+      },
+      {
+        "rule_name": "rdsBackupDisabled",
+        "description": "Ensure automated backups are enabled for AWS RDS instances",
+        "rule_id": "AC_AWS_0052",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 45
+      },
+      {
+        "rule_name": "rdsBackupDisabled",
+        "description": "Ensure automated backups are enabled for AWS RDS instances",
+        "rule_id": "AC_AWS_0052",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "root",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws/modules/storage",
+        "line": 45
+      },
+      {
+        "rule_name": "portWideOpenToPublic",
+        "description": "Ensure no security groups is wide open to public, that is, allows traffic from 0.0.0.0/0 to ALL ports and protocols",
+        "rule_id": "AC_AWS_0275",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-security-group",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 225
+      },
+      {
+        "rule_name": "targetGroupUsingHttp",
+        "description": "Ensure Target Group use HTTPs to ensure end to end encryption",
+        "rule_id": "AC_AWS_0492",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "km_lb_target",
+        "resource_type": "aws_lb_target_group",
+        "module_name": "network",
+        "file": "terraform/aws/modules/network/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 162
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_vm",
+        "resource_type": "aws_instance",
+        "module_name": "compute",
+        "file": "terraform/aws/modules/compute/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 124
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_vm",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/modules/compute/main.tf",
+        "plan_root": "terraform/aws/modules/compute",
+        "line": 124
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "privileged-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 369
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "web-app-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 292
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "km_vm",
+        "resource_type": "aws_instance",
+        "module_name": "compute",
+        "file": "terraform/aws/modules/compute/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 124
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "km_vm",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/modules/compute/main.tf",
+        "plan_root": "terraform/aws/modules/compute",
+        "line": 124
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "privileged-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 369
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-instance",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 292
+      },
+      {
+        "rule_name": "port5432AlbNetworkPortSecurity",
+        "description": "Security Groups - Unrestricted Specific Ports - Postgres SQL (TCP,5432)",
+        "rule_id": "AC_AWS_0262",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "km_rds_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 10
+      },
+      {
+        "rule_name": "port5432AlbNetworkPortSecurity",
+        "description": "Security Groups - Unrestricted Specific Ports - Postgres SQL (TCP,5432)",
+        "rule_id": "AC_AWS_0262",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "km_rds_sg",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws/modules/storage",
+        "line": 10
+      },
+      {
+        "rule_name": "port22OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (SSH,22)",
+        "rule_id": "AC_AWS_0227",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "web-app-security-group",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+        "plan_root": "terraform/aws/scenarios/ssrf-iam-breach",
+        "line": 225
+      },
+      {
+        "rule_name": "rdsLogExportDisabled",
+        "description": "Ensure CloudWatch logging is enabled for AWS DB instances",
+        "rule_id": "AC_AWS_0454",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "storage",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws",
+        "line": 45
+      },
+      {
+        "rule_name": "rdsLogExportDisabled",
+        "description": "Ensure CloudWatch logging is enabled for AWS DB instances",
+        "rule_id": "AC_AWS_0454",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "km_db",
+        "resource_type": "aws_db_instance",
+        "module_name": "root",
+        "file": "terraform/aws/modules/storage/main.tf",
+        "plan_root": "terraform/aws/modules/storage",
+        "line": 45
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/KaiMonkey",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:54:37.160176185 +0000 UTC",
+      "policies_validated": 179,
+      "violated_policies": 36,
+      "low": 5,
+      "medium": 10,
+      "high": 21
+    }
+  }
+}

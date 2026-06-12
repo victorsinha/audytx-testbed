@@ -1,6 +1,64 @@
 {
   "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/docs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/docs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/examples' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/wrappers/flow-log",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/examples/flow-log",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:215,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:241,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc/modules/flow-log/variables.tf:35,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      }
+    ],
     "violations": [
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "s3_bucket",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/flow-log",
+        "line": 45
+      },
+      {
+        "rule_name": "port5432AlbNetworkPortSecurityPublicScope",
+        "description": "Ensure Postgres SQL (TCP,5432) is not accessible by a public CIDR block range",
+        "rule_id": "AC_AWS_0304",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "rds",
+        "resource_type": "aws_security_group",
+        "module_name": "root",
+        "file": "examples/complete/main.tf",
+        "plan_root": "examples/complete",
+        "line": 211
+      },
       {
         "rule_name": "vpcFlowLogsNotEnabled",
         "description": "Ensure VPC flow logging is enabled in all VPCs",
@@ -13,18 +71,161 @@
         "file": "main.tf",
         "plan_root": "./",
         "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "main.tf",
+        "plan_root": "examples/block-public-access",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc_ipam_set_cidr",
+        "file": "main.tf",
+        "plan_root": "examples/ipam",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc_ipam_set_netmask",
+        "file": "main.tf",
+        "plan_root": "examples/ipam",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "main.tf",
+        "plan_root": "examples/ipv6-dualstack",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc_issue_108",
+        "file": "main.tf",
+        "plan_root": "examples/issues",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc_issue_44",
+        "file": "main.tf",
+        "plan_root": "examples/issues",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc_issue_46",
+        "file": "main.tf",
+        "plan_root": "examples/issues",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "main.tf",
+        "plan_root": "examples/manage-default-vpc",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "main.tf",
+        "plan_root": "examples/network-acls",
+        "line": 28
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "wrapper",
+        "file": "main.tf",
+        "plan_root": "wrappers",
+        "line": 28
       }
     ],
     "skipped_violations": null,
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:38:48.562492973 +0000 UTC",
-      "policies_validated": 5,
-      "violated_policies": 1,
-      "low": 1,
-      "medium": 0,
-      "high": 0
+      "scanned_at": "2026-06-12 21:55:23.59022237 +0000 UTC",
+      "policies_validated": 160,
+      "violated_policies": 14,
+      "low": 12,
+      "medium": 1,
+      "high": 1
     }
   }
 }

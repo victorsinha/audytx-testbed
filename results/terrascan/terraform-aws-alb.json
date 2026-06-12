@@ -1,0 +1,381 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules/lb_trust_store",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules/lb_trust_store'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules/lb_trust_store/variables.tf:63,1-28: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/docs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/docs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/examples' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/wrappers/lb_trust_store",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules/lb_trust_store/variables.tf:63,1-28: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/examples/mutual-auth-alb",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/modules/lb_trust_store/variables.tf:63,1-28: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/examples/complete-alb",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/examples/complete-nlb",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/wrappers",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:27,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:43,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:125,23-35: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:249,43-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:340,85-102: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:343,21-451,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:450,22-39: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:518,33-45: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:521,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:587,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:590,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:605,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:608,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:630,38-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:532,1-47: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:195,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb/variables.tf:218,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "lambdaNotInVpc",
+        "description": "Lambda function does not include a VPC configuration.",
+        "rule_id": "AC_AWS_0486",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_with_allowed_triggers",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 41
+      },
+      {
+        "rule_name": "lambdaNotInVpc",
+        "description": "Lambda function does not include a VPC configuration.",
+        "rule_id": "AC_AWS_0486",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_without_allowed_triggers",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 41
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "log_bucket",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 45
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "certificate_bucket",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/mutual-auth-alb",
+        "line": 45
+      },
+      {
+        "rule_name": "instanceWithNoVpc",
+        "description": "Ensure that your AWS application is not deployed within the default Virtual Private Cloud in order to follow security best practices",
+        "rule_id": "AC_AWS_0153",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "other",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 646
+      },
+      {
+        "rule_name": "instanceWithNoVpc",
+        "description": "Ensure that your AWS application is not deployed within the default Virtual Private Cloud in order to follow security best practices",
+        "rule_id": "AC_AWS_0153",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 640
+      },
+      {
+        "rule_name": "instanceWithNoVpc",
+        "description": "Ensure that your AWS application is not deployed within the default Virtual Private Cloud in order to follow security best practices",
+        "rule_id": "AC_AWS_0153",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-nlb/main.tf",
+        "plan_root": "examples/complete-nlb",
+        "line": 217
+      },
+      {
+        "rule_name": "instanceWithNoVpc",
+        "description": "Ensure that your AWS application is not deployed within the default Virtual Private Cloud in order to follow security best practices",
+        "rule_id": "AC_AWS_0153",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/mutual-auth-alb/main.tf",
+        "plan_root": "examples/mutual-auth-alb",
+        "line": 204
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lb_listener",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 124
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lb_listener",
+        "module_name": "alb",
+        "file": "main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 124
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lb_listener",
+        "module_name": "nlb",
+        "file": "main.tf",
+        "plan_root": "examples/complete-nlb",
+        "line": 124
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lb_listener",
+        "module_name": "alb",
+        "file": "main.tf",
+        "plan_root": "examples/mutual-auth-alb",
+        "line": 124
+      },
+      {
+        "rule_name": "listenerNotHttps",
+        "description": "Ensure there is a listener configured on HTTPs or with a port 443",
+        "rule_id": "AC_AWS_0491",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lb_listener",
+        "module_name": "wrapper",
+        "file": "main.tf",
+        "plan_root": "wrappers",
+        "line": 124
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "other",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 646
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 640
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-nlb/main.tf",
+        "plan_root": "examples/complete-nlb",
+        "line": 217
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/mutual-auth-alb/main.tf",
+        "plan_root": "examples/mutual-auth-alb",
+        "line": 204
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "other",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 646
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-alb/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 640
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/complete-nlb/main.tf",
+        "plan_root": "examples/complete-nlb",
+        "line": 217
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "examples/mutual-auth-alb/main.tf",
+        "plan_root": "examples/mutual-auth-alb",
+        "line": 204
+      },
+      {
+        "rule_name": "lambdaXRayTracingDisabled",
+        "description": "Lambda tracing is not enabled.",
+        "rule_id": "AC_AWS_0485",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_with_allowed_triggers",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 41
+      },
+      {
+        "rule_name": "lambdaXRayTracingDisabled",
+        "description": "Lambda tracing is not enabled.",
+        "rule_id": "AC_AWS_0485",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_without_allowed_triggers",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 41
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc?ref=3ffbd46fb1c7733e1b34d8666893280454e27436/main.tf",
+        "plan_root": "examples/complete-alb",
+        "line": 28
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-alb",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:55:03.878259656 +0000 UTC",
+      "policies_validated": 172,
+      "violated_policies": 24,
+      "low": 5,
+      "medium": 13,
+      "high": 6
+    }
+  }
+}

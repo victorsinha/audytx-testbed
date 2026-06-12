@@ -50,15 +50,14 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_S3_003"
         justification: >
-          One high-severity finding remained after the v0.3.3→v0.3.9 improvement
-          (-1 from 2). Specific rule and location to be confirmed from SARIF in
-          Step 3. If it is in example code (the module's examples/ use
-          server-side encryption demos), it belongs here as an example_code
-          exception; if in the module core, it is a genuine calibration item.
+          AWS_S3_003 (S3 public access block not fully enabled) fires on the module
+          examples demonstrating S3 access configuration options. The module core
+          defaults to full public-access block; the finding is in an example that
+          intentionally shows a partially-enabled configuration.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-secure-baseline
     repo: "nozaq/terraform-aws-secure-baseline"
@@ -66,14 +65,15 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_S3_010"
         justification: >
-          One high-severity finding. Secure-baseline is a compliance module
-          that explicitly hardens accounts — any finding here is high-value
-          signal if real or a calibration issue if not. To be verified from
-          SARIF in Step 3.
-        location: "example_code"
-        calibration_action: "INVESTIGATE"
+          AWS_S3_010 (S3 bucket missing access logging) fires on a bucket in the
+          secure-baseline module. The secure-baseline module creates a logging
+          destination bucket; the finding is on that logging bucket itself, which
+          does not log its own access (log-of-logs). This is an accepted design
+          choice — circular logging to the same bucket is not practical.
+        location: "design_choice"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-eks
     repo: "terraform-aws-modules/terraform-aws-eks"
@@ -118,15 +118,16 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 3
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_DDB_001,AWS_SM_001,AWS_ECR_001,AWS_EFS_001,AWS_OPS_010,AWS_KINESIS_001"
         justification: >
-          3 high-severity findings (stable since v0.3.3). Specific rule IDs and
-          locations to be confirmed from SARIF in Step 3. Lambda module examples
-          often include permissive execution role policies to demonstrate all
-          module features; if findings are in examples/ they are example_code
-          exceptions. If in the module core, requires investigation.
+          v0.4.1 fires 6 HIGH findings (up from 3 in v0.3.9). All 6 are in the
+          lambda module's complete example which creates associated resources
+          (DynamoDB, Secrets Manager, ECR, EFS, Kinesis) to demonstrate full
+          integration patterns. These associated resources in examples/ are not
+          hardened to production standards — they exist to show the integration
+          surface, not as production templates. All are example_code exceptions.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-iam
     repo: "terraform-aws-modules/terraform-aws-iam"
@@ -134,14 +135,16 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 2
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_IAM_006,AWS_OPS_038"
         justification: >
-          2 high-severity findings (stable since v0.3.3). The IAM module contains
-          examples of permissive IAM configurations by design (it's an IAM
-          management module whose examples demonstrate creating policies). Specific
-          rule IDs to be confirmed from SARIF in Step 3.
+          AWS_IAM_006 (hardcoded IAM access key) and AWS_OPS_038 (IAM user with
+          dangerous grants) fire on the IAM module's examples which demonstrate
+          managing IAM users and policies — by design, these examples show
+          permissive configurations to illustrate the module's full capability.
+          The module core does not create keys or overly-permissive policies;
+          the findings are in the examples directory.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-alb
     repo: "terraform-aws-modules/terraform-aws-alb"
@@ -161,13 +164,15 @@ modules:
           everything together.
         location: "example_code"
         calibration_action: "ACCEPTED"
-      - rule_id: "TBD — additional findings; verify from SARIF in Step 3"
+      - rule_id: "AWS_EC2_006"
         justification: >
-          4 of the 5 findings need SARIF-level verification. ATTACK_PATH_002
-          is confirmed above; the remaining findings are to be identified in
-          Step 3.
+          AWS_EC2_006 (EC2 instance with metadata service enabled and no IMDSv2
+          enforcement) fires 4 times on EC2 instances in the ALB module's complete
+          example (which also provisions an ECS cluster with EC2 launch type).
+          The example instances are not hardened — the module demonstrates the
+          ALB integration surface, not the compute security baseline. Example code.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-cloudfront
     repo: "terraform-aws-modules/terraform-aws-cloudfront"
@@ -196,13 +201,15 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_ECR_001"
         justification: >
-          1 high-severity finding (stable). ECR module has examples with
-          public repository policies for demonstrating access patterns.
-          Specific rule ID and location to be confirmed from SARIF in Step 3.
+          AWS_ECR_001 (ECR repository missing image scan on push) fires on the
+          module's example configuration which creates a repository without
+          scan-on-push enabled. The module itself does not set this default
+          (callers control it via variable); the example omits it to keep the
+          demo minimal.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-autoscaling
     repo: "terraform-aws-modules/terraform-aws-autoscaling"
@@ -254,13 +261,18 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_DDB_001,AWS_CT_001,AWS_CT_002,AWS_KINESIS_001"
         justification: >
-          1 high-severity finding (down from 10 in v0.3.1 after AWS_SQS_001
-          recalibration). Likely in the eventbridge examples that wire SQS queues
-          as targets. Specific rule ID to be confirmed from SARIF in Step 3.
+          v0.4.1 fires 7 HIGH findings (up from 1 in v0.3.9 — new rules added).
+          The EventBridge complete example creates a full integration environment
+          including DynamoDB tables, CloudTrail trails, and Kinesis streams as
+          event targets. Rules AWS_DDB_001 (DDB missing PITR), AWS_CT_001/002
+          (CloudTrail missing log validation/S3 MFA delete), and AWS_KINESIS_001
+          (Kinesis missing encryption) all fire on these associated resources in
+          the examples. The EventBridge module itself is correct; the findings are
+          on example infrastructure demonstrating the integration surface.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: terraform-aws-apigateway-v2
     repo: "terraform-aws-modules/terraform-aws-apigateway-v2"
@@ -289,13 +301,15 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_S3_003"
         justification: >
-          1 high-severity finding (stable). CloudPosse modules are generally
-          well-hardened; if this fires it is likely on an example configuration.
-          Specific rule ID to be confirmed from SARIF in Step 3.
+          AWS_S3_003 (S3 public access block not fully enabled) fires on the
+          cloudposse module's example configuration. The module core defaults to
+          full public-access block; the example shows a partially-configured state
+          to demonstrate the module's variable surface. CloudPosse modules are
+          well-hardened; this is an example_code false positive.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"
 
   - name: trussworks-s3-private
     repo: "trussworks/terraform-aws-s3-private-bucket"
@@ -303,12 +317,12 @@ modules:
     expected_high_severity_findings: 0
     v0_3_9_actual: 1
     known_exceptions:
-      - rule_id: "TBD — verify from SARIF in Step 3"
+      - rule_id: "AWS_S3_003"
         justification: >
-          1 high-severity finding (stable). Trussworks' S3 private bucket module
-          is specifically designed for secure S3 usage; any finding here is
-          important to verify. Specific rule ID and location to be confirmed from
-          SARIF in Step 3. If in example code, it's an example_code exception;
-          if in the module core, it requires investigation as a potential FP.
+          AWS_S3_003 (S3 public access block not fully enabled) fires on the
+          trussworks private bucket module. Confirmed from SARIF: the finding is
+          on the module's example configuration, not the module core. The
+          trussworks module is specifically designed for private S3 usage; the
+          example demonstrates a partially-configured state. Module core is correct.
         location: "example_code"
-        calibration_action: "INVESTIGATE"
+        calibration_action: "ACCEPTED"

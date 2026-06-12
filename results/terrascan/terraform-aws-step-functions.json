@@ -1,16 +1,76 @@
 {
   "results": {
-    "violations": null,
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-step-functions/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-step-functions/examples' has no terraform config files"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "lambdaXRayTracingDisabled",
+        "description": "Lambda tracing is not enabled.",
+        "rule_id": "AC_AWS_0485",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_function",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "cloudWatchLogGroupNoRetentionPolicy",
+        "description": "Ensure AWS Cloudwatch log group has retention policy set.",
+        "rule_id": "AC_AWS_0452",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "external",
+        "resource_type": "aws_cloudwatch_log_group",
+        "module_name": "root",
+        "file": "examples/complete/main.tf",
+        "plan_root": "examples/complete",
+        "line": 195
+      },
+      {
+        "rule_name": "lambdaNotInVpc",
+        "description": "Lambda function does not include a VPC configuration.",
+        "rule_id": "AC_AWS_0486",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_function",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "sqsSseDisabled",
+        "description": "Ensure that your Amazon Simple Queue Service (SQS) queues are protecting the contents of their messages using Server-Side Encryption (SSE). The SQS service uses an AWS KMS Customer Master Key (CMK) to generate data keys required for the encryption/decryption process of SQS messages. There is no additional charge for using SQS Server-Side Encryption, however, there is a charge for using AWS KMS",
+        "rule_id": "AC_AWS_0366",
+        "severity": "HIGH",
+        "category": "Security Best Practices",
+        "resource_name": "queue",
+        "resource_type": "aws_sqs_queue",
+        "module_name": "root",
+        "file": "examples/complete/main.tf",
+        "plan_root": "examples/complete",
+        "line": 277
+      }
+    ],
     "skipped_violations": null,
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-step-functions",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:38:09.080565897 +0000 UTC",
-      "policies_validated": 3,
-      "violated_policies": 0,
-      "low": 0,
-      "medium": 0,
-      "high": 0
+      "scanned_at": "2026-06-12 21:54:42.346649844 +0000 UTC",
+      "policies_validated": 15,
+      "violated_policies": 4,
+      "low": 2,
+      "medium": 1,
+      "high": 1
     }
   }
 }

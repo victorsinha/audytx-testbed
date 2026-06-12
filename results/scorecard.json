@@ -1007,7 +1007,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 2,
       "terrascan_status": "OK",
       "trivy_count": 1,
       "trivy_status": "OK"
@@ -1023,7 +1023,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 2,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 6,
       "terrascan_status": "OK",
       "trivy_count": 13,
       "trivy_status": "OK"
@@ -1039,7 +1039,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 5,
       "terrascan_status": "OK",
       "trivy_count": 7,
       "trivy_status": "OK"
@@ -1055,7 +1055,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 1,
       "terrascan_status": "OK",
       "trivy_count": 6,
       "trivy_status": "OK"
@@ -1071,7 +1071,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 6,
       "terrascan_status": "OK",
       "trivy_count": 8,
       "trivy_status": "OK"
@@ -1103,7 +1103,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 16,
       "terrascan_status": "OK",
       "trivy_count": 16,
       "trivy_status": "OK"
@@ -1119,7 +1119,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 1,
       "terrascan_status": "OK",
       "trivy_count": 38,
       "trivy_status": "OK"
@@ -1135,7 +1135,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 24,
       "terrascan_status": "OK",
       "trivy_count": 18,
       "trivy_status": "OK"
@@ -1151,7 +1151,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 4,
       "terrascan_status": "OK",
       "trivy_count": 1,
       "trivy_status": "OK"
@@ -1167,7 +1167,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 11,
       "terrascan_status": "OK",
       "trivy_count": 0,
       "trivy_status": "OK"
@@ -1183,7 +1183,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 9,
       "terrascan_status": "OK",
       "trivy_count": 23,
       "trivy_status": "OK"
@@ -1199,7 +1199,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 10,
       "terrascan_status": "OK",
       "trivy_count": 7,
       "trivy_status": "OK"
@@ -1215,7 +1215,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 1,
+      "terrascan_count": 348,
       "terrascan_status": "OK",
       "trivy_count": 18,
       "trivy_status": "OK"
@@ -1231,7 +1231,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 8,
       "terrascan_status": "OK",
       "trivy_count": 8,
       "trivy_status": "OK"
@@ -1295,7 +1295,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 1,
       "terrascan_status": "OK",
       "trivy_count": 1,
       "trivy_status": "OK"
@@ -1311,7 +1311,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 1,
       "terrascan_status": "OK",
       "trivy_count": 3,
       "trivy_status": "OK"
@@ -1327,7 +1327,7 @@
       "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
-      "terrascan_count": 0,
+      "terrascan_count": 1,
       "terrascan_status": "OK",
       "trivy_count": 4,
       "trivy_status": "OK"
@@ -1337,7 +1337,7 @@
     "audytx": 27,
     "checkov": 1193,
     "kics": 34,
-    "terrascan": 1,
+    "terrascan": 454,
     "trivy": 175
   },
   "recall_other_corpora": [
@@ -1349,7 +1349,7 @@
       "corpus": "KaiMonkey",
       "kics_count": 0,
       "kics_status": "OK",
-      "terrascan_count": 0,
+      "terrascan_count": 21,
       "terrascan_status": "OK",
       "trivy_count": 112,
       "trivy_status": "OK"
@@ -1388,7 +1388,7 @@
       "corpus": "sadcloud",
       "kics_count": 53,
       "kics_status": "OK",
-      "terrascan_count": 0,
+      "terrascan_count": 58,
       "terrascan_status": "OK",
       "trivy_count": 26,
       "trivy_status": "OK"
@@ -1401,7 +1401,7 @@
       "corpus": "terraform-aws-eks-blueprints",
       "kics_count": 13,
       "kics_status": "OK",
-      "terrascan_count": 0,
+      "terrascan_count": 7,
       "terrascan_status": "OK",
       "trivy_count": null,
       "trivy_status": "DNF"
@@ -1414,7 +1414,7 @@
       "corpus": "terragoat",
       "kics_count": 70,
       "kics_status": "OK",
-      "terrascan_count": 0,
+      "terrascan_count": 35,
       "terrascan_status": "OK",
       "trivy_count": 93,
       "trivy_status": "OK"

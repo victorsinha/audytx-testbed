@@ -1,0 +1,447 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:10,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/variables.tf:63,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/docs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/docs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers/iam-group",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:10,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/variables.tf:63,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples/iam-group",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:10,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/variables.tf:63,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/migrations.tf:10,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-group/variables.tf:63,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers/iam-role-for-service-accounts",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples/iam-role-for-service-accounts",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:68,29-42: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:182,32-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:225,33-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:227,33-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:229,35-235,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:405,42-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:408,42-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:414,42-55: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:473,45-60: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:476,45-64: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:482,45-58: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:642,36-49: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:643,36-48: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:653,43-55: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:654,43-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:655,43-64: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:657,24-661,12: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:662,20-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:692,45-62: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1196,53-71: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1197,53-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1428,38-56: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1476,53-71: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1477,53-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:1496,43-1508,13: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/variables.tf:205,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:166,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:753,1-28: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:91,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:83,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:104,1-30: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/variables.tf:667,1-27: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/migrations.tf:17,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:5,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:40,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:121,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:128,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:147,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:166,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:179,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:198,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:332,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:321,43-62: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:323,43-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:324,43-63: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:339,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:346,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:353,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:360,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:398,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:395,36-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:420,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:443,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:460,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:467,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:474,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:487,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:494,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:507,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:514,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:582,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:588,55-67: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:621,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:628,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:647,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:660,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:673,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:680,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:687,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:698,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:735,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:748,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:766,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:769,44-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:770,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:785,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:788,44-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:789,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:263,1-39: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:219,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:271,1-32: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:252,1-23: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:302,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:562,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:91,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:102,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:279,1-27: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:603,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:401,1-21: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:240,1-46: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:572,1-25: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:287,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:423,1-36: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:553,1-25: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/eks-managed-node-group/variables.tf:701,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/_user_data/main.tf:7,5-17: Unsupported block type; Blocks of type \"precondition\" are not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:5,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:12,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:19,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:26,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:33,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:40,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:47,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:54,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:61,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:68,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:75,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:82,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:89,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:96,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:108,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:120,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:99,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/_user_data/variables.tf:111,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/fargate-profile/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/fargate-profile/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:5,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:12,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:41,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:66,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:79,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:92,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:99,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:106,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:117,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:160,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:167,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/fargate-profile/variables.tf:170,1-21: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/fargate-profile/variables.tf:179,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/fargate-profile/variables.tf:120,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/8mgf3g/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/8mgf3g/variables.tf:205,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/8mgf3g/variables.tf:280,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/self-managed-node-group/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/self-managed-node-group/migrations.tf:17,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:5,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:126,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:145,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:164,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:325,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:322,36-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:347,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:370,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:377,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:448,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:461,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:474,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:481,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:488,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:495,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:512,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:501,43-62: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:503,43-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:504,43-63: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:519,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:526,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:537,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:550,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:575,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:582,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:589,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:626,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:657,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:664,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:677,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:735,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:742,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:836,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:847,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:866,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:879,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:892,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:899,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:906,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:917,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:954,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:971,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:984,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1010,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1002,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1005,44-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1006,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1030,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1022,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1025,44-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1026,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:1037,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:686,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:274,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:745,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:709,1-28: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:243,1-32: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:824,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:920,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:386,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:224,1-23: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:96,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:235,1-39: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:350,1-36: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:212,1-46: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:259,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:328,1-21: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:107,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:251,1-27: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/self-managed-node-group/variables.tf:191,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/_user_data/main.tf:7,5-17: Unsupported block type; Blocks of type \"precondition\" are not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:5,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:12,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:19,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:26,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:33,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:40,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:47,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:54,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:61,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:68,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:75,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:82,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:89,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:96,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:108,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:120,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/tmp/53gj60/modules/_user_data/variables.tf:111,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/53gj60/modules/_user_data/variables.tf:99,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:117,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role-for-service-accounts/variables.tf:427,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples/iam-oidc-provider",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers/iam-role",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples/iam-role",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:59,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-role/variables.tf:213,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/wrappers/iam-user",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/examples/iam-user",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/migrations.tf:5,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam/modules/iam-user/variables.tf:141,29-46: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "passwordRotateEvery90Days",
+        "description": "Reducing the password lifetime increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0138",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRotateEvery90Days",
+        "description": "Reducing the password lifetime increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0138",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRotateEvery90Days",
+        "description": "Reducing the password lifetime increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0138",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordReuseNotAllowed",
+        "description": "It is recommended that the password policy prevent the reuse of passwords.Preventing password reuse increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0472",
+        "severity": "LOW",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0141",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0141",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0141",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc?ref=3ffbd46fb1c7733e1b34d8666893280454e27436/main.tf",
+        "plan_root": "examples/iam-role-for-service-accounts",
+        "line": 28
+      },
+      {
+        "rule_name": "noPasswordPolicyEnabled",
+        "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets, have minimal length, rotation and history restrictions",
+        "rule_id": "AC_AWS_0148",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_user_login_profile",
+        "module_name": "iam_user2",
+        "file": "modules/iam-user/main.tf",
+        "plan_root": "examples/iam-group",
+        "line": 91
+      },
+      {
+        "rule_name": "noPasswordPolicyEnabled",
+        "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets, have minimal length, rotation and history restrictions",
+        "rule_id": "AC_AWS_0148",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_user_login_profile",
+        "module_name": "iam_user",
+        "file": "modules/iam-user/main.tf",
+        "plan_root": "examples/iam-user",
+        "line": 91
+      },
+      {
+        "rule_name": "noPasswordPolicyEnabled",
+        "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets, have minimal length, rotation and history restrictions",
+        "rule_id": "AC_AWS_0148",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_user_login_profile",
+        "module_name": "iam_user_disabled",
+        "file": "modules/iam-user/main.tf",
+        "plan_root": "examples/iam-user",
+        "line": 91
+      },
+      {
+        "rule_name": "noPasswordPolicyEnabled",
+        "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets, have minimal length, rotation and history restrictions",
+        "rule_id": "AC_AWS_0148",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_user_login_profile",
+        "module_name": "wrapper",
+        "file": "modules/iam-user/main.tf",
+        "plan_root": "wrappers/iam-user",
+        "line": 91
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireMinLength14",
+        "description": "Setting a lengthy password increases account resiliency against brute force login attempts",
+        "rule_id": "AC_AWS_0142",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireNumber",
+        "description": "Number not present in the Password, Password Complexity is not high. Increased Password complexity increases resiliency against brute force attack",
+        "rule_id": "AC_AWS_0136",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "iam_account",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "examples/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireNumber",
+        "description": "Number not present in the Password, Password Complexity is not high. Increased Password complexity increases resiliency against brute force attack",
+        "rule_id": "AC_AWS_0136",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "root",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "modules/iam-account",
+        "line": 15
+      },
+      {
+        "rule_name": "passwordRequireNumber",
+        "description": "Number not present in the Password, Password Complexity is not high. Increased Password complexity increases resiliency against brute force attack",
+        "rule_id": "AC_AWS_0136",
+        "severity": "MEDIUM",
+        "category": "Compliance Validation",
+        "resource_name": "this",
+        "resource_type": "aws_iam_account_password_policy",
+        "module_name": "wrapper",
+        "file": "modules/iam-account/main.tf",
+        "plan_root": "wrappers/iam-account",
+        "line": 15
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-iam",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:55:03.517942756 +0000 UTC",
+      "policies_validated": 166,
+      "violated_policies": 26,
+      "low": 10,
+      "medium": 12,
+      "high": 4
+    }
+  }
+}

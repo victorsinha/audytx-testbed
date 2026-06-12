@@ -16,39 +16,39 @@ Clean production modules: **21**
 
 | Corpus | exceptions | audytx | checkov | trivy | kics | terrascan |
 |---|----|:---:|:---:|:---:|:---:|:---:|
-| cloudposse-s3-bucket | 1 | 1 | 36 | 1 | 0 | 0 |
-| terraform-aws-alb | 2 | 4 | 54 | 13 | 2 | 0 |
-| terraform-aws-apigateway-v2 | 0 | 0 | 20 | 7 | 1 | 0 |
-| terraform-aws-autoscaling | 0 | 0 | 11 | 6 | 0 | 0 |
-| terraform-aws-cloudfront | 0 | 0 | 24 | 8 | 0 | 0 |
+| cloudposse-s3-bucket | 1 | 1 | 36 | 1 | 0 | 2 |
+| terraform-aws-alb | 2 | 4 | 54 | 13 | 2 | 6 |
+| terraform-aws-apigateway-v2 | 0 | 0 | 20 | 7 | 1 | 5 |
+| terraform-aws-autoscaling | 0 | 0 | 11 | 6 | 0 | 1 |
+| terraform-aws-cloudfront | 0 | 0 | 24 | 8 | 0 | 6 |
 | terraform-aws-ecr | 1 | 1 | 5 | 1 | 2 | 0 |
-| terraform-aws-ecs | 1 | 0 | 86 | 16 | 2 | 0 |
-| terraform-aws-eks | 1 | 2 | 88 | 38 | 1 | 0 |
-| terraform-aws-eventbridge | 1 | 7 | 57 | 18 | 12 | 0 |
-| terraform-aws-iam | 1 | 2 | 287 | 1 | 0 | 0 |
-| terraform-aws-kms | 0 | 0 | 1 | 0 | 0 | 0 |
-| terraform-aws-lambda | 1 | 6 | 112 | 23 | 7 | 0 |
-| terraform-aws-rds | 1 | 1 | 124 | 7 | 1 | 0 |
-| terraform-aws-s3-bucket | 1 | 1 | 129 | 18 | 4 | 1 |
-| terraform-aws-secure-baseline | 1 | 1 | 107 | 8 | 2 | 0 |
+| terraform-aws-ecs | 1 | 0 | 86 | 16 | 2 | 16 |
+| terraform-aws-eks | 1 | 2 | 88 | 38 | 1 | 1 |
+| terraform-aws-eventbridge | 1 | 7 | 57 | 18 | 12 | 24 |
+| terraform-aws-iam | 1 | 2 | 287 | 1 | 0 | 4 |
+| terraform-aws-kms | 0 | 0 | 1 | 0 | 0 | 11 |
+| terraform-aws-lambda | 1 | 6 | 112 | 23 | 7 | 9 |
+| terraform-aws-rds | 1 | 1 | 124 | 7 | 1 | 10 |
+| terraform-aws-s3-bucket | 1 | 1 | 129 | 18 | 4 | 348 |
+| terraform-aws-secure-baseline | 1 | 1 | 107 | 8 | 2 | 8 |
 | terraform-aws-security-group | 1 | 0 | 10 | 2 | 0 | 0 |
 | terraform-aws-sns | 0 | 0 | 4 | 0 | 0 | 0 |
 | terraform-aws-sqs | 0 | 0 | 1 | 0 | 0 | 0 |
-| terraform-aws-step-functions | 0 | 0 | 6 | 1 | 0 | 0 |
-| terraform-aws-vpc | 0 | 0 | 25 | 3 | 0 | 0 |
-| trussworks-s3-private | 1 | 1 | 6 | 4 | 0 | 0 |
-| **Total** | | **27**|**1193**|**175**|**34**|**1** |
+| terraform-aws-step-functions | 0 | 0 | 6 | 1 | 0 | 1 |
+| terraform-aws-vpc | 0 | 0 | 25 | 3 | 0 | 1 |
+| trussworks-s3-private | 1 | 1 | 6 | 4 | 0 | 1 |
+| **Total** | | **27**|**1193**|**175**|**34**|**454** |
 
 ## Table 3 — Recall: high-severity findings on vulnerable corpora
 
 | Corpus | audytx | checkov | trivy | kics | terrascan |
 |---|:---:|:---:|:---:|:---:|:---:|
-| KaiMonkey | 39 | 109 | 112 | 0 | 0 |
+| KaiMonkey | 39 | 109 | 112 | 0 | 21 |
 | iam-role-chain | 4 | 9 | 0 | 1 | 0 |
 | learn-terraform-provision-eks-cluster | 0 | 3 | 3 | 0 | 0 |
-| sadcloud | 47 | 201 | 26 | 53 | 0 |
-| terraform-aws-eks-blueprints | 6 | 210 | DNF | 13 | 0 |
-| terragoat | 52 | 466 | 93 | 70 | 0 |
+| sadcloud | 47 | 201 | 26 | 53 | 58 |
+| terraform-aws-eks-blueprints | 6 | 210 | DNF | 13 | 7 |
+| terragoat | 52 | 466 | 93 | 70 | 35 |
 
 ## Appendix — Unmatched findings on iam-vulnerable (for audit)
 

@@ -5,7 +5,7 @@
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/iam-role-chain",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:38:03.093047744 +0000 UTC",
+      "scanned_at": "2026-06-12 21:54:34.469649319 +0000 UTC",
       "policies_validated": 2,
       "violated_policies": 0,
       "low": 0,

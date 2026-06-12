@@ -1,0 +1,259 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:121,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:69,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:73,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:74,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:77,32-92,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:79,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:83,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:119,44-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:215,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:161,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:162,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:166,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:169,32-184,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:171,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:175,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:266,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:245,42-69: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:288,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:280,34-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:313,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:309,46-70: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:376,26-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:377,26-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:384,20-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:541,44-73: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:55,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:345,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:393,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:431,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:462,1-37: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:617,1-22: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:148,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:218,1-24: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:582,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:316,1-30: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/docs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/docs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/complete/functions",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/complete/functions' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/mtls/functions",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/mtls/functions' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/modules",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/modules' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/mtls",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:121,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:69,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:73,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:74,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:77,32-92,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:79,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:83,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:119,44-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:215,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:161,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:162,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:166,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:169,32-184,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:171,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:175,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:266,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:245,42-69: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:288,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:280,34-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:313,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:309,46-70: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:376,26-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:377,26-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:384,20-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:541,44-73: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:462,1-37: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:582,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:617,1-22: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:218,1-24: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:316,1-30: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:148,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:431,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:345,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:55,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:393,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/examples/complete",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:121,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:69,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:73,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:74,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:77,32-92,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:79,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:83,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:119,44-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:215,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:161,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:162,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:166,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:169,32-184,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:171,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:175,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:266,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:245,42-69: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:288,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:280,34-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:313,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:309,46-70: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:376,26-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:377,26-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:384,20-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:541,44-73: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:55,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:148,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:345,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:316,1-30: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:218,1-24: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:431,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:617,1-22: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:582,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:393,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:462,1-37: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:223,43-62: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:225,43-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:226,43-63: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:465,42-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:467,42-57: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:577,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:580,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:604,44-59: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:607,44-61: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/tmp/d54yxa/variables.tf:212,1-31: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:301,1-29: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:164,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:253,1-39: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:285,1-36: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:53,1-46: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:202,1-27: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:242,1-29: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:112,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:388,1-20: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/d54yxa/variables.tf:65,1-23: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/wrappers",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:121,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:69,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:73,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:74,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:77,32-92,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:79,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:83,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:119,44-66: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:215,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:161,41-83: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:162,41-72: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:166,41-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:169,32-184,6: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:171,37-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:175,41-54: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:266,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:245,42-69: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:288,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:280,34-50: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:313,3-11: Unsupported argument; An argument named \"nullable\" is not expected here.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:309,46-70: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:376,26-53: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:377,26-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:384,20-37: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:541,44-73: Invalid type specification; Optional attribute modifier expects only one argument: the attribute type.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:55,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:316,1-30: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:617,1-22: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:431,1-35: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:462,1-37: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:393,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:345,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:218,1-24: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:148,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront/variables.tf:582,1-38: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "lambdaNotInVpc",
+        "description": "Lambda function does not include a VPC configuration.",
+        "rule_id": "AC_AWS_0486",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_function",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "cloudfrontNoLogging",
+        "description": "Ensure that your AWS Cloudfront distributions have the Logging feature enabled in order to track all viewer requests for the content delivered through the Content Delivery Network (CDN).",
+        "rule_id": "AC_AWS_0025",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_cloudfront_distribution",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 5
+      },
+      {
+        "rule_name": "cloudfrontNoLogging",
+        "description": "Ensure that your AWS Cloudfront distributions have the Logging feature enabled in order to track all viewer requests for the content delivered through the Content Delivery Network (CDN).",
+        "rule_id": "AC_AWS_0025",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_cloudfront_distribution",
+        "module_name": "cloudfront",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 5
+      },
+      {
+        "rule_name": "cloudfrontNoLogging",
+        "description": "Ensure that your AWS Cloudfront distributions have the Logging feature enabled in order to track all viewer requests for the content delivered through the Content Delivery Network (CDN).",
+        "rule_id": "AC_AWS_0025",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_cloudfront_distribution",
+        "module_name": "cloudfront",
+        "file": "main.tf",
+        "plan_root": "examples/mtls",
+        "line": 5
+      },
+      {
+        "rule_name": "cloudfrontNoLogging",
+        "description": "Ensure that your AWS Cloudfront distributions have the Logging feature enabled in order to track all viewer requests for the content delivered through the Content Delivery Network (CDN).",
+        "rule_id": "AC_AWS_0025",
+        "severity": "MEDIUM",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_cloudfront_distribution",
+        "module_name": "wrapper",
+        "file": "main.tf",
+        "plan_root": "wrappers",
+        "line": 5
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc?ref=3ffbd46fb1c7733e1b34d8666893280454e27436/main.tf",
+        "plan_root": "examples/complete",
+        "line": 28
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "ignore_ami",
+        "resource_type": "aws_instance",
+        "module_name": "ec2",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=56b7f8aac0acf2c6c4cfc28d5aa12e08a8ebb843/main.tf",
+        "plan_root": "examples/complete",
+        "line": 251
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "ec2",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=56b7f8aac0acf2c6c4cfc28d5aa12e08a8ebb843/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "log_bucket",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/complete",
+        "line": 45
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "s3",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/complete",
+        "line": 45
+      },
+      {
+        "rule_name": "s3Versioning",
+        "description": "Enabling S3 versioning will enable easy recovery from both unintended user actions, like deletes and overwrites",
+        "rule_id": "AC_AWS_0214",
+        "severity": "HIGH",
+        "category": "Resilience",
+        "resource_name": "this",
+        "resource_type": "aws_s3_bucket",
+        "module_name": "ca_certificates",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-s3-bucket?ref=0ffe41e66ad5854c637a736e43180c29eb727393/main.tf",
+        "plan_root": "examples/mtls",
+        "line": 45
+      },
+      {
+        "rule_name": "lambdaXRayTracingDisabled",
+        "description": "Lambda tracing is not enabled.",
+        "rule_id": "AC_AWS_0485",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "lambda_function",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=b842374147fc07731d79028517223e9e0cbaab6d/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "ignore_ami",
+        "resource_type": "aws_instance",
+        "module_name": "ec2",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=56b7f8aac0acf2c6c4cfc28d5aa12e08a8ebb843/main.tf",
+        "plan_root": "examples/complete",
+        "line": 251
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_instance",
+        "module_name": "ec2",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=56b7f8aac0acf2c6c4cfc28d5aa12e08a8ebb843/main.tf",
+        "plan_root": "examples/complete",
+        "line": 41
+      },
+      {
+        "rule_name": "ebsSnapshotDisabled",
+        "description": "Enable AWS EBS Snapshot Encryption",
+        "rule_id": "AC_AWS_0459",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_ebs_volume",
+        "module_name": "ec2",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=56b7f8aac0acf2c6c4cfc28d5aa12e08a8ebb843/main.tf",
+        "plan_root": "examples/complete",
+        "line": 665
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-cloudfront",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:54:51.974041587 +0000 UTC",
+      "policies_validated": 176,
+      "violated_policies": 15,
+      "low": 3,
+      "medium": 6,
+      "high": 6
+    }
+  }
+}

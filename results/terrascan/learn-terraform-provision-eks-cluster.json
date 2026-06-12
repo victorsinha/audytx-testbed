@@ -1,0 +1,37 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster",
+        "errMsg": "failed to build unified config. errors:\n/tmp/9969xt/modules/eks-managed-node-group/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/eks-managed-node-group/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/eks-managed-node-group/migrations.tf:17,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/eks-managed-node-group/variables.tf:84,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/eks-managed-node-group/variables.tf:95,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/_user_data/main.tf:7,5-17: Unsupported block type; Blocks of type \"precondition\" are not expected here.\n/tmp/9969xt/modules/_user_data/variables.tf:97,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/_user_data/variables.tf:86,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/fargate-profile/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/fargate-profile/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/self-managed-node-group/migrations.tf:7,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/self-managed-node-group/migrations.tf:12,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/self-managed-node-group/migrations.tf:17,1-6: Unsupported block type; Blocks of type \"moved\" are not expected here.\n/tmp/9969xt/modules/self-managed-node-group/variables.tf:88,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/self-managed-node-group/variables.tf:77,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/_user_data/main.tf:7,5-17: Unsupported block type; Blocks of type \"precondition\" are not expected here.\n/tmp/9969xt/modules/_user_data/variables.tf:97,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/tmp/9969xt/modules/_user_data/variables.tf:86,1-33: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "vpc",
+        "file": "git::https://github.com/terraform-aws-modules/terraform-aws-vpc?ref=25322b6b6be69db6cca7f167d7b0e5327156a595/main.tf",
+        "plan_root": "./",
+        "line": 28
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:54:40.950286155 +0000 UTC",
+      "policies_validated": 147,
+      "violated_policies": 1,
+      "low": 1,
+      "medium": 0,
+      "high": 0
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms",
+        "errMsg": "diagnostic errors while loading terraform config dir '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms'. error from terraform:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/docs",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/docs' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/examples",
+        "errMsg": "directory '/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/examples' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/examples/complete",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/wrappers",
+        "errMsg": "failed to build unified config. errors:\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:211,1-34: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:161,1-26: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms/variables.tf:286,1-18: Optional object type attributes are experimental; This feature is currently an opt-in experiment, subject to change in future releases based on feedback.\n\nActivate the feature for this module by adding module_variable_optional_attrs to the list of active experiments.\n"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_disabled",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_dnssec_signing",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_primary",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_primary_external",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_replica_external",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_complete",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_default",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_external",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "kms_replica",
+        "file": "main.tf",
+        "plan_root": "examples/complete",
+        "line": 18
+      },
+      {
+        "rule_name": "kmsKeyRotationDisabled",
+        "description": "Ensure rotation for customer created CMKs is enabled",
+        "rule_id": "AC_AWS_0160",
+        "severity": "HIGH",
+        "category": "Data Protection",
+        "resource_name": "this",
+        "resource_type": "aws_kms_key",
+        "module_name": "wrapper",
+        "file": "main.tf",
+        "plan_root": "wrappers",
+        "line": 18
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-kms",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:54:42.84324856 +0000 UTC",
+      "policies_validated": 5,
+      "violated_policies": 11,
+      "low": 0,
+      "medium": 0,
+      "high": 11
+    }
+  }
+}
