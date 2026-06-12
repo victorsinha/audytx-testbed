@@ -51,8 +51,9 @@ jobs:
 
       - id: set-matrix
         run: |
-          matrix=$(cat bench-corpora.json)
-          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+          # Minify the JSON to a single line — multiline breaks $GITHUB_OUTPUT
+          matrix=$(python3 -c "import json; print(json.dumps(json.load(open('bench-corpora.json'))))")
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   # Phase 2: one job per corpus × all 4 tools
   scan:
