@@ -1,1 +1,120 @@
-{"status":"ERROR","reason":"no_output_file","stderr_excerpt":"Error: unable to find queries: stat /home/runner/work/audytx-testbed/audytx-testbed/assets/queries: no such file or directory Usage:   kics scan [flags]  Flags: "}
+{
+	"kics_version": "2.1.20",
+	"files_scanned": 4,
+	"lines_scanned": 183,
+	"files_parsed": 4,
+	"lines_parsed": 167,
+	"lines_ignored": 16,
+	"files_failed_to_scan": 0,
+	"queries_total": 1100,
+	"queries_failed_to_execute": 0,
+	"queries_failed_to_compute_similarity_id": 0,
+	"scan_id": "console",
+	"severity_counters": {
+		"CRITICAL": 0,
+		"HIGH": 0,
+		"INFO": 1,
+		"LOW": 0,
+		"MEDIUM": 2,
+		"TRACE": 0
+	},
+	"total_counter": 3,
+	"total_bom_resources": 0,
+	"start": "2026-06-12T21:37:43.887838965Z",
+	"end": "2026-06-12T21:38:02.457030778Z",
+	"paths": [
+		"corpus/learn-terraform-provision-eks-cluster",
+		"/tmp/kics-queries/assets"
+	],
+	"queries": [
+		{
+			"query_name": "VPC FlowLogs Disabled",
+			"query_id": "f83121ea-03da-434f-9277-9cd247ab3047",
+			"query_url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc",
+			"severity": "MEDIUM",
+			"platform": "Terraform",
+			"cwe": "778",
+			"risk_score": "5.1",
+			"cloud_provider": "AWS",
+			"category": "Observability",
+			"experimental": false,
+			"description": "Every VPC resource should have an associated Flow Log",
+			"description_id": "cdbdeb30",
+			"files": [
+				{
+					"file_name": "corpus/learn-terraform-provision-eks-cluster/main.tf",
+					"similarity_id": "ba74916a69e9af4bd415feaba23cc0ff0d85e0a4f359d1028a67fd20449c49ad",
+					"line": 26,
+					"resource_type": "n/a",
+					"resource_name": "n/a",
+					"issue_type": "MissingAttribute",
+					"search_key": "vpc",
+					"search_line": 26,
+					"search_value": "",
+					"expected_value": "vpc.enable_flow_log should be set to true",
+					"actual_value": "vpc.enable_flow_log is undefined"
+				}
+			]
+		},
+		{
+			"query_name": "VPC Subnet Assigns Public IP",
+			"query_id": "52f04a44-6bfa-4c41-b1d3-4ae99a2de05c",
+			"query_url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet#map_public_ip_on_launch",
+			"severity": "MEDIUM",
+			"platform": "Terraform",
+			"cwe": "732",
+			"risk_score": "5.2",
+			"cloud_provider": "AWS",
+			"category": "Networking and Firewall",
+			"experimental": false,
+			"description": "VPC Subnet should not assign public IP",
+			"description_id": "2b7ea60d",
+			"files": [
+				{
+					"file_name": "corpus/learn-terraform-provision-eks-cluster/main.tf",
+					"similarity_id": "cc5e0c6aac5183952f73531483fbcb969f7f8330aef26a8fa626a8e9109b2979",
+					"line": 26,
+					"resource_type": "n/a",
+					"resource_name": "n/a",
+					"issue_type": "IncorrectValue",
+					"search_key": "vpc",
+					"search_line": 26,
+					"search_value": "",
+					"expected_value": "vpc.map_public_ip_on_launch should be set to false",
+					"actual_value": "vpc.map_public_ip_on_launch is set undefined",
+					"remediation": "map_public_ip_on_launch = false",
+					"remediation_type": "addition"
+				}
+			]
+		},
+		{
+			"query_name": "Name Is Not Snake Case",
+			"query_id": "1e434b25-8763-4b00-a5ca-ca03b7abbb66",
+			"query_url": "https://www.terraform.io/docs/extend/best-practices/naming.html#naming",
+			"severity": "INFO",
+			"platform": "Terraform",
+			"cwe": "710",
+			"risk_score": "0.0",
+			"cloud_provider": "COMMON",
+			"category": "Best Practices",
+			"experimental": false,
+			"description": "All names should follow snake case pattern.",
+			"description_id": "ac707cad",
+			"files": [
+				{
+					"file_name": "corpus/learn-terraform-provision-eks-cluster/main.tf",
+					"similarity_id": "bb06809ea75f7db457f9a69a2917265caed1355e9de3caddf97a7ef12bf1945f",
+					"line": 104,
+					"resource_type": "n/a",
+					"resource_name": "n/a",
+					"issue_type": "IncorrectValue",
+					"search_key": "module.irsa-ebs-csi",
+					"search_line": 104,
+					"search_value": "",
+					"expected_value": "All names should be on snake case pattern",
+					"actual_value": "'irsa-ebs-csi' is not in snake case"
+				}
+			]
+		}
+	]
+}

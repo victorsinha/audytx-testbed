@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-256f-7c9f-ab16-1c0edac6f10b",
-  "CreatedAt": "2026-06-12T21:23:42.575828978Z",
+  "ReportID": "019ebdc5-072b-756a-b949-64d3b23a9518",
+  "CreatedAt": "2026-06-12T21:37:46.79535714Z",
   "ArtifactName": "corpus/cloudposse-s3-bucket",
   "ArtifactType": "filesystem",
   "Results": [

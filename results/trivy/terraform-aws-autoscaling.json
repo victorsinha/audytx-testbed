@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-44f4-726b-8ce1-952ce608b814",
-  "CreatedAt": "2026-06-12T21:23:50.644160392Z",
+  "ReportID": "019ebdc5-85cd-7dd6-bf38-cb054c71a5ad",
+  "CreatedAt": "2026-06-12T21:38:19.213909063Z",
   "ArtifactName": "corpus/terraform-aws-autoscaling",
   "ArtifactType": "filesystem",
   "Results": [

@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-21ec-7a27-b544-da596b262191",
-  "CreatedAt": "2026-06-12T21:23:41.676667623Z",
+  "ReportID": "019ebdc4-fa33-7e5f-a810-8955a8be3f2f",
+  "CreatedAt": "2026-06-12T21:37:43.475944835Z",
   "ArtifactName": "corpus/KaiMonkey",
   "ArtifactType": "filesystem",
   "Results": [
@@ -2186,102 +2186,6 @@
           "CauseMetadata": {
             "Provider": "Azure",
             "Service": "storage",
-            "StartLine": 124,
-            "EndLine": 124,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 1,
-                  "Content": "{",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "{",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 2,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 124,
-                  "Content": "      \"properties\": {}",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "      \u001b[38;5;33m\"properties\"\u001b[0m: {}",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 315,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 316,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "resources[1]",
-                "Filename": "arm/role-assignment/azuredeploy.json",
-                "Location": {
-                  "StartLine": 115,
-                  "EndLine": 125
-                }
-              },
-              {
-                "Filename": "arm/role-assignment/azuredeploy.json",
-                "Location": {
-                  "StartLine": 1,
-                  "EndLine": 316
-                }
-              },
-              {
-                "Filename": "arm/role-assignment/azuredeploy.json",
-                "Location": {}
-              }
-            ]
-          }
-        },
-        {
-          "Type": "Azure ARM Security Check",
-          "ID": "AZU-0059",
-          "Title": "Storage account should have secure transfer and minimum TLS version configured",
-          "Description": "Storage accounts should enforce HTTPS for secure data transfer and use a minimum TLS version of 1.2 or higher.\nThis ensures that logs and data stored in the storage account are encrypted in transit.\nAzure Storage encrypts all data at rest by default, but transport encryption is also critical.\n",
-          "Message": "Storage account does not use a secure TLS version.",
-          "Namespace": "builtin.azure.storage.azure0059",
-          "Query": "data.builtin.azure.storage.azure0059.deny",
-          "Resolution": "Enable secure transfer and set minimum TLS version to TLS1_2 or higher",
-          "Severity": "HIGH",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0059",
-          "References": [
-            "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
-            "https://avd.aquasec.com/misconfig/azu-0059"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Provider": "Azure",
-            "Service": "storage",
             "StartLine": 113,
             "EndLine": 113,
             "Code": {
@@ -2343,6 +2247,102 @@
                 "Location": {
                   "StartLine": 104,
                   "EndLine": 114
+                }
+              },
+              {
+                "Filename": "arm/role-assignment/azuredeploy.json",
+                "Location": {
+                  "StartLine": 1,
+                  "EndLine": 316
+                }
+              },
+              {
+                "Filename": "arm/role-assignment/azuredeploy.json",
+                "Location": {}
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Azure ARM Security Check",
+          "ID": "AZU-0059",
+          "Title": "Storage account should have secure transfer and minimum TLS version configured",
+          "Description": "Storage accounts should enforce HTTPS for secure data transfer and use a minimum TLS version of 1.2 or higher.\nThis ensures that logs and data stored in the storage account are encrypted in transit.\nAzure Storage encrypts all data at rest by default, but transport encryption is also critical.\n",
+          "Message": "Storage account does not use a secure TLS version.",
+          "Namespace": "builtin.azure.storage.azure0059",
+          "Query": "data.builtin.azure.storage.azure0059.deny",
+          "Resolution": "Enable secure transfer and set minimum TLS version to TLS1_2 or higher",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0059",
+          "References": [
+            "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+            "https://avd.aquasec.com/misconfig/azu-0059"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Azure",
+            "Service": "storage",
+            "StartLine": 124,
+            "EndLine": 124,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 1,
+                  "Content": "{",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "{",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 2,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 124,
+                  "Content": "      \"properties\": {}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "      \u001b[38;5;33m\"properties\"\u001b[0m: {}",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 315,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 316,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "resources[1]",
+                "Filename": "arm/role-assignment/azuredeploy.json",
+                "Location": {
+                  "StartLine": 115,
+                  "EndLine": 125
                 }
               },
               {
@@ -4813,7 +4813,7 @@
           "ID": "AWS-0036",
           "Title": "Task definition defines sensitive environment variable(s).",
           "Description": "You should not make secrets available to a user in plaintext in any scenario. Secrets can instead be pulled from a secure secret storage system by the service requiring them.\n",
-          "Message": "Container definition contains a potentially sensitive in environment variable name \"{\\\"endline\\\": 29, \\\"explicit\\\": true, \\\"filepath\\\": \\\"cft/ecs/ecs-task-definition/deploy.yml\\\", \\\"fskey\\\": \\\"eb9b502123e0764495f1d7d6757db3062ea8fa30d861707b494501a9cae21b24\\\", \\\"managed\\\": true, \\\"parent\\\": {\\\"endline\\\": 29, \\\"explicit\\\": false, \\\"filepath\\\": \\\"cft/ecs/ecs-task-definition/deploy.yml\\\", \\\"fskey\\\": \\\"eb9b502123e0764495f1d7d6757db3062ea8fa30d861707b494501a9cae21b24\\\", \\\"managed\\\": true, \\\"resource\\\": \\\"taskdefinition\\\", \\\"sourceprefix\\\": \\\"\\\", \\\"startline\\\": 29, \\\"unresolvable\\\": false}, \\\"resource\\\": \\\"\\\", \\\"sourceprefix\\\": \\\"\\\", \\\"startline\\\": 29, \\\"unresolvable\\\": false, \\\"value\\\": \\\"PASSWORD\\\"}\"",
+          "Message": "Container definition contains a potentially sensitive in environment variable name \"{\\\"endline\\\": 29, \\\"explicit\\\": true, \\\"filepath\\\": \\\"cft/ecs/ecs-task-definition/deploy.yml\\\", \\\"fskey\\\": \\\"edd59adefebf2c494c5b968f795c68ead684b8b50360371da216d0d4b27c489f\\\", \\\"managed\\\": true, \\\"parent\\\": {\\\"endline\\\": 29, \\\"explicit\\\": false, \\\"filepath\\\": \\\"cft/ecs/ecs-task-definition/deploy.yml\\\", \\\"fskey\\\": \\\"edd59adefebf2c494c5b968f795c68ead684b8b50360371da216d0d4b27c489f\\\", \\\"managed\\\": true, \\\"resource\\\": \\\"taskdefinition\\\", \\\"sourceprefix\\\": \\\"\\\", \\\"startline\\\": 29, \\\"unresolvable\\\": false}, \\\"resource\\\": \\\"\\\", \\\"sourceprefix\\\": \\\"\\\", \\\"startline\\\": 29, \\\"unresolvable\\\": false, \\\"value\\\": \\\"PASSWORD\\\"}\"",
           "Namespace": "builtin.aws.ecs.aws0036",
           "Query": "data.builtin.aws.ecs.aws0036.deny",
           "Resolution": "Use secrets for the task definition",
@@ -12725,6 +12725,100 @@
             "Resource": "aws_security_group.web-app-security-group",
             "Provider": "AWS",
             "Service": "ec2",
+            "StartLine": 229,
+            "EndLine": 229,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 225,
+                  "Content": "resource \"aws_security_group\" \"web-app-security-group\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group\"\u001b[0m \u001b[38;5;37m\"web-app-security-group\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 226,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 229,
+                  "Content": "    cidr_blocks      = [\"0.0.0.0/0\"]",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mcidr_blocks\u001b[0m      = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 273,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 274,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "egress",
+                "Filename": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+                "Location": {
+                  "StartLine": 228,
+                  "EndLine": 235
+                }
+              },
+              {
+                "Resource": "aws_security_group.web-app-security-group",
+                "Filename": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
+                "Location": {
+                  "StartLine": 225,
+                  "EndLine": 274
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_security_group.web-app-security-group",
+            "Provider": "AWS",
+            "Service": "ec2",
             "StartLine": 231,
             "EndLine": 231,
             "Code": {
@@ -12801,26 +12895,28 @@
         },
         {
           "Type": "Terraform Security Check",
-          "ID": "AWS-0104",
-          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
-          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
-          "Message": "Security group rule allows unrestricted egress to any IP address.",
-          "Namespace": "builtin.aws.ec2.aws0104",
-          "Query": "data.builtin.aws.ec2.aws0104.deny",
-          "Resolution": "Set a more restrictive cidr range",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "ID": "AWS-0107",
+          "Title": "Security groups should not allow unrestricted ingress to SSH or RDP from any IP address.",
+          "Description": "Security groups provide stateful filtering of ingress and egress network traffic to AWS\nresources. It is recommended that no security group allows unrestricted ingress access to\nremote server administration ports, such as SSH to port 22 and RDP to port 3389.\n",
+          "Message": "Security group rule allows unrestricted ingress from any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0107",
+          "Query": "data.builtin.aws.ec2.aws0107.deny",
+          "Resolution": "Set a more restrictive CIDR range",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0107",
           "References": [
-            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
-            "https://avd.aquasec.com/misconfig/aws-0104"
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-13",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-14",
+            "https://avd.aquasec.com/misconfig/aws-0107"
           ],
           "Status": "FAIL",
           "CauseMetadata": {
             "Resource": "aws_security_group.web-app-security-group",
             "Provider": "AWS",
             "Service": "ec2",
-            "StartLine": 229,
-            "EndLine": 229,
+            "StartLine": 248,
+            "EndLine": 248,
             "Code": {
               "Lines": [
                 {
@@ -12843,12 +12939,12 @@
                   "LastCause": false
                 },
                 {
-                  "Number": 229,
-                  "Content": "    cidr_blocks      = [\"0.0.0.0/0\"]",
+                  "Number": 248,
+                  "Content": "    ipv6_cidr_blocks = [\"::/0\"]",
                   "IsCause": true,
                   "Annotation": "",
                   "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mcidr_blocks\u001b[0m      = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]",
+                  "Highlighted": "\u001b[0m    \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = [\u001b[38;5;37m\"::/0\"\u001b[0m]",
                   "FirstCause": true,
                   "LastCause": true
                 },
@@ -12875,11 +12971,11 @@
             },
             "Occurrences": [
               {
-                "Resource": "egress",
+                "Resource": "ingress",
                 "Filename": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
                 "Location": {
-                  "StartLine": 228,
-                  "EndLine": 235
+                  "StartLine": 245,
+                  "EndLine": 252
                 }
               },
               {
@@ -13072,102 +13168,6 @@
                 "Location": {
                   "StartLine": 237,
                   "EndLine": 243
-                }
-              },
-              {
-                "Resource": "aws_security_group.web-app-security-group",
-                "Filename": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
-                "Location": {
-                  "StartLine": 225,
-                  "EndLine": 274
-                }
-              }
-            ]
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0107",
-          "Title": "Security groups should not allow unrestricted ingress to SSH or RDP from any IP address.",
-          "Description": "Security groups provide stateful filtering of ingress and egress network traffic to AWS\nresources. It is recommended that no security group allows unrestricted ingress access to\nremote server administration ports, such as SSH to port 22 and RDP to port 3389.\n",
-          "Message": "Security group rule allows unrestricted ingress from any IP address.",
-          "Namespace": "builtin.aws.ec2.aws0107",
-          "Query": "data.builtin.aws.ec2.aws0107.deny",
-          "Resolution": "Set a more restrictive CIDR range",
-          "Severity": "HIGH",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0107",
-          "References": [
-            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html",
-            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-13",
-            "https://docs.aws.amazon.com/securityhub/latest/userguide/ec2-controls.html#ec2-14",
-            "https://avd.aquasec.com/misconfig/aws-0107"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "aws_security_group.web-app-security-group",
-            "Provider": "AWS",
-            "Service": "ec2",
-            "StartLine": 248,
-            "EndLine": 248,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 225,
-                  "Content": "resource \"aws_security_group\" \"web-app-security-group\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group\"\u001b[0m \u001b[38;5;37m\"web-app-security-group\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 226,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 248,
-                  "Content": "    ipv6_cidr_blocks = [\"::/0\"]",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[0m    \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = [\u001b[38;5;37m\"::/0\"\u001b[0m]",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 273,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 274,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "ingress",
-                "Filename": "terraform/aws/scenarios/ssrf-iam-breach/main.tf",
-                "Location": {
-                  "StartLine": 245,
-                  "EndLine": 252
                 }
               },
               {

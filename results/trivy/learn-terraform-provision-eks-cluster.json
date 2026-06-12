@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-5fbd-77a6-ab11-aad597801caa",
-  "CreatedAt": "2026-06-12T21:23:57.501503585Z",
+  "ReportID": "019ebdc4-fb3f-7876-b00b-804b86c02796",
+  "CreatedAt": "2026-06-12T21:37:43.743557181Z",
   "ArtifactName": "corpus/learn-terraform-provision-eks-cluster",
   "ArtifactType": "filesystem",
   "Results": [

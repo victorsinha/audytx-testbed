@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-3f02-765e-903e-5437914f8b48",
-  "CreatedAt": "2026-06-12T21:23:49.122419874Z",
+  "ReportID": "019ebdc4-f88c-7145-854d-19e2614c2037",
+  "CreatedAt": "2026-06-12T21:37:43.052085028Z",
   "ArtifactName": "corpus/terraform-aws-apigateway-v2",
   "ArtifactType": "filesystem",
   "Results": [

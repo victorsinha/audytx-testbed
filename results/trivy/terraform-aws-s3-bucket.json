@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-2531-7050-b693-b081b8099e67",
-  "CreatedAt": "2026-06-12T21:23:42.51302259Z",
+  "ReportID": "019ebdc5-67a1-7bd6-8bca-47a0f63c6cd5",
+  "CreatedAt": "2026-06-12T21:38:11.489778461Z",
   "ArtifactName": "corpus/terraform-aws-s3-bucket",
   "ArtifactType": "filesystem",
   "Results": [
@@ -1885,10 +1885,10 @@
             "Occurrences": [
               {
                 "Resource": "module.s3_bucket",
-                "Filename": "examples/object/main.tf",
+                "Filename": "examples/notification/main.tf",
                 "Location": {
-                  "StartLine": 108,
-                  "EndLine": 113
+                  "StartLine": 19,
+                  "EndLine": 24
                 }
               }
             ]
@@ -2020,10 +2020,10 @@
             "Occurrences": [
               {
                 "Resource": "module.s3_bucket",
-                "Filename": "examples/notification/main.tf",
+                "Filename": "examples/object/main.tf",
                 "Location": {
-                  "StartLine": 19,
-                  "EndLine": 24
+                  "StartLine": 108,
+                  "EndLine": 113
                 }
               }
             ]

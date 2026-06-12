@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-2494-7971-842e-d6b1f8542dfa",
-  "CreatedAt": "2026-06-12T21:23:42.356620543Z",
+  "ReportID": "019ebdc5-37f2-7408-be97-457c8e12f4de",
+  "CreatedAt": "2026-06-12T21:37:59.28226695Z",
   "ArtifactName": "corpus/iam-vulnerable",
   "ArtifactType": "filesystem",
   "Results": [

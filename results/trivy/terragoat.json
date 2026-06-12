@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-35cd-7b8e-847f-01ce3ca0acd3",
-  "CreatedAt": "2026-06-12T21:23:46.765759359Z",
+  "ReportID": "019ebdc4-e1a4-7016-9ca5-c6bd12e4eb60",
+  "CreatedAt": "2026-06-12T21:37:37.188008204Z",
   "ArtifactName": "corpus/terragoat",
   "ArtifactType": "filesystem",
   "Results": [

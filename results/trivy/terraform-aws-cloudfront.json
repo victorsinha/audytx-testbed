@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-3000-7b46-b3fb-67ec2a23053d",
-  "CreatedAt": "2026-06-12T21:23:45.280741513Z",
+  "ReportID": "019ebdc5-03f6-7eae-a153-87fa2bfe4b9c",
+  "CreatedAt": "2026-06-12T21:37:45.974964237Z",
   "ArtifactName": "corpus/terraform-aws-cloudfront",
   "ArtifactType": "filesystem",
   "Results": [

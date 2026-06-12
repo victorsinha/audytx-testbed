@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-34d8-7bf5-ad88-850df941e269",
-  "CreatedAt": "2026-06-12T21:23:46.520785583Z",
+  "ReportID": "019ebdc4-df14-795b-b1f4-9d3bb9a93e17",
+  "CreatedAt": "2026-06-12T21:37:36.532614796Z",
   "ArtifactName": "corpus/terraform-aws-sns",
   "ArtifactType": "filesystem",
   "Results": [

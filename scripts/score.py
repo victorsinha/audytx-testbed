@@ -183,7 +183,11 @@ def _count_checkov_item(item):
 
 
 def count_checkov_findings(data):
-    """Return list of finding dicts from Checkov JSON (for TP/FP matching)."""
+    """Return list of finding dicts from Checkov JSON (for TP/FP matching).
+
+    Note: Checkov severity is only available with Bridgecrew API credentials.
+    In offline mode (bench.yml), all failed checks are returned (no severity filter).
+    """
     if isinstance(data, dict) and data.get('status') in ('DNF', 'ERROR'):
         return []
     findings = []
@@ -195,6 +199,11 @@ def count_checkov_findings(data):
         if not isinstance(results, dict):
             continue
         for check in results.get('failed_checks', []):
+            sev = (check.get('severity') or '').upper()
+            # When severity is populated, filter to HIGH/CRITICAL only.
+            # When severity is null/empty (offline run), include all.
+            if sev and sev not in ('HIGH', 'CRITICAL'):
+                continue
             findings.append({
                 'rule_id': check.get('check_id', ''),
                 'rule_name': check.get('check_address', '') or check.get('check_id', ''),
@@ -316,7 +325,10 @@ def count_terrascan_findings(data):
 
 
 def count_audytx_high_severity(data):
-    """Extract HIGH+CRITICAL count from audytx SARIF JSON."""
+    """Extract HIGH+CRITICAL count from audytx SARIF JSON.
+
+    audytx SARIF uses standard SARIF levels: error=High/Critical, warning=Medium, note=Low.
+    """
     if isinstance(data, dict) and data.get('status') in ('DNF', 'ERROR', 'MISSING'):
         return None, data.get('status', 'ERROR')
     try:
@@ -329,27 +341,16 @@ def count_audytx_high_severity(data):
                 rule_id = result.get('ruleId', '')
                 rule = rules_by_id.get(rule_id, {})
                 level = rule.get('defaultConfiguration', {}).get('level', '')
-                if not level:
-                    level = result.get('properties', {}).get('severity', '')
-                if level in ('error', 'warning', 'high', 'critical', 'note'):
-                    # SARIF levels: error=critical/high, warning=medium, note=low
-                    if level in ('error',):
-                        total += 1
-                    elif level == 'warning':
-                        # In audytx SARIF: error=Critical/High, warning=Medium
-                        pass  # don't count medium
-                    # Also check properties for explicit severity
-                    props_sev = result.get('properties', {}).get('severity', '')
-                    if props_sev in ('Critical', 'High'):
-                        total += 1
-                        total -= 1  # avoid double-count (we already counted via level=error)
+                # SARIF level=error → High/Critical; level=warning → Medium; level=note → Low
+                if level == 'error':
+                    total += 1
         return total, 'OK'
     except (AttributeError, TypeError):
         return None, 'PARSE_ERROR'
 
 
 def count_audytx_findings(data):
-    """Return all finding dicts from audytx SARIF."""
+    """Return HIGH/Critical finding dicts from audytx SARIF (level=error only)."""
     if isinstance(data, dict) and data.get('status') in ('DNF', 'ERROR', 'MISSING'):
         return []
     findings = []
@@ -361,9 +362,10 @@ def count_audytx_findings(data):
             for result in run.get('results', []):
                 rule_id = result.get('ruleId', '')
                 rule = rules_by_id.get(rule_id, {})
-                sev = result.get('properties', {}).get('severity', '')
                 level = rule.get('defaultConfiguration', {}).get('level', '')
-                # Get file location
+                # Only include HIGH/Critical findings for TP/FP matching
+                if level != 'error':
+                    continue
                 locs = result.get('locations', [{}])
                 loc = locs[0] if locs else {}
                 phys = loc.get('physicalLocation', {})
@@ -376,7 +378,7 @@ def count_audytx_findings(data):
                     'rule_name': rule.get('shortDescription', {}).get('text', ''),
                     'file': file_uri,
                     'resource': result.get('properties', {}).get('resource_name', ''),
-                    'severity': sev or level,
+                    'severity': level,
                     'line_start': line,
                 })
     except (AttributeError, TypeError):

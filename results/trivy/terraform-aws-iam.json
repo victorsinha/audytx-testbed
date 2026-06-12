@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-44dd-7d46-b837-e6d137c37fea",
-  "CreatedAt": "2026-06-12T21:23:50.621872689Z",
+  "ReportID": "019ebdc5-5b93-73b3-aa2b-83e5319eb5ac",
+  "CreatedAt": "2026-06-12T21:38:08.403246286Z",
   "ArtifactName": "corpus/terraform-aws-iam",
   "ArtifactType": "filesystem",
   "Results": [

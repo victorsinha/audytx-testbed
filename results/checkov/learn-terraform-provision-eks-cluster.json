@@ -1,37 +1,412 @@
-usage: checkov [-h] [-v] [--support] [-d DIRECTORY] [--add-check]
-               [-f FILE [FILE ...]] [--skip-path SKIP_PATH]
-               [--external-checks-dir EXTERNAL_CHECKS_DIR]
-               [--external-checks-git EXTERNAL_CHECKS_GIT] [-l]
-               [-o {cli,csv,cyclonedx,cyclonedx_json,json,junitxml,github_failed_only,gitlab_sast,sarif,spdx}]
-               [--output-file-path OUTPUT_FILE_PATH] [--output-bc-ids]
-               [--include-all-checkov-policies] [--quiet] [--compact]
-               [--framework FRAMEWORK [FRAMEWORK ...]]
-               [--skip-framework SKIP_FRAMEWORK [SKIP_FRAMEWORK ...]]
-               [-c CHECK] [--skip-check SKIP_CHECK]
-               [--run-all-external-checks] [-s] [--soft-fail-on SOFT_FAIL_ON]
-               [--hard-fail-on HARD_FAIL_ON] [--bc-api-key BC_API_KEY]
-               [--prisma-api-url PRISMA_API_URL] [--skip-results-upload]
-               [--docker-image DOCKER_IMAGE]
-               [--dockerfile-path DOCKERFILE_PATH] [--repo-id REPO_ID]
-               [-b BRANCH] [--skip-download] [--use-enforcement-rules]
-               [--download-external-modules DOWNLOAD_EXTERNAL_MODULES]
-               [--var-file VAR_FILE]
-               [--external-modules-download-path EXTERNAL_MODULES_DOWNLOAD_PATH]
-               [--evaluate-variables EVALUATE_VARIABLES] [-ca CA_CERTIFICATE]
-               [--no-cert-verify]
-               [--repo-root-for-plan-enrichment REPO_ROOT_FOR_PLAN_ENRICHMENT]
-               [--config-file CONFIG_FILE] [--create-config CREATE_CONFIG]
-               [--show-config] [--create-baseline] [--baseline BASELINE]
-               [--output-baseline-as-skipped]
-               [--skip-cve-package SKIP_CVE_PACKAGE]
-               [--policy-metadata-filter POLICY_METADATA_FILTER]
-               [--policy-metadata-filter-exception POLICY_METADATA_FILTER_EXCEPTION]
-               [--secrets-scan-file-type SECRETS_SCAN_FILE_TYPE]
-               [--enable-secret-scan-all-files]
-               [--block-list-secret-scan BLOCK_LIST_SECRET_SCAN]
-               [--summary-position {bottom,top}]
-               [--skip-resources-without-violations] [--deep-analysis]
-               [--no-fail-on-crash] [--mask MASK] [--scan-secrets-history]
-               [--secrets-history-timeout SECRETS_HISTORY_TIMEOUT]
-               [--custom-tool-name CUSTOM_TOOL_NAME]
-checkov: error: unrecognized arguments: --no-guide
+{
+    "check_type": "terraform",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_AWS_41",
+                "bc_check_id": "BC_AWS_SECRETS_5",
+                "check_name": "Ensure no hard coded AWS access key and secret key exists in provider",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    4,
+                    6
+                ],
+                "resource": "aws.default",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.provider.aws.credentials",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/secrets-policies/bc-aws-secrets-5",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "breadcrumbs": {
+                    "region": [
+                        {
+                            "type": "variable",
+                            "name": "region",
+                            "path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/variables.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_AWS_275",
+                "bc_check_id": "BC_AWS_IAM_79",
+                "check_name": "Disallow policies from using the AWS AdministratorAccess policy",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    100,
+                    102
+                ],
+                "resource": "aws_iam_policy.ebs_csi_policy",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.data.aws.IAMManagedAdminPolicy",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-275",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf"
+            },
+            {
+                "check_id": "CKV_TF_2",
+                "bc_check_id": "BC_CROSS_2",
+                "check_name": "Ensure Terraform module sources use a tag with a version number",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    26,
+                    49
+                ],
+                "resource": "vpc",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionVersionTag",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-tag",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf"
+            },
+            {
+                "check_id": "CKV_TF_2",
+                "bc_check_id": "BC_CROSS_2",
+                "check_name": "Ensure Terraform module sources use a tag with a version number",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    51,
+                    96
+                ],
+                "resource": "eks",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionVersionTag",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-tag",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "breadcrumbs": {
+                    "cluster_name": [
+                        {
+                            "type": "locals",
+                            "name": "cluster_name",
+                            "path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_TF_2",
+                "bc_check_id": "BC_CROSS_2",
+                "check_name": "Ensure Terraform module sources use a tag with a version number",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    104,
+                    113
+                ],
+                "resource": "irsa-ebs-csi",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionVersionTag",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-tag",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "breadcrumbs": {
+                    "role_policy_arns": [
+                        {
+                            "type": "data",
+                            "name": "aws_iam_policy.ebs_csi_policy",
+                            "path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV2_AWS_56",
+                "bc_check_id": "BC_AWS_IAM_75",
+                "check_name": "Ensure AWS Managed IAMFullAccess IAM policy is not used.",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "aws_iam_policy": {
+                            "ebs_csi_policy": {
+                                "__end_line__": 102,
+                                "__start_line__": 100,
+                                "arn": [
+                                    "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+                                ],
+                                "__address__": "aws_iam_policy.ebs_csi_policy"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "name",
+                        "arn",
+                        "managed_policy_arns/*",
+                        "managed_policy_arn",
+                        "policy_arn"
+                    ]
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    100,
+                    102
+                ],
+                "resource": "aws_iam_policy.ebs_csi_policy",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-2-56",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_TF_1",
+                "bc_check_id": "BC_CROSS_1",
+                "check_name": "Ensure Terraform module sources use a commit hash",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    26,
+                    49
+                ],
+                "resource": "vpc",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionHash",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-git-url-with-commit-hash-revision",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf"
+            },
+            {
+                "check_id": "CKV_TF_1",
+                "bc_check_id": "BC_CROSS_1",
+                "check_name": "Ensure Terraform module sources use a commit hash",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    51,
+                    96
+                ],
+                "resource": "eks",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionHash",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-git-url-with-commit-hash-revision",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "breadcrumbs": {
+                    "cluster_name": [
+                        {
+                            "type": "locals",
+                            "name": "cluster_name",
+                            "path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            },
+            {
+                "check_id": "CKV_TF_1",
+                "bc_check_id": "BC_CROSS_1",
+                "check_name": "Ensure Terraform module sources use a commit hash",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": null,
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "repo_file_path": "/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "file_line_range": [
+                    104,
+                    113
+                ],
+                "resource": "irsa-ebs-csi",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.module.generic.RevisionHash",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-git-url-with-commit-hash-revision",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                "breadcrumbs": {
+                    "role_policy_arns": [
+                        {
+                            "type": "data",
+                            "name": "aws_iam_policy.ebs_csi_policy",
+                            "path": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/learn-terraform-provision-eks-cluster/main.tf",
+                            "module_connection": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 6,
+        "failed": 3,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 1,
+        "checkov_version": "3.2.520"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

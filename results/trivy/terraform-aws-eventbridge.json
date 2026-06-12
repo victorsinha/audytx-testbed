@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-2954-743e-ba5d-0cf56600df62",
-  "CreatedAt": "2026-06-12T21:23:43.572279896Z",
+  "ReportID": "019ebdc5-5a56-7a84-b94e-6472769c2f87",
+  "CreatedAt": "2026-06-12T21:38:08.086691514Z",
   "ArtifactName": "corpus/terraform-aws-eventbridge",
   "ArtifactType": "filesystem",
   "Results": [

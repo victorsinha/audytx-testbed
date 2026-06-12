@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-4921-7ed3-bcbe-952e48662f49",
-  "CreatedAt": "2026-06-12T21:23:51.713974798Z",
+  "ReportID": "019ebdc5-230c-703c-a8e9-f58aa8a841df",
+  "CreatedAt": "2026-06-12T21:37:53.932018137Z",
   "ArtifactName": "corpus/terraform-aws-alb",
   "ArtifactType": "filesystem",
   "Results": [

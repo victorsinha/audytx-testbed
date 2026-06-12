@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-5148-7e42-8af5-4b5d8bf132ab",
-  "CreatedAt": "2026-06-12T21:23:53.800936988Z",
+  "ReportID": "019ebdc5-8b79-7654-b537-b24c77620cdc",
+  "CreatedAt": "2026-06-12T21:38:20.665417668Z",
   "ArtifactName": "corpus/terraform-aws-security-group",
   "ArtifactType": "filesystem",
   "Results": [

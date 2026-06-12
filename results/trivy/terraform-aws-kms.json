@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-3370-7f00-832c-7eab94b93387",
-  "CreatedAt": "2026-06-12T21:23:46.160984845Z",
+  "ReportID": "019ebdc5-00c9-7bf8-9524-cf8c337f5c20",
+  "CreatedAt": "2026-06-12T21:37:45.161786675Z",
   "ArtifactName": "corpus/terraform-aws-kms",
   "ArtifactType": "filesystem",
   "Results": [

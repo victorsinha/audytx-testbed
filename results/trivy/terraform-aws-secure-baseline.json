@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-330d-7a7b-9487-aab552eade42",
-  "CreatedAt": "2026-06-12T21:23:46.061688543Z",
+  "ReportID": "019ebdc5-90cc-7686-89b5-14f56b7cb848",
+  "CreatedAt": "2026-06-12T21:38:22.028429416Z",
   "ArtifactName": "corpus/terraform-aws-secure-baseline",
   "ArtifactType": "filesystem",
   "Results": [

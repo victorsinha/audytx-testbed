@@ -19,7 +19,7 @@
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-s3-bucket",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:23:46.953811333 +0000 UTC",
+      "scanned_at": "2026-06-12 21:38:34.813109474 +0000 UTC",
       "policies_validated": 16,
       "violated_policies": 1,
       "low": 0,

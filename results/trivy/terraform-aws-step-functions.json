@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-40db-718a-8f21-b4c17487b95d",
-  "CreatedAt": "2026-06-12T21:23:49.595102922Z",
+  "ReportID": "019ebdc5-034c-740e-b08c-4e9c03f9b421",
+  "CreatedAt": "2026-06-12T21:37:45.804267902Z",
   "ArtifactName": "corpus/terraform-aws-step-functions",
   "ArtifactType": "filesystem",
   "Results": [

@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-3637-72c8-866f-78ad6888ec0d",
-  "CreatedAt": "2026-06-12T21:23:46.871184039Z",
+  "ReportID": "019ebdc5-3266-7c7c-85bd-4242258b8006",
+  "CreatedAt": "2026-06-12T21:37:57.86282006Z",
   "ArtifactName": "corpus/terraform-aws-ecr",
   "ArtifactType": "filesystem",
   "Results": [

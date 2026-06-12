@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-0d05-7576-8740-1a8f41d00971",
-  "CreatedAt": "2026-06-12T21:23:36.325360159Z",
+  "ReportID": "019ebdc4-e5df-7022-a580-7ba08aefc1cb",
+  "CreatedAt": "2026-06-12T21:37:38.271011157Z",
   "ArtifactName": "corpus/sadcloud",
   "ArtifactType": "filesystem",
   "Results": [

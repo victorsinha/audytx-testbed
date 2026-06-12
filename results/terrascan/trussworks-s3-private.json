@@ -5,7 +5,7 @@
     "scan_summary": {
       "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/trussworks-s3-private",
       "iac_type": "terraform",
-      "scanned_at": "2026-06-12 21:23:44.319492856 +0000 UTC",
+      "scanned_at": "2026-06-12 21:38:10.475600003 +0000 UTC",
       "policies_validated": 16,
       "violated_policies": 0,
       "low": 0,

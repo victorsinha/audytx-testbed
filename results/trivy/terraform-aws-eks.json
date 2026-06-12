@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-5c20-7c56-894f-5fee0668ceaf",
-  "CreatedAt": "2026-06-12T21:23:56.576810439Z",
+  "ReportID": "019ebdc6-7063-7efd-bb59-d94d02858eda",
+  "CreatedAt": "2026-06-12T21:39:19.26798489Z",
   "ArtifactName": "corpus/terraform-aws-eks",
   "ArtifactType": "filesystem",
   "Results": [
@@ -1068,10 +1068,434 @@
               },
               {
                 "Resource": "module.eks",
+                "Filename": "examples/eks-auto-mode/main.tf",
+                "Location": {
+                  "StartLine": 32,
+                  "EndLine": 50
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0040",
+          "Title": "EKS Clusters should have the public access disabled",
+          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
+          "Message": "Public cluster access is enabled.",
+          "Namespace": "builtin.aws.eks.aws0040",
+          "Query": "data.builtin.aws.eks.aws0040.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
+            "https://avd.aquasec.com/misconfig/aws-0040"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 82,
+            "EndLine": 82,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 82,
+                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "examples/eks-hybrid-nodes/main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 88
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0040",
+          "Title": "EKS Clusters should have the public access disabled",
+          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
+          "Message": "Public cluster access is enabled.",
+          "Namespace": "builtin.aws.eks.aws0040",
+          "Query": "data.builtin.aws.eks.aws0040.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
+            "https://avd.aquasec.com/misconfig/aws-0040"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 82,
+            "EndLine": 82,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 82,
+                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "examples/karpenter/main.tf",
+                "Location": {
+                  "StartLine": 49,
+                  "EndLine": 104
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0040",
+          "Title": "EKS Clusters should have the public access disabled",
+          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
+          "Message": "Public cluster access is enabled.",
+          "Namespace": "builtin.aws.eks.aws0040",
+          "Query": "data.builtin.aws.eks.aws0040.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
+            "https://avd.aquasec.com/misconfig/aws-0040"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 82,
+            "EndLine": 82,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 82,
+                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
                 "Filename": "tests/eks-managed-node-group/main.tf",
                 "Location": {
                   "StartLine": 34,
                   "EndLine": 417
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0040",
+          "Title": "EKS Clusters should have the public access disabled",
+          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
+          "Message": "Public cluster access is enabled.",
+          "Namespace": "builtin.aws.eks.aws0040",
+          "Query": "data.builtin.aws.eks.aws0040.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
+            "https://avd.aquasec.com/misconfig/aws-0040"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 82,
+            "EndLine": 82,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 82,
+                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "examples/eks-capabilities/main.tf",
+                "Location": {
+                  "StartLine": 115,
+                  "EndLine": 133
                 }
               }
             ],
@@ -1310,430 +1734,6 @@
           ],
           "Status": "FAIL",
           "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 82,
-            "EndLine": 82,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 82,
-                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "examples/eks-auto-mode/main.tf",
-                "Location": {
-                  "StartLine": 32,
-                  "EndLine": 50
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0040",
-          "Title": "EKS Clusters should have the public access disabled",
-          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
-          "Message": "Public cluster access is enabled.",
-          "Namespace": "builtin.aws.eks.aws0040",
-          "Query": "data.builtin.aws.eks.aws0040.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
-            "https://avd.aquasec.com/misconfig/aws-0040"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 82,
-            "EndLine": 82,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 82,
-                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "examples/eks-hybrid-nodes/main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 88
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0040",
-          "Title": "EKS Clusters should have the public access disabled",
-          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
-          "Message": "Public cluster access is enabled.",
-          "Namespace": "builtin.aws.eks.aws0040",
-          "Query": "data.builtin.aws.eks.aws0040.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
-            "https://avd.aquasec.com/misconfig/aws-0040"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 82,
-            "EndLine": 82,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 82,
-                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "examples/eks-capabilities/main.tf",
-                "Location": {
-                  "StartLine": 115,
-                  "EndLine": 133
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0040",
-          "Title": "EKS Clusters should have the public access disabled",
-          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
-          "Message": "Public cluster access is enabled.",
-          "Namespace": "builtin.aws.eks.aws0040",
-          "Query": "data.builtin.aws.eks.aws0040.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
-            "https://avd.aquasec.com/misconfig/aws-0040"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 82,
-            "EndLine": 82,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 82,
-                  "Content": "    endpoint_public_access  = var.endpoint_public_access",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "examples/karpenter/main.tf",
-                "Location": {
-                  "StartLine": 49,
-                  "EndLine": 104
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0040",
-          "Title": "EKS Clusters should have the public access disabled",
-          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
-          "Message": "Public cluster access is enabled.",
-          "Namespace": "builtin.aws.eks.aws0040",
-          "Query": "data.builtin.aws.eks.aws0040.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
-            "https://avd.aquasec.com/misconfig/aws-0040"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
             "Resource": "module.eks_auto_custom_node_pools",
             "Provider": "AWS",
             "Service": "eks",
@@ -1820,218 +1820,6 @@
             "RenderedCause": {
               "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
               "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0041",
-          "Title": "EKS cluster should not have open CIDR range for public access",
-          "Description": "EKS Clusters have public access cidrs set to 0.0.0.0/0 by default which is wide open to the internet. This should be explicitly set to a more specific private CIDR range\n",
-          "Message": "Cluster allows access from a public CIDR: 0.0.0.0/0",
-          "Namespace": "builtin.aws.eks.aws0041",
-          "Query": "data.builtin.aws.eks.aws0041.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0041",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html",
-            "https://avd.aquasec.com/misconfig/aws-0041"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 83,
-            "EndLine": 83,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 83,
-                  "Content": "    public_access_cidrs     = var.endpoint_public_access_cidrs",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mpublic_access_cidrs\u001b[0m     = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access_cidrs",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "tests/eks-fargate-profile/main.tf",
-                "Location": {
-                  "StartLine": 32,
-                  "EndLine": 94
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    public_access_cidrs = [\"0.0.0.0/0\"]\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mpublic_access_cidrs\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n  }\n}"
-            }
-          }
-        },
-        {
-          "Type": "Terraform Security Check",
-          "ID": "AWS-0041",
-          "Title": "EKS cluster should not have open CIDR range for public access",
-          "Description": "EKS Clusters have public access cidrs set to 0.0.0.0/0 by default which is wide open to the internet. This should be explicitly set to a more specific private CIDR range\n",
-          "Message": "Cluster allows access from a public CIDR: 0.0.0.0/0",
-          "Namespace": "builtin.aws.eks.aws0041",
-          "Query": "data.builtin.aws.eks.aws0041.deny",
-          "Resolution": "Don't enable public access to EKS Clusters",
-          "Severity": "CRITICAL",
-          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0041",
-          "References": [
-            "https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html",
-            "https://avd.aquasec.com/misconfig/aws-0041"
-          ],
-          "Status": "FAIL",
-          "CauseMetadata": {
-            "Resource": "module.eks",
-            "Provider": "AWS",
-            "Service": "eks",
-            "StartLine": 83,
-            "EndLine": 83,
-            "Code": {
-              "Lines": [
-                {
-                  "Number": 36,
-                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 37,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 83,
-                  "Content": "    public_access_cidrs     = var.endpoint_public_access_cidrs",
-                  "IsCause": true,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "    \u001b[38;5;245mpublic_access_cidrs\u001b[0m     = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access_cidrs",
-                  "FirstCause": true,
-                  "LastCause": true
-                },
-                {
-                  "Number": 212,
-                  "Content": "",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": true,
-                  "FirstCause": false,
-                  "LastCause": false
-                },
-                {
-                  "Number": 213,
-                  "Content": "}",
-                  "IsCause": false,
-                  "Annotation": "",
-                  "Truncated": false,
-                  "Highlighted": "}",
-                  "FirstCause": false,
-                  "LastCause": false
-                }
-              ]
-            },
-            "Occurrences": [
-              {
-                "Resource": "vpc_config",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 78,
-                  "EndLine": 84
-                }
-              },
-              {
-                "Resource": "aws_eks_cluster.this[0]",
-                "Filename": "main.tf",
-                "Location": {
-                  "StartLine": 36,
-                  "EndLine": 213
-                }
-              },
-              {
-                "Resource": "module.eks",
-                "Filename": "examples/karpenter/main.tf",
-                "Location": {
-                  "StartLine": 49,
-                  "EndLine": 104
-                }
-              }
-            ],
-            "RenderedCause": {
-              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    public_access_cidrs = [\"0.0.0.0/0\"]\n  }\n}",
-              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mpublic_access_cidrs\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n  }\n}"
             }
           }
         },
@@ -2238,6 +2026,218 @@
                 "Location": {
                   "StartLine": 34,
                   "EndLine": 417
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    public_access_cidrs = [\"0.0.0.0/0\"]\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mpublic_access_cidrs\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0041",
+          "Title": "EKS cluster should not have open CIDR range for public access",
+          "Description": "EKS Clusters have public access cidrs set to 0.0.0.0/0 by default which is wide open to the internet. This should be explicitly set to a more specific private CIDR range\n",
+          "Message": "Cluster allows access from a public CIDR: 0.0.0.0/0",
+          "Namespace": "builtin.aws.eks.aws0041",
+          "Query": "data.builtin.aws.eks.aws0041.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0041",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html",
+            "https://avd.aquasec.com/misconfig/aws-0041"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 83,
+            "EndLine": 83,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 83,
+                  "Content": "    public_access_cidrs     = var.endpoint_public_access_cidrs",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mpublic_access_cidrs\u001b[0m     = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access_cidrs",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "tests/eks-fargate-profile/main.tf",
+                "Location": {
+                  "StartLine": 32,
+                  "EndLine": 94
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    public_access_cidrs = [\"0.0.0.0/0\"]\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mpublic_access_cidrs\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0041",
+          "Title": "EKS cluster should not have open CIDR range for public access",
+          "Description": "EKS Clusters have public access cidrs set to 0.0.0.0/0 by default which is wide open to the internet. This should be explicitly set to a more specific private CIDR range\n",
+          "Message": "Cluster allows access from a public CIDR: 0.0.0.0/0",
+          "Namespace": "builtin.aws.eks.aws0041",
+          "Query": "data.builtin.aws.eks.aws0041.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0041",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html",
+            "https://avd.aquasec.com/misconfig/aws-0041"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 83,
+            "EndLine": 83,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 36,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 37,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 83,
+                  "Content": "    public_access_cidrs     = var.endpoint_public_access_cidrs",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mpublic_access_cidrs\u001b[0m     = \u001b[38;5;33mvar\u001b[0m.endpoint_public_access_cidrs",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 212,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 78,
+                  "EndLine": 84
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 36,
+                  "EndLine": 213
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "examples/karpenter/main.tf",
+                "Location": {
+                  "StartLine": 49,
+                  "EndLine": 104
                 }
               }
             ],

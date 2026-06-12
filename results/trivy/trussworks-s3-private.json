@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ebdb8-181d-754f-97f4-4427c3b1b34e",
-  "CreatedAt": "2026-06-12T21:23:39.165349664Z",
+  "ReportID": "019ebdc5-0c31-78c7-a646-6b7e77aebf20",
+  "CreatedAt": "2026-06-12T21:37:48.081577203Z",
   "ArtifactName": "corpus/trussworks-s3-private",
   "ArtifactType": "filesystem",
   "Results": [

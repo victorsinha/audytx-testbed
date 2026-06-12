@@ -5,30 +5,846 @@
   },
   "iam_vulnerable_precision_recall": [
     {
-      "fn": 31,
-      "fp": 0,
-      "matched_gt_ids": [],
-      "precision": null,
-      "recall": 0.0,
-      "status": "MISSING",
+      "fn": 0,
+      "fp": 104,
+      "matched_gt_ids": [
+        "GT-001",
+        "GT-002",
+        "GT-003",
+        "GT-004",
+        "GT-005",
+        "GT-006",
+        "GT-007",
+        "GT-008",
+        "GT-009",
+        "GT-010",
+        "GT-011",
+        "GT-012",
+        "GT-013",
+        "GT-014",
+        "GT-015",
+        "GT-016",
+        "GT-017",
+        "GT-018",
+        "GT-019",
+        "GT-020",
+        "GT-021",
+        "GT-022",
+        "GT-023",
+        "GT-024",
+        "GT-025",
+        "GT-026",
+        "GT-027",
+        "GT-028",
+        "GT-029",
+        "GT-030",
+        "GT-031"
+      ],
+      "precision": 0.23,
+      "recall": 1.0,
+      "status": "OK",
       "tool": "audytx",
-      "total_findings": 0,
-      "total_high_count": null,
-      "tp": 0,
-      "unmatched_findings": []
+      "total_findings": 135,
+      "total_high_count": 135,
+      "tp": 31,
+      "unmatched_findings": [
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/sre.tf",
+          "line_start": 48,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn3-ExploitableConditionConstraint.tf",
+          "line_start": 59,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn2-ExploitableResourceConstraint.tf",
+          "line_start": 43,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn4-ExploitableNotAction.tf",
+          "line_start": 49,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp1-allow-and-deny-same-policy.tf",
+          "line_start": 49,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp3-deny.tf",
+          "line_start": 44,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp2-allow-and-deny-multiple-policies.tf",
+          "line_start": 64,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp4-NonExploitableResourceConstraint.tf",
+          "line_start": 43,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp5-NonExploitableConditionConstraint.tf",
+          "line_start": 59,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn1-privesc3-multiple-policies.tf",
+          "line_start": 69,
+          "resource": "",
+          "rule_id": "AWS_IAM_006",
+          "rule_name": "IAM access keys should be rotated (hardcoded key in source)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/ec2/ec2.tf",
+          "line_start": 12,
+          "resource": "",
+          "rule_id": "AWS_EC2_003",
+          "rule_name": "Security group should not allow 0.0.0.0/0 ingress on SSH (port 22) or RDP (port 3389)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/ec2/ec2.tf",
+          "line_start": 38,
+          "resource": "",
+          "rule_id": "AWS_EC2_006",
+          "rule_name": "EC2 instance has no metadata_options block \u2014 IMDSv2 not configured",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 78,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf",
+          "line_start": 54,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-cloudFormationUpdateStack.tf",
+          "line_start": 46,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf",
+          "line_start": 51,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ec2InstanceConnect.tf",
+          "line_start": 49,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreatePresignedNotebookURL.tf",
+          "line_start": 48,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf",
+          "line_start": 48,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf",
+          "line_start": 48,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ssmSendCommand.tf",
+          "line_start": 50,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ssmStartSession.tf",
+          "line_start": 53,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf",
+          "line_start": 43,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc11-PutGroupPolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc13-AddUserToGroup.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc14-UpdatingAssumeRolePolicy.tf",
+          "line_start": 46,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc12-PutRolePolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc15-PassExistingRoleToNewLambdaThenInvoke.tf",
+          "line_start": 46,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc17-EditExistingLambdaFunctionWithRole.tf",
+          "line_start": 45,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc16-PassRoleToNewLambdaThenTriggerWithNewDynamo.tf",
+          "line_start": 46,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc19-UpdateExistingGlueDevEndpoint.tf",
+          "line_start": 45,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc18-PassExistingRoleToNewGlueDevEndpoint.tf",
+          "line_start": 46,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc21-PassExistingRoleToNewDataPipeline.tf",
+          "line_start": 51,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc20-PassExistingRoleToCloudFormation.tf",
+          "line_start": 47,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc3-CreateEC2WithExistingIP.tf",
+          "line_start": 51,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc2-SetExistingDefaultPolicyVersion.tf",
+          "line_start": 47,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc4-CreateAccessKey.tf",
+          "line_start": 43,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc5-CreateLoginProfile.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc7-AttachUserPolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc6-UpdateLoginProfile.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc9-AttachRolePolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc8-AttachGroupPolicy.tf",
+          "line_start": 42,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/sre.tf",
+          "line_start": 48,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn3-ExploitableConditionConstraint.tf",
+          "line_start": 59,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn2-ExploitableResourceConstraint.tf",
+          "line_start": 43,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fn4-ExploitableNotAction.tf",
+          "line_start": 49,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp1-allow-and-deny-same-policy.tf",
+          "line_start": 49,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp3-deny.tf",
+          "line_start": 44,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp2-allow-and-deny-multiple-policies.tf",
+          "line_start": 64,
+          "resource": "",
+          "rule_id": "AWS_OPS_038",
+          "rule_name": "IAM access key resource declared (long-lived credential)",
+          "severity": "error"
+        }
+      ]
     },
     {
-      "fn": 31,
-      "fp": 0,
-      "matched_gt_ids": [],
-      "precision": null,
-      "recall": 0.0,
+      "fn": 0,
+      "fp": 238,
+      "matched_gt_ids": [
+        "GT-001",
+        "GT-002",
+        "GT-003",
+        "GT-004",
+        "GT-005",
+        "GT-006",
+        "GT-007",
+        "GT-008",
+        "GT-009",
+        "GT-010",
+        "GT-011",
+        "GT-012",
+        "GT-013",
+        "GT-014",
+        "GT-015",
+        "GT-016",
+        "GT-017",
+        "GT-018",
+        "GT-019",
+        "GT-020",
+        "GT-021",
+        "GT-022",
+        "GT-023",
+        "GT-024",
+        "GT-025",
+        "GT-026",
+        "GT-027",
+        "GT-028",
+        "GT-029",
+        "GT-030",
+        "GT-031"
+      ],
+      "precision": 0.115,
+      "recall": 1.0,
       "status": "OK",
       "tool": "checkov",
-      "total_findings": 0,
-      "total_high_count": 0,
-      "tp": 0,
-      "unmatched_findings": []
+      "total_findings": 269,
+      "total_high_count": 269,
+      "tp": 31,
+      "unmatched_findings": [
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_286",
+          "rule_name": "CKV_AWS_286"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_62",
+          "rule_name": "CKV_AWS_62"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_288",
+          "rule_name": "CKV_AWS_288"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_63",
+          "rule_name": "CKV_AWS_63"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-AssumeRole-high-priv-policy",
+          "rule_id": "CKV_AWS_287",
+          "rule_name": "CKV_AWS_287"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-AssumeRole.tf",
+          "line_start": 74,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-AssumeRole-start-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-cloudFormationUpdateStack.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-CloudFormationUpdateStack",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-cloudFormationUpdateStack.tf",
+          "line_start": 41,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-CloudFormationUpdateStack-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-cloudFormationUpdateStack.tf",
+          "line_start": 51,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-CloudFormationUpdateStack-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-codeBuildCreateProjectPassRole-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-codeBuildCreateProjectPassRole-policy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf",
+          "line_start": 46,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-codeBuildCreateProjectPassRole-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf",
+          "line_start": 57,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-codeBuildCreateProjectPassRole-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ec2InstanceConnect.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-ec2InstanceConnect-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ec2InstanceConnect.tf",
+          "line_start": 44,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-ec2InstanceConnect-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ec2InstanceConnect.tf",
+          "line_start": 55,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-ec2InstanceConnect-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateNotebookPassRole-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateNotebookPassRole-policy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf",
+          "line_start": 49,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-sageMakerCreateNotebookPassRole-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf",
+          "line_start": 60,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-sageMakerCreateNotebookPassRole-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreatePresignedNotebookURL.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreatePresignedNotebookURL-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreatePresignedNotebookURL.tf",
+          "line_start": 43,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-sageMakerCreatePresignedNotebookURL-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreatePresignedNotebookURL.tf",
+          "line_start": 54,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-sageMakerCreatePresignedNotebookURL-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateProcessingJobPassRole-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateProcessingJobPassRole-policy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf",
+          "line_start": 43,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-sageMakerCreateProcessingJobPassRole-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf",
+          "line_start": 54,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-sageMakerCreateProcessingJobPassRole-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateTrainingJobPassRole-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-sageMakerCreateTrainingJobPassRole-policy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf",
+          "line_start": 43,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-sageMakerCreateTrainingJobPassRole-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf",
+          "line_start": 54,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-sageMakerCreateTrainingJobPassRole-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmSendCommand.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-ssmSendCommand-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmSendCommand.tf",
+          "line_start": 45,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-ssmSendCommand-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmSendCommand.tf",
+          "line_start": 56,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-ssmSendCommand-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmStartSession.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc-ssmStartSession-policy",
+          "rule_id": "CKV_AWS_355",
+          "rule_name": "CKV_AWS_355"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmStartSession.tf",
+          "line_start": 48,
+          "resource": "module.privesc-paths.aws_iam_user.privesc-ssmStartSession-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc-ssmStartSession.tf",
+          "line_start": 59,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc-ssmStartSession-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc1-CreateNewPolicyVersion",
+          "rule_id": "CKV_AWS_286",
+          "rule_name": "CKV_AWS_286"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc1-CreateNewPolicyVersion",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf",
+          "line_start": 38,
+          "resource": "module.privesc-paths.aws_iam_user.privesc1-CreateNewPolicyVersion-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf",
+          "line_start": 48,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc1-CreateNewPolicyVersion-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc10-PutUserPolicy",
+          "rule_id": "CKV_AWS_286",
+          "rule_name": "CKV_AWS_286"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc10-PutUserPolicy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf",
+          "line_start": 37,
+          "resource": "module.privesc-paths.aws_iam_user.privesc10-PutUserPolicy-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf",
+          "line_start": 47,
+          "resource": "module.privesc-paths.aws_iam_user_policy_attachment.privesc10-PutUserPolicy-user-attach-policy",
+          "rule_id": "CKV_AWS_40",
+          "rule_name": "CKV_AWS_40"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc11-PutGroupPolicy.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc11-PutGroupPolicy",
+          "rule_id": "CKV_AWS_286",
+          "rule_name": "CKV_AWS_286"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc11-PutGroupPolicy.tf",
+          "line_start": 1,
+          "resource": "module.privesc-paths.aws_iam_policy.privesc11-PutGroupPolicy",
+          "rule_id": "CKV_AWS_289",
+          "rule_name": "CKV_AWS_289"
+        },
+        {
+          "file": "/modules/free-resources/privesc-paths/privesc11-PutGroupPolicy.tf",
+          "line_start": 37,
+          "resource": "module.privesc-paths.aws_iam_user.privesc11-PutGroupPolicy-user",
+          "rule_id": "CKV_AWS_273",
+          "rule_name": "CKV_AWS_273"
+        }
+      ]
     },
     {
       "fn": 31,
@@ -94,17 +910,76 @@
       ]
     },
     {
-      "fn": 31,
-      "fp": 0,
-      "matched_gt_ids": [],
-      "precision": null,
-      "recall": 0.0,
-      "status": "ERROR",
+      "fn": 30,
+      "fp": 8,
+      "matched_gt_ids": [
+        "GT-026"
+      ],
+      "precision": 0.111,
+      "recall": 0.032,
+      "status": "OK",
       "tool": "kics",
-      "total_findings": 0,
-      "total_high_count": null,
-      "tp": 0,
-      "unmatched_findings": []
+      "total_findings": 9,
+      "total_high_count": 9,
+      "tp": 1,
+      "unmatched_findings": [
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/privesc-paths/service-linked-role-common.tf",
+          "line_start": 10,
+          "resource": "privesc-high-priv-service-policy",
+          "rule_id": "575a2155-6af1-4026-b1af-d5bc8fe2a904",
+          "rule_name": "IAM Policy Grants Full Permissions"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/free-resources/tool-testing/fp2-allow-and-deny-multiple-policies.tf",
+          "line_start": 8,
+          "resource": "fp2-allow-all",
+          "rule_id": "575a2155-6af1-4026-b1af-d5bc8fe2a904",
+          "rule_name": "IAM Policy Grants Full Permissions"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/glue/glue.tf",
+          "line_start": 27,
+          "resource": "privesc-high-priv-glue-policy2",
+          "rule_id": "575a2155-6af1-4026-b1af-d5bc8fe2a904",
+          "rule_name": "IAM Policy Grants Full Permissions"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/lambda/lambda.tf",
+          "line_start": 8,
+          "resource": "privesc-high-priv-lambda-policy2",
+          "rule_id": "575a2155-6af1-4026-b1af-d5bc8fe2a904",
+          "rule_name": "IAM Policy Grants Full Permissions"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/sagemaker/sagemaker.tf",
+          "line_start": 33,
+          "resource": "privesc-high-priv-sagemaker-policy2",
+          "rule_id": "575a2155-6af1-4026-b1af-d5bc8fe2a904",
+          "rule_name": "IAM Policy Grants Full Permissions"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/sagemaker/sagemaker.tf",
+          "line_start": 1,
+          "resource": "privesc-sagemakerNotebook",
+          "rule_id": "f3674e0c-f6be-43fa-b71c-bf346d1aed99",
+          "rule_name": "Sagemaker Notebook Instance Without KMS"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/ec2/ec2.tf",
+          "line_start": 16,
+          "resource": "allow_ssh_from_world",
+          "rule_id": "381c3f2a-ef6f-4eff-99f7-b169cda3422c",
+          "rule_name": "Sensitive Port Is Exposed To Entire Network"
+        },
+        {
+          "file": "corpus/iam-vulnerable/modules/non-free-resources/ec2/ec2.tf",
+          "line_start": 21,
+          "resource": "allow_ssh_from_world",
+          "rule_id": "4728cd65-a20c-49da-8b31-9c08b423e4db",
+          "rule_name": "Unrestricted Security Group Ingress"
+        }
+      ]
     },
     {
       "fn": 31,
@@ -122,14 +997,14 @@
   ],
   "precision_clean_modules": [
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 36,
       "checkov_status": "OK",
       "corpus": "cloudposse-s3-bucket",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -138,14 +1013,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 4,
+      "audytx_status": "OK",
+      "checkov_count": 54,
       "checkov_status": "OK",
       "corpus": "terraform-aws-alb",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 2,
+      "kics_status": "OK",
       "known_exceptions_count": 2,
       "role": "precision",
       "terrascan_count": 0,
@@ -154,14 +1029,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 20,
       "checkov_status": "OK",
       "corpus": "terraform-aws-apigateway-v2",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 1,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -170,14 +1045,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 11,
       "checkov_status": "OK",
       "corpus": "terraform-aws-autoscaling",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -186,14 +1061,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 24,
       "checkov_status": "OK",
       "corpus": "terraform-aws-cloudfront",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -202,14 +1077,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 5,
       "checkov_status": "OK",
       "corpus": "terraform-aws-ecr",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 2,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -218,14 +1093,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 86,
       "checkov_status": "OK",
       "corpus": "terraform-aws-ecs",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 2,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -234,14 +1109,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 2,
+      "audytx_status": "OK",
+      "checkov_count": 88,
       "checkov_status": "OK",
       "corpus": "terraform-aws-eks",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 1,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -250,14 +1125,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 7,
+      "audytx_status": "OK",
+      "checkov_count": 57,
       "checkov_status": "OK",
       "corpus": "terraform-aws-eventbridge",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 12,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -266,14 +1141,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 2,
+      "audytx_status": "OK",
+      "checkov_count": 287,
       "checkov_status": "OK",
       "corpus": "terraform-aws-iam",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -282,14 +1157,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 1,
       "checkov_status": "OK",
       "corpus": "terraform-aws-kms",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -298,14 +1173,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 6,
+      "audytx_status": "OK",
+      "checkov_count": 112,
       "checkov_status": "OK",
       "corpus": "terraform-aws-lambda",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 7,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -314,14 +1189,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 124,
       "checkov_status": "OK",
       "corpus": "terraform-aws-rds",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 1,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -330,14 +1205,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 129,
       "checkov_status": "OK",
       "corpus": "terraform-aws-s3-bucket",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 4,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 1,
@@ -346,14 +1221,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 107,
       "checkov_status": "OK",
       "corpus": "terraform-aws-secure-baseline",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 2,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -362,14 +1237,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 10,
       "checkov_status": "OK",
       "corpus": "terraform-aws-security-group",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -378,14 +1253,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 4,
       "checkov_status": "OK",
       "corpus": "terraform-aws-sns",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -394,14 +1269,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 1,
       "checkov_status": "OK",
       "corpus": "terraform-aws-sqs",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -410,14 +1285,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 6,
       "checkov_status": "OK",
       "corpus": "terraform-aws-step-functions",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -426,14 +1301,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 25,
       "checkov_status": "OK",
       "corpus": "terraform-aws-vpc",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 0,
       "role": "precision",
       "terrascan_count": 0,
@@ -442,14 +1317,14 @@
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 1,
+      "audytx_status": "OK",
+      "checkov_count": 6,
       "checkov_status": "OK",
       "corpus": "trussworks-s3-private",
       "expected_after_exceptions": 0,
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "known_exceptions_count": 1,
       "role": "precision",
       "terrascan_count": 0,
@@ -459,86 +1334,86 @@
     }
   ],
   "precision_totals": {
-    "audytx": null,
-    "checkov": 0,
-    "kics": null,
+    "audytx": 27,
+    "checkov": 1193,
+    "kics": 34,
     "terrascan": 1,
     "trivy": 175
   },
   "recall_other_corpora": [
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 39,
+      "audytx_status": "OK",
+      "checkov_count": 109,
       "checkov_status": "OK",
       "corpus": "KaiMonkey",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": 112,
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 4,
+      "audytx_status": "OK",
+      "checkov_count": 9,
       "checkov_status": "OK",
       "corpus": "iam-role-chain",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 1,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": 0,
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 0,
+      "audytx_status": "OK",
+      "checkov_count": 3,
       "checkov_status": "OK",
       "corpus": "learn-terraform-provision-eks-cluster",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 0,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": 3,
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 47,
+      "audytx_status": "OK",
+      "checkov_count": 201,
       "checkov_status": "OK",
       "corpus": "sadcloud",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 53,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": 26,
       "trivy_status": "OK"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 6,
+      "audytx_status": "OK",
+      "checkov_count": 210,
       "checkov_status": "OK",
       "corpus": "terraform-aws-eks-blueprints",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 13,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": null,
       "trivy_status": "DNF"
     },
     {
-      "audytx_count": null,
-      "audytx_status": "MISSING",
-      "checkov_count": 0,
+      "audytx_count": 52,
+      "audytx_status": "OK",
+      "checkov_count": 466,
       "checkov_status": "OK",
       "corpus": "terragoat",
-      "kics_count": null,
-      "kics_status": "ERROR",
+      "kics_count": 70,
+      "kics_status": "OK",
       "terrascan_count": 0,
       "terrascan_status": "OK",
       "trivy_count": 93,
