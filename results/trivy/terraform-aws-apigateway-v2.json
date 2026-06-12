@@ -1,0 +1,850 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-3f02-765e-903e-5437914f8b48",
+  "CreatedAt": "2026-06-12T21:23:49.122419874Z",
+  "ArtifactName": "corpus/terraform-aws-apigateway-v2",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/complete-http",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 25,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/vpc-link-http",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 35,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/websocket",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 21,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "terraform-aws-modules/alb/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0053",
+          "Title": "Load balancer is exposed to the internet.",
+          "Description": "There are many scenarios in which you would want to expose a load balancer to the wider internet, but this check exists as a warning to prevent accidental exposure of internal assets. You should ensure that this resource should be exposed publicly.\n",
+          "Message": "Load balancer is exposed publicly.",
+          "Namespace": "builtin.aws.elb.aws0053",
+          "Query": "data.builtin.aws.elb.aws0053.deny",
+          "Resolution": "Switch to an internal load balancer or add a tfsec ignore",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0053",
+          "References": [
+            "https://avd.aquasec.com/misconfig/aws-0053"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.alb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 53,
+            "EndLine": 53,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 13,
+                  "Content": "resource \"aws_lb\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "  internal                                                     = var.internal",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minternal\u001b[0m                                                     = \u001b[38;5;33mvar\u001b[0m.internal",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 117,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 118,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_lb.this[0]",
+                "Filename": "terraform-aws-modules/alb/aws/main.tf",
+                "Location": {
+                  "StartLine": 13,
+                  "EndLine": 118
+                }
+              },
+              {
+                "Resource": "module.alb",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 117,
+                  "EndLine": 159
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0054",
+          "Title": "Use of plain HTTP.",
+          "Description": "Plain HTTP is unencrypted and human-readable. This means that if a malicious actor was to eavesdrop on your connection, they would be able to see all of your data flowing back and forth.\nYou should use HTTPS, which is HTTP over an encrypted (TLS) connection, meaning eavesdroppers cannot read your traffic.\n",
+          "Message": "Listener for application load balancer does not use HTTPS.",
+          "Namespace": "builtin.aws.elb.aws0054",
+          "Query": "data.builtin.aws.elb.aws0054.deny",
+          "Resolution": "Switch to HTTPS to benefit from TLS security features",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0054",
+          "References": [
+            "https://www.cloudflare.com/en-gb/learning/ssl/why-is-http-not-secure/",
+            "https://avd.aquasec.com/misconfig/aws-0054"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.alb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 124,
+            "EndLine": 312,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 124,
+                  "Content": "resource \"aws_lb_listener\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb_listener\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 125,
+                  "Content": "  for_each = { for k, v in var.listeners : k =\u003e v if local.create }",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mfor_each\u001b[0m = { \u001b[38;5;64mfor\u001b[0m k, v \u001b[38;5;64min\u001b[0m \u001b[38;5;33mvar\u001b[0m.listeners \u001b[38;5;245m:\u001b[0m k =\u003e v if local.create }",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 126,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 127,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 128,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 129,
+                  "Content": "  alpn_policy     = each.value.alpn_policy",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245malpn_policy\u001b[0m     = \u001b[38;5;33meach\u001b[0m.value.alpn_policy",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 130,
+                  "Content": "  certificate_arn = each.value.certificate_arn",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcertificate_arn\u001b[0m = \u001b[38;5;33meach\u001b[0m.value.certificate_arn",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 131,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 132,
+                  "Content": "  dynamic \"default_action\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  dynamic \u001b[38;5;37m\"default_action\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 133,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.alb",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 117,
+                  "EndLine": 159
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/dynamodb-table/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "terraform-aws-modules/lambda/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "terraform-aws-modules/s3-bucket/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0132",
+          "Title": "S3 encryption should use Customer Managed Keys",
+          "Description": "Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.\nNote that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.\n",
+          "Message": "Bucket does not encrypt data with a customer managed key.",
+          "Namespace": "builtin.aws.s3.aws0132",
+          "Query": "data.builtin.aws.s3.aws0132.deny",
+          "Resolution": "Use SSE-KMS with a customer managed key (CMK)",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0132",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0132"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.s3_bucket",
+            "Provider": "AWS",
+            "Service": "s3",
+            "StartLine": 45,
+            "EndLine": 57,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 45,
+                  "Content": "resource \"aws_s3_bucket\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_s3_bucket\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 46,
+                  "Content": "  count = local.create_bucket \u0026\u0026 !var.is_directory_bucket ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_bucket \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;245m!\u001b[0m\u001b[38;5;33mvar\u001b[0m.is_directory_bucket \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 47,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 48,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "  bucket           = var.bucket",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket\u001b[0m           = \u001b[38;5;33mvar\u001b[0m.bucket",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 51,
+                  "Content": "  bucket_prefix    = var.bucket_prefix",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_prefix\u001b[0m    = \u001b[38;5;33mvar\u001b[0m.bucket_prefix",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 52,
+                  "Content": "  bucket_namespace = var.bucket_namespace",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_namespace\u001b[0m = \u001b[38;5;33mvar\u001b[0m.bucket_namespace",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 54,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.s3_bucket",
+                "Filename": "examples/complete-http/main.tf",
+                "Location": {
+                  "StartLine": 311,
+                  "EndLine": 321
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/security-group/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 4
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.api_gateway_security_group",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 533,
+            "EndLine": 533,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 527,
+                  "Content": "resource \"aws_security_group_rule\" \"egress_rules\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 528,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 533,
+                  "Content": "  cidr_blocks      = var.egress_cidr_blocks",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcidr_blocks\u001b[0m      = \u001b[38;5;33mvar\u001b[0m.egress_cidr_blocks",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 540,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 541,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_security_group_rule.egress_rules[0]",
+                "Filename": "terraform-aws-modules/security-group/aws/main.tf",
+                "Location": {
+                  "StartLine": 527,
+                  "EndLine": 541
+                }
+              },
+              {
+                "Resource": "module.api_gateway_security_group",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 101,
+                  "EndLine": 115
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_security_group_rule\" \"egress_rules\" {\n  cidr_blocks = [\"0.0.0.0/0\"]\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {\n  \u001b[38;5;245mcidr_blocks\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.api_gateway_security_group",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 534,
+            "EndLine": 534,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 527,
+                  "Content": "resource \"aws_security_group_rule\" \"egress_rules\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 528,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 534,
+                  "Content": "  ipv6_cidr_blocks = var.egress_ipv6_cidr_blocks",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = \u001b[38;5;33mvar\u001b[0m.egress_ipv6_cidr_blocks",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 540,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 541,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_security_group_rule.egress_rules[0]",
+                "Filename": "terraform-aws-modules/security-group/aws/main.tf",
+                "Location": {
+                  "StartLine": 527,
+                  "EndLine": 541
+                }
+              },
+              {
+                "Resource": "module.api_gateway_security_group",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 101,
+                  "EndLine": 115
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_security_group_rule\" \"egress_rules\" {\n  ipv6_cidr_blocks = [\"::/0\"]\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {\n  \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = [\u001b[38;5;37m\"::/0\"\u001b[0m]\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.lambda_security_group",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 533,
+            "EndLine": 533,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 527,
+                  "Content": "resource \"aws_security_group_rule\" \"egress_rules\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 528,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 533,
+                  "Content": "  cidr_blocks      = var.egress_cidr_blocks",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcidr_blocks\u001b[0m      = \u001b[38;5;33mvar\u001b[0m.egress_cidr_blocks",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 540,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 541,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_security_group_rule.egress_rules[0]",
+                "Filename": "terraform-aws-modules/security-group/aws/main.tf",
+                "Location": {
+                  "StartLine": 527,
+                  "EndLine": 541
+                }
+              },
+              {
+                "Resource": "module.lambda_security_group",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 207,
+                  "EndLine": 226
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_security_group_rule\" \"egress_rules\" {\n  cidr_blocks = [\"0.0.0.0/0\"]\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {\n  \u001b[38;5;245mcidr_blocks\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.lambda_security_group",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 534,
+            "EndLine": 534,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 527,
+                  "Content": "resource \"aws_security_group_rule\" \"egress_rules\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 528,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 534,
+                  "Content": "  ipv6_cidr_blocks = var.egress_ipv6_cidr_blocks",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = \u001b[38;5;33mvar\u001b[0m.egress_ipv6_cidr_blocks",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 540,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 541,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_security_group_rule.egress_rules[0]",
+                "Filename": "terraform-aws-modules/security-group/aws/main.tf",
+                "Location": {
+                  "StartLine": 527,
+                  "EndLine": 541
+                }
+              },
+              {
+                "Resource": "module.lambda_security_group",
+                "Filename": "examples/vpc-link-http/main.tf",
+                "Location": {
+                  "StartLine": 207,
+                  "EndLine": 226
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_security_group_rule\" \"egress_rules\" {\n  ipv6_cidr_blocks = [\"::/0\"]\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"egress_rules\"\u001b[0m {\n  \u001b[38;5;245mipv6_cidr_blocks\u001b[0m = [\u001b[38;5;37m\"::/0\"\u001b[0m]\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/vpc/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

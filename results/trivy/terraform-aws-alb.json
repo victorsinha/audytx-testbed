@@ -1,0 +1,1289 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-4921-7ed3-bcbe-952e48662f49",
+  "CreatedAt": "2026-06-12T21:23:51.713974798Z",
+  "ArtifactName": "corpus/terraform-aws-alb",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/complete-alb",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 33,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete-alb/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 4
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0028",
+          "Title": "aws_instance should activate session tokens for Instance Metadata Service.",
+          "Description": "IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve security when talking to IMDS.\n\nBy default \u003ccode\u003eaws_instance\u003c/code\u003e resource sets IMDS session auth tokens to be optional.\n\nTo fully protect IMDS you need to enable session tokens by using \u003ccode\u003emetadata_options\u003c/code\u003e block and its \u003ccode\u003ehttp_tokens\u003c/code\u003e variable set to \u003ccode\u003erequired\u003c/code\u003e.\n",
+          "Message": "Instance does not require IMDS access to require a token.",
+          "Namespace": "builtin.aws.ec2.aws0028",
+          "Query": "data.builtin.aws.ec2.aws0028.deny",
+          "Resolution": "Enable HTTP token requirement for IMDS",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0028",
+          "References": [
+            "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service",
+            "https://avd.aquasec.com/misconfig/aws-0028"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.other",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 646,
+            "EndLine": 650,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 646,
+                  "Content": "resource \"aws_instance\" \"other\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"other\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 647,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 648,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 649,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 650,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0028",
+          "Title": "aws_instance should activate session tokens for Instance Metadata Service.",
+          "Description": "IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve security when talking to IMDS.\n\nBy default \u003ccode\u003eaws_instance\u003c/code\u003e resource sets IMDS session auth tokens to be optional.\n\nTo fully protect IMDS you need to enable session tokens by using \u003ccode\u003emetadata_options\u003c/code\u003e block and its \u003ccode\u003ehttp_tokens\u003c/code\u003e variable set to \u003ccode\u003erequired\u003c/code\u003e.\n",
+          "Message": "Instance does not require IMDS access to require a token.",
+          "Namespace": "builtin.aws.ec2.aws0028",
+          "Query": "data.builtin.aws.ec2.aws0028.deny",
+          "Resolution": "Enable HTTP token requirement for IMDS",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0028",
+          "References": [
+            "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service",
+            "https://avd.aquasec.com/misconfig/aws-0028"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 640,
+            "EndLine": 644,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 640,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 641,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 642,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 643,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 644,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0131",
+          "Title": "Instance with unencrypted block device.",
+          "Description": "Block devices should be encrypted to ensure sensitive data is held securely at rest.\n",
+          "Message": "Root block device is not encrypted.",
+          "Namespace": "builtin.aws.ec2.aws0131",
+          "Query": "data.builtin.aws.ec2.aws0131.deny",
+          "Resolution": "Turn on encryption for all block devices",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0131",
+          "References": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html",
+            "https://avd.aquasec.com/misconfig/aws-0131"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.other",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 646,
+            "EndLine": 650,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 646,
+                  "Content": "resource \"aws_instance\" \"other\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"other\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 647,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 648,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 649,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 650,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0131",
+          "Title": "Instance with unencrypted block device.",
+          "Description": "Block devices should be encrypted to ensure sensitive data is held securely at rest.\n",
+          "Message": "Root block device is not encrypted.",
+          "Namespace": "builtin.aws.ec2.aws0131",
+          "Query": "data.builtin.aws.ec2.aws0131.deny",
+          "Resolution": "Turn on encryption for all block devices",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0131",
+          "References": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html",
+            "https://avd.aquasec.com/misconfig/aws-0131"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 640,
+            "EndLine": 644,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 640,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 641,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 642,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 643,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 644,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/complete-nlb",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 39,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete-nlb/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0028",
+          "Title": "aws_instance should activate session tokens for Instance Metadata Service.",
+          "Description": "IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve security when talking to IMDS.\n\nBy default \u003ccode\u003eaws_instance\u003c/code\u003e resource sets IMDS session auth tokens to be optional.\n\nTo fully protect IMDS you need to enable session tokens by using \u003ccode\u003emetadata_options\u003c/code\u003e block and its \u003ccode\u003ehttp_tokens\u003c/code\u003e variable set to \u003ccode\u003erequired\u003c/code\u003e.\n",
+          "Message": "Instance does not require IMDS access to require a token.",
+          "Namespace": "builtin.aws.ec2.aws0028",
+          "Query": "data.builtin.aws.ec2.aws0028.deny",
+          "Resolution": "Enable HTTP token requirement for IMDS",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0028",
+          "References": [
+            "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service",
+            "https://avd.aquasec.com/misconfig/aws-0028"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 217,
+            "EndLine": 221,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 217,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 218,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 219,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 220,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 221,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0131",
+          "Title": "Instance with unencrypted block device.",
+          "Description": "Block devices should be encrypted to ensure sensitive data is held securely at rest.\n",
+          "Message": "Root block device is not encrypted.",
+          "Namespace": "builtin.aws.ec2.aws0131",
+          "Query": "data.builtin.aws.ec2.aws0131.deny",
+          "Resolution": "Turn on encryption for all block devices",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0131",
+          "References": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html",
+            "https://avd.aquasec.com/misconfig/aws-0131"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 217,
+            "EndLine": 221,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 217,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 218,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 219,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 220,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 221,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/mutual-auth-alb",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 38,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/mutual-auth-alb/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0028",
+          "Title": "aws_instance should activate session tokens for Instance Metadata Service.",
+          "Description": "IMDS v2 (Instance Metadata Service) introduced session authentication tokens which improve security when talking to IMDS.\n\nBy default \u003ccode\u003eaws_instance\u003c/code\u003e resource sets IMDS session auth tokens to be optional.\n\nTo fully protect IMDS you need to enable session tokens by using \u003ccode\u003emetadata_options\u003c/code\u003e block and its \u003ccode\u003ehttp_tokens\u003c/code\u003e variable set to \u003ccode\u003erequired\u003c/code\u003e.\n",
+          "Message": "Instance does not require IMDS access to require a token.",
+          "Namespace": "builtin.aws.ec2.aws0028",
+          "Query": "data.builtin.aws.ec2.aws0028.deny",
+          "Resolution": "Enable HTTP token requirement for IMDS",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0028",
+          "References": [
+            "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service",
+            "https://avd.aquasec.com/misconfig/aws-0028"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 204,
+            "EndLine": 208,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 204,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 205,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 206,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 207,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 208,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0131",
+          "Title": "Instance with unencrypted block device.",
+          "Description": "Block devices should be encrypted to ensure sensitive data is held securely at rest.\n",
+          "Message": "Root block device is not encrypted.",
+          "Namespace": "builtin.aws.ec2.aws0131",
+          "Query": "data.builtin.aws.ec2.aws0131.deny",
+          "Resolution": "Turn on encryption for all block devices",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0131",
+          "References": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html",
+            "https://avd.aquasec.com/misconfig/aws-0131"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_instance.this",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 204,
+            "EndLine": 208,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 204,
+                  "Content": "resource \"aws_instance\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_instance\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 205,
+                  "Content": "  ami           = data.aws_ssm_parameter.al2023.value",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mami\u001b[0m           = \u001b[38;5;33mdata\u001b[0m.aws_ssm_parameter.al2023.value",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 206,
+                  "Content": "  instance_type = \"t3.nano\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minstance_type\u001b[0m = \u001b[38;5;37m\"t3.nano\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 207,
+                  "Content": "  subnet_id     = element(module.vpc.private_subnets, 0)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msubnet_id\u001b[0m     =\u001b[38;5;33m element\u001b[0m(\u001b[38;5;33mmodule\u001b[0m.vpc.private_subnets, \u001b[38;5;37m0\u001b[0m)",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 208,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 4
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0053",
+          "Title": "Load balancer is exposed to the internet.",
+          "Description": "There are many scenarios in which you would want to expose a load balancer to the wider internet, but this check exists as a warning to prevent accidental exposure of internal assets. You should ensure that this resource should be exposed publicly.\n",
+          "Message": "Load balancer is exposed publicly.",
+          "Namespace": "builtin.aws.elb.aws0053",
+          "Query": "data.builtin.aws.elb.aws0053.deny",
+          "Resolution": "Switch to an internal load balancer or add a tfsec ignore",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0053",
+          "References": [
+            "https://avd.aquasec.com/misconfig/aws-0053"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.alb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 53,
+            "EndLine": 53,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 13,
+                  "Content": "resource \"aws_lb\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "  internal                                                     = var.internal",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minternal\u001b[0m                                                     = \u001b[38;5;33mvar\u001b[0m.internal",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 117,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 118,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_lb.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 13,
+                  "EndLine": 118
+                }
+              },
+              {
+                "Resource": "module.alb",
+                "Filename": "examples/complete-alb/main.tf",
+                "Location": {
+                  "StartLine": 25,
+                  "EndLine": 523
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0053",
+          "Title": "Load balancer is exposed to the internet.",
+          "Description": "There are many scenarios in which you would want to expose a load balancer to the wider internet, but this check exists as a warning to prevent accidental exposure of internal assets. You should ensure that this resource should be exposed publicly.\n",
+          "Message": "Load balancer is exposed publicly.",
+          "Namespace": "builtin.aws.elb.aws0053",
+          "Query": "data.builtin.aws.elb.aws0053.deny",
+          "Resolution": "Switch to an internal load balancer or add a tfsec ignore",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0053",
+          "References": [
+            "https://avd.aquasec.com/misconfig/aws-0053"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.alb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 53,
+            "EndLine": 53,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 13,
+                  "Content": "resource \"aws_lb\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "  internal                                                     = var.internal",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minternal\u001b[0m                                                     = \u001b[38;5;33mvar\u001b[0m.internal",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 117,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 118,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_lb.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 13,
+                  "EndLine": 118
+                }
+              },
+              {
+                "Resource": "module.alb",
+                "Filename": "examples/mutual-auth-alb/main.tf",
+                "Location": {
+                  "StartLine": 41,
+                  "EndLine": 160
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0053",
+          "Title": "Load balancer is exposed to the internet.",
+          "Description": "There are many scenarios in which you would want to expose a load balancer to the wider internet, but this check exists as a warning to prevent accidental exposure of internal assets. You should ensure that this resource should be exposed publicly.\n",
+          "Message": "Load balancer is exposed publicly.",
+          "Namespace": "builtin.aws.elb.aws0053",
+          "Query": "data.builtin.aws.elb.aws0053.deny",
+          "Resolution": "Switch to an internal load balancer or add a tfsec ignore",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0053",
+          "References": [
+            "https://avd.aquasec.com/misconfig/aws-0053"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.nlb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 53,
+            "EndLine": 53,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 13,
+                  "Content": "resource \"aws_lb\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "  internal                                                     = var.internal",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245minternal\u001b[0m                                                     = \u001b[38;5;33mvar\u001b[0m.internal",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 117,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 118,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_lb.this[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 13,
+                  "EndLine": 118
+                }
+              },
+              {
+                "Resource": "module.nlb",
+                "Filename": "examples/complete-nlb/main.tf",
+                "Location": {
+                  "StartLine": 25,
+                  "EndLine": 172
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0054",
+          "Title": "Use of plain HTTP.",
+          "Description": "Plain HTTP is unencrypted and human-readable. This means that if a malicious actor was to eavesdrop on your connection, they would be able to see all of your data flowing back and forth.\nYou should use HTTPS, which is HTTP over an encrypted (TLS) connection, meaning eavesdroppers cannot read your traffic.\n",
+          "Message": "Listener for application load balancer does not use HTTPS.",
+          "Namespace": "builtin.aws.elb.aws0054",
+          "Query": "data.builtin.aws.elb.aws0054.deny",
+          "Resolution": "Switch to HTTPS to benefit from TLS security features",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0054",
+          "References": [
+            "https://www.cloudflare.com/en-gb/learning/ssl/why-is-http-not-secure/",
+            "https://avd.aquasec.com/misconfig/aws-0054"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.alb",
+            "Provider": "AWS",
+            "Service": "elb",
+            "StartLine": 124,
+            "EndLine": 312,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 124,
+                  "Content": "resource \"aws_lb_listener\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_lb_listener\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 125,
+                  "Content": "  for_each = { for k, v in var.listeners : k =\u003e v if local.create }",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mfor_each\u001b[0m = { \u001b[38;5;64mfor\u001b[0m k, v \u001b[38;5;64min\u001b[0m \u001b[38;5;33mvar\u001b[0m.listeners \u001b[38;5;245m:\u001b[0m k =\u003e v if local.create }",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 126,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 127,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 128,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 129,
+                  "Content": "  alpn_policy     = each.value.alpn_policy",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245malpn_policy\u001b[0m     = \u001b[38;5;33meach\u001b[0m.value.alpn_policy",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 130,
+                  "Content": "  certificate_arn = each.value.certificate_arn",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcertificate_arn\u001b[0m = \u001b[38;5;33meach\u001b[0m.value.certificate_arn",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 131,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 132,
+                  "Content": "  dynamic \"default_action\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  dynamic \u001b[38;5;37m\"default_action\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 133,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.alb",
+                "Filename": "examples/complete-alb/main.tf",
+                "Location": {
+                  "StartLine": 25,
+                  "EndLine": 523
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/s3-bucket/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0132",
+          "Title": "S3 encryption should use Customer Managed Keys",
+          "Description": "Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.\nNote that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.\n",
+          "Message": "Bucket does not encrypt data with a customer managed key.",
+          "Namespace": "builtin.aws.s3.aws0132",
+          "Query": "data.builtin.aws.s3.aws0132.deny",
+          "Resolution": "Use SSE-KMS with a customer managed key (CMK)",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0132",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0132"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.certificate_bucket",
+            "Provider": "AWS",
+            "Service": "s3",
+            "StartLine": 45,
+            "EndLine": 57,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 45,
+                  "Content": "resource \"aws_s3_bucket\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_s3_bucket\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 46,
+                  "Content": "  count = local.create_bucket \u0026\u0026 !var.is_directory_bucket ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_bucket \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;245m!\u001b[0m\u001b[38;5;33mvar\u001b[0m.is_directory_bucket \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 47,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 48,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "  bucket           = var.bucket",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket\u001b[0m           = \u001b[38;5;33mvar\u001b[0m.bucket",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 51,
+                  "Content": "  bucket_prefix    = var.bucket_prefix",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_prefix\u001b[0m    = \u001b[38;5;33mvar\u001b[0m.bucket_prefix",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 52,
+                  "Content": "  bucket_namespace = var.bucket_namespace",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_namespace\u001b[0m = \u001b[38;5;33mvar\u001b[0m.bucket_namespace",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 54,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.certificate_bucket",
+                "Filename": "examples/mutual-auth-alb/main.tf",
+                "Location": {
+                  "StartLine": 258,
+                  "EndLine": 266
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/vpc/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/lb_trust_store",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

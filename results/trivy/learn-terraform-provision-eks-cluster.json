@@ -1,0 +1,353 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-5fbd-77a6-ab11-aad597801caa",
+  "CreatedAt": "2026-06-12T21:23:57.501503585Z",
+  "ArtifactName": "corpus/learn-terraform-provision-eks-cluster",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": ".",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "terraform-aws-modules/eks/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0040",
+          "Title": "EKS Clusters should have the public access disabled",
+          "Description": "EKS clusters are available publicly by default, this should be explicitly disabled in the vpc_config of the EKS cluster resource.\n",
+          "Message": "Public cluster access is enabled.",
+          "Namespace": "builtin.aws.eks.aws0040",
+          "Query": "data.builtin.aws.eks.aws0040.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0040",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html",
+            "https://avd.aquasec.com/misconfig/aws-0040"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 50,
+            "EndLine": 50,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 27,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 28,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "    endpoint_public_access  = var.cluster_endpoint_public_access",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mendpoint_public_access\u001b[0m  = \u001b[38;5;33mvar\u001b[0m.cluster_endpoint_public_access",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 104,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 105,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "terraform-aws-modules/eks/aws/main.tf",
+                "Location": {
+                  "StartLine": 46,
+                  "EndLine": 52
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "terraform-aws-modules/eks/aws/main.tf",
+                "Location": {
+                  "StartLine": 27,
+                  "EndLine": 105
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 51,
+                  "EndLine": 96
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    endpoint_public_access = true\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mendpoint_public_access\u001b[0m = \u001b[38;5;166mtrue\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0041",
+          "Title": "EKS cluster should not have open CIDR range for public access",
+          "Description": "EKS Clusters have public access cidrs set to 0.0.0.0/0 by default which is wide open to the internet. This should be explicitly set to a more specific private CIDR range\n",
+          "Message": "Cluster allows access from a public CIDR: 0.0.0.0/0",
+          "Namespace": "builtin.aws.eks.aws0041",
+          "Query": "data.builtin.aws.eks.aws0041.deny",
+          "Resolution": "Don't enable public access to EKS Clusters",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0041",
+          "References": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html",
+            "https://avd.aquasec.com/misconfig/aws-0041"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "eks",
+            "StartLine": 51,
+            "EndLine": 51,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 27,
+                  "Content": "resource \"aws_eks_cluster\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 28,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 51,
+                  "Content": "    public_access_cidrs     = var.cluster_endpoint_public_access_cidrs",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mpublic_access_cidrs\u001b[0m     = \u001b[38;5;33mvar\u001b[0m.cluster_endpoint_public_access_cidrs",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 104,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 105,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "vpc_config",
+                "Filename": "terraform-aws-modules/eks/aws/main.tf",
+                "Location": {
+                  "StartLine": 46,
+                  "EndLine": 52
+                }
+              },
+              {
+                "Resource": "aws_eks_cluster.this[0]",
+                "Filename": "terraform-aws-modules/eks/aws/main.tf",
+                "Location": {
+                  "StartLine": 27,
+                  "EndLine": 105
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 51,
+                  "EndLine": 96
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_eks_cluster\" \"this\" {\n  vpc_config {\n    public_access_cidrs = [\"0.0.0.0/0\"]\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_eks_cluster\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  vpc_config {\n    \u001b[38;5;245mpublic_access_cidrs\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n  }\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/eks/aws/node_groups.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0104",
+          "Title": "A security group rule should not allow unrestricted egress to any IP address.",
+          "Description": "Opening up ports to connect out to the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted egress to any IP address.",
+          "Namespace": "builtin.aws.ec2.aws0104",
+          "Query": "data.builtin.aws.ec2.aws0104.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0104",
+          "References": [
+            "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html",
+            "https://avd.aquasec.com/misconfig/aws-0104"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.eks",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 247,
+            "EndLine": 247,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 230,
+                  "Content": "resource \"aws_security_group_rule\" \"node\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"node\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 231,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 247,
+                  "Content": "  cidr_blocks              = lookup(each.value, \"cidr_blocks\", null)",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcidr_blocks\u001b[0m              =\u001b[38;5;33m lookup\u001b[0m(\u001b[38;5;33meach\u001b[0m.value, \u001b[38;5;37m\"cidr_blocks\"\u001b[0m, null)",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 251,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 252,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_security_group_rule.node[\"egress_all\"]",
+                "Filename": "terraform-aws-modules/eks/aws/node_groups.tf",
+                "Location": {
+                  "StartLine": 230,
+                  "EndLine": 252
+                }
+              },
+              {
+                "Resource": "module.eks",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 51,
+                  "EndLine": 96
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_security_group_rule\" \"node\" {\n  cidr_blocks = [\"0.0.0.0/0\"]\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_security_group_rule\"\u001b[0m \u001b[38;5;37m\"node\"\u001b[0m {\n  \u001b[38;5;245mcidr_blocks\u001b[0m = [\u001b[38;5;37m\"0.0.0.0/0\"\u001b[0m]\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

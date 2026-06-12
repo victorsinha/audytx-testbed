@@ -1,0 +1,1 @@
+{"status":"ERROR","reason":"no_output_file","stderr_excerpt":"Error: unable to find queries: stat /home/runner/work/audytx-testbed/audytx-testbed/assets/queries: no such file or directory Usage:   kics scan [flags]  Flags: "}

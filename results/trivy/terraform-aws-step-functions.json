@@ -1,0 +1,114 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-40db-718a-8f21-b4c17487b95d",
+  "CreatedAt": "2026-06-12T21:23:49.595102922Z",
+  "ArtifactName": "corpus/terraform-aws-step-functions",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/complete",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 21,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.queue",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 277,
+            "EndLine": 281,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 277,
+                  "Content": "resource \"aws_sqs_queue\" \"queue\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"queue\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 278,
+                  "Content": "  name = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 279,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 280,
+                  "Content": "  tags = local.tags",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mtags\u001b[0m = local.tags",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 281,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/lambda/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    }
+  ]
+}

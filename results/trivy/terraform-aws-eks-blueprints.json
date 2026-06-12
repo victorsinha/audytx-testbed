@@ -1,0 +1,1 @@
+{"status":"DNF","corpus":"terraform-aws-eks-blueprints","tool":"trivy","reason":"timeout_300s"}

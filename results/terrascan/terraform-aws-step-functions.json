@@ -1,0 +1,16 @@
+{
+  "results": {
+    "violations": null,
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-step-functions",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:23:53.849871438 +0000 UTC",
+      "policies_validated": 3,
+      "violated_policies": 0,
+      "low": 0,
+      "medium": 0,
+      "high": 0
+    }
+  }
+}

@@ -1,0 +1,1874 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-4642-7f03-8585-ee69ba3ccf7b",
+  "CreatedAt": "2026-06-12T21:23:50.978985713Z",
+  "ArtifactName": "corpus/terraform-aws-lambda",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/alias",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 22,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/async",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 22,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/async/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0095",
+          "Title": "Unencrypted SNS topic.",
+          "Description": "Topics should be encrypted to protect their contents.\n",
+          "Message": "Topic does not have encryption enabled.",
+          "Namespace": "builtin.aws.sns.aws0095",
+          "Query": "data.builtin.aws.sns.aws0095.deny",
+          "Resolution": "Turn on SNS Topic encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0095",
+          "References": [
+            "https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0095"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sns_topic.async",
+            "Provider": "AWS",
+            "Service": "sns",
+            "StartLine": 34,
+            "EndLine": 36,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 34,
+                  "Content": "resource \"aws_sns_topic\" \"async\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sns_topic\"\u001b[0m \u001b[38;5;37m\"async\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 35,
+                  "Content": "  name_prefix = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname_prefix\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 36,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.async",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 38,
+            "EndLine": 40,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 38,
+                  "Content": "resource \"aws_sqs_queue\" \"async\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"async\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 39,
+                  "Content": "  name_prefix = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname_prefix\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 40,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/build-package",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/code-signing",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 25,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 26,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.dlq",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 481,
+            "EndLine": 483,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 481,
+                  "Content": "resource \"aws_sqs_queue\" \"dlq\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"dlq\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 482,
+                  "Content": "  name = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 483,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/container-image",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 20,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/container-image/context/Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0002",
+          "Title": "Image user should not be 'root'",
+          "Description": "Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.",
+          "Message": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+          "Namespace": "builtin.dockerfile.DS002",
+          "Query": "data.builtin.dockerfile.DS002.deny",
+          "Resolution": "Add 'USER \u003cnon root user name\u003e' line to the Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0002",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+            "https://avd.aquasec.com/misconfig/ds-0002"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general"
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/deploy",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 20,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/deploy/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0095",
+          "Title": "Unencrypted SNS topic.",
+          "Description": "Topics should be encrypted to protect their contents.\n",
+          "Message": "Topic does not have encryption enabled.",
+          "Namespace": "builtin.aws.sns.aws0095",
+          "Query": "data.builtin.aws.sns.aws0095.deny",
+          "Resolution": "Turn on SNS Topic encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0095",
+          "References": [
+            "https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0095"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sns_topic.sns1",
+            "Provider": "AWS",
+            "Service": "sns",
+            "StartLine": 77,
+            "EndLine": 79,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 77,
+                  "Content": "resource \"aws_sns_topic\" \"sns1\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sns_topic\"\u001b[0m \u001b[38;5;37m\"sns1\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 78,
+                  "Content": "  name_prefix = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname_prefix\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 79,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0095",
+          "Title": "Unencrypted SNS topic.",
+          "Description": "Topics should be encrypted to protect their contents.\n",
+          "Message": "Topic does not have encryption enabled.",
+          "Namespace": "builtin.aws.sns.aws0095",
+          "Query": "data.builtin.aws.sns.aws0095.deny",
+          "Resolution": "Turn on SNS Topic encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0095",
+          "References": [
+            "https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0095"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sns_topic.sns2",
+            "Provider": "AWS",
+            "Service": "sns",
+            "StartLine": 81,
+            "EndLine": 83,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 81,
+                  "Content": "resource \"aws_sns_topic\" \"sns2\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sns_topic\"\u001b[0m \u001b[38;5;37m\"sns2\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 82,
+                  "Content": "  name_prefix = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname_prefix\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 83,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/event-source-mapping",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 37,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/event-source-mapping/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 3
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0064",
+          "Title": "Kinesis stream is unencrypted.",
+          "Description": "Kinesis streams should be encrypted to ensure sensitive data is kept private. Additionally, non-default KMS keys should be used so granularity of access control can be ensured.\n",
+          "Message": "Stream does not use KMS encryption.",
+          "Namespace": "builtin.aws.kinesis.aws0064",
+          "Query": "data.builtin.aws.kinesis.aws0064.deny",
+          "Resolution": "Enable in transit encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0064",
+          "References": [
+            "https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0064"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_kinesis_stream.this",
+            "Provider": "AWS",
+            "Service": "kinesis",
+            "StartLine": 236,
+            "EndLine": 239,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 236,
+                  "Content": "resource \"aws_kinesis_stream\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_kinesis_stream\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 237,
+                  "Content": "  name        = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m        = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 238,
+                  "Content": "  shard_count = 1",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mshard_count\u001b[0m = \u001b[38;5;37m1",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 239,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.failure",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 211,
+            "EndLine": 213,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 211,
+                  "Content": "resource \"aws_sqs_queue\" \"failure\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"failure\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 212,
+                  "Content": "  name = \"${random_pet.this.id}-failure\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = \u001b[38;5;37m\"\u001b[0m\u001b[38;5;37m${\u001b[0mrandom_pet.this.id\u001b[38;5;37m}\u001b[0m\u001b[38;5;37m-failure\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.this",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 207,
+            "EndLine": 209,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 207,
+                  "Content": "resource \"aws_sqs_queue\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 208,
+                  "Content": "  name = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 209,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/fixtures/python-app-poetry/docker/Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0002",
+          "Title": "Image user should not be 'root'",
+          "Description": "Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.",
+          "Message": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+          "Namespace": "builtin.dockerfile.DS002",
+          "Query": "data.builtin.dockerfile.DS002.deny",
+          "Resolution": "Add 'USER \u003cnon root user name\u003e' line to the Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0002",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+            "https://avd.aquasec.com/misconfig/ds-0002"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general"
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/fixtures/python-app-uv/docker/Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0002",
+          "Title": "Image user should not be 'root'",
+          "Description": "Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.",
+          "Message": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+          "Namespace": "builtin.dockerfile.DS002",
+          "Query": "data.builtin.dockerfile.DS002.deny",
+          "Resolution": "Add 'USER \u003cnon root user name\u003e' line to the Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0002",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+            "https://avd.aquasec.com/misconfig/ds-0002"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general"
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/fixtures/python-app1/docker/Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 4
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0002",
+          "Title": "Image user should not be 'root'",
+          "Description": "Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.",
+          "Message": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+          "Namespace": "builtin.dockerfile.DS002",
+          "Query": "data.builtin.dockerfile.DS002.deny",
+          "Resolution": "Add 'USER \u003cnon root user name\u003e' line to the Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0002",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+            "https://avd.aquasec.com/misconfig/ds-0002"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general"
+          }
+        },
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0015",
+          "Title": "'yum clean all' missing",
+          "Description": "You should use 'yum clean all' after using a 'yum install' command to clean package cached data and reduce image size.",
+          "Message": "'yum clean all' is missed: cd /root  \u0026\u0026 yum install -y yum-utils spectool deltarpm  \u0026\u0026 yum-builddep -y automake",
+          "Namespace": "builtin.dockerfile.DS015",
+          "Query": "data.builtin.dockerfile.DS015.deny",
+          "Resolution": "Add 'yum clean all' to Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0015",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run",
+            "https://avd.aquasec.com/misconfig/ds-0015"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general",
+            "StartLine": 8,
+            "EndLine": 11,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 8,
+                  "Content": "RUN \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;64mRUN\u001b[0m \u001b[38;5;124m\\",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 9,
+                  "Content": "    cd /root \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m    \u001b[38;5;33mcd\u001b[0m /root \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 10,
+                  "Content": " \u0026\u0026 yum install -y yum-utils spectool deltarpm \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m yum install -y yum-utils spectool deltarpm \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 11,
+                  "Content": " \u0026\u0026 yum-builddep -y automake",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m yum-builddep -y automake",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0015",
+          "Title": "'yum clean all' missing",
+          "Description": "You should use 'yum clean all' after using a 'yum install' command to clean package cached data and reduce image size.",
+          "Message": "'yum clean all' is missed: cd /root  \u0026\u0026 yumdownloader --source automake  \u0026\u0026 rpm -i automake-1.13.*.amzn2.src.rpm  \u0026\u0026 cd /root/rpmbuild  \u0026\u0026 patch -p0 \u003c ../automake-1.13-to-1.16-spec.patch  \u0026\u0026 spectool -g -R SPECS/automake.spec  \u0026\u0026 rpmbuild -ba SPECS/automake.spec --nocheck  \u0026\u0026 yum install -y RPMS/noarch/*",
+          "Namespace": "builtin.dockerfile.DS015",
+          "Query": "data.builtin.dockerfile.DS015.deny",
+          "Resolution": "Add 'yum clean all' to Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0015",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run",
+            "https://avd.aquasec.com/misconfig/ds-0015"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general",
+            "StartLine": 13,
+            "EndLine": 21,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 13,
+                  "Content": "RUN \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;64mRUN\u001b[0m \u001b[38;5;124m\\",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "    cd /root \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m    \u001b[38;5;33mcd\u001b[0m /root \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 15,
+                  "Content": " \u0026\u0026 yumdownloader --source automake \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m yumdownloader --source automake \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 16,
+                  "Content": " \u0026\u0026 rpm -i automake-1.13.*.amzn2.src.rpm \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m rpm -i automake-1.13.*.amzn2.src.rpm \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 17,
+                  "Content": " \u0026\u0026 cd /root/rpmbuild \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;33mcd\u001b[0m /root/rpmbuild \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 18,
+                  "Content": " \u0026\u0026 patch -p0 \u003c ../automake-1.13-to-1.16-spec.patch \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m patch -p0 \u003c ../automake-1.13-to-1.16-spec.patch \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 19,
+                  "Content": " \u0026\u0026 spectool -g -R SPECS/automake.spec \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m spectool -g -R SPECS/automake.spec \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 20,
+                  "Content": " \u0026\u0026 rpmbuild -ba SPECS/automake.spec --nocheck \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m rpmbuild -ba SPECS/automake.spec --nocheck \u001b[38;5;124m\\",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 21,
+                  "Content": " \u0026\u0026 yum install -y RPMS/noarch/*",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m yum install -y RPMS/noarch/*",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Dockerfile Security Check",
+          "ID": "DS-0015",
+          "Title": "'yum clean all' missing",
+          "Description": "You should use 'yum clean all' after using a 'yum install' command to clean package cached data and reduce image size.",
+          "Message": "'yum clean all' is missed: yum install -y *.rpm  \u0026\u0026 rm *.rpm",
+          "Namespace": "builtin.dockerfile.DS015",
+          "Query": "data.builtin.dockerfile.DS015.deny",
+          "Resolution": "Add 'yum clean all' to Dockerfile",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/ds-0015",
+          "References": [
+            "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run",
+            "https://avd.aquasec.com/misconfig/ds-0015"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Provider": "Dockerfile",
+            "Service": "general",
+            "StartLine": 25,
+            "EndLine": 26,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 25,
+                  "Content": "RUN yum install -y *.rpm \\",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;64mRUN\u001b[0m yum install -y *.rpm \u001b[38;5;124m\\",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 26,
+                  "Content": " \u0026\u0026 rm *.rpm",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m \u001b[38;5;245m\u0026\u0026\u001b[0m rm *.rpm",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/multiple-regions",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 21,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/multiple-regions/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.dlq",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 211,
+            "EndLine": 213,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 211,
+                  "Content": "resource \"aws_sqs_queue\" \"dlq\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"dlq\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 212,
+                  "Content": "  name = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 213,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0096",
+          "Title": "Unencrypted SQS queue.",
+          "Description": "Queues should be encrypted to protect queue contents.\n",
+          "Message": "Queue is not encrypted",
+          "Namespace": "builtin.aws.sqs.aws0096",
+          "Query": "data.builtin.aws.sqs.aws0096.deny",
+          "Resolution": "Turn on SQS Queue encryption",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0096",
+          "References": [
+            "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0096"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_sqs_queue.dlq_us_east_1",
+            "Provider": "AWS",
+            "Service": "sqs",
+            "StartLine": 215,
+            "EndLine": 219,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 215,
+                  "Content": "resource \"aws_sqs_queue\" \"dlq_us_east_1\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_sqs_queue\"\u001b[0m \u001b[38;5;37m\"dlq_us_east_1\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 216,
+                  "Content": "  name = random_pet.this.id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m = random_pet.this.id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 217,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 218,
+                  "Content": "  provider = aws.us-east-1",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33m  provider\u001b[0m \u001b[38;5;245m=\u001b[0m aws.us\u001b[38;5;245m-\u001b[0meast\u001b[38;5;37m-1",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 219,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/runtimes",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/simple",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/simple-cicd",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/triggers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 19,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/with-efs",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 33,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/with-efs/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0037",
+          "Title": "EFS Encryption has not been enabled",
+          "Description": "If your organization is subject to corporate or regulatory policies that require encryption of data and metadata at rest, we recommend creating a file system that is encrypted at rest, and mounting your file system using encryption of data in transit.\n",
+          "Message": "File system is not encrypted.",
+          "Namespace": "builtin.aws.efs.aws0037",
+          "Query": "data.builtin.aws.efs.aws0037.deny",
+          "Resolution": "Enable encryption for EFS",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0037",
+          "References": [
+            "https://docs.aws.amazon.com/efs/latest/ug/encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0037"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "aws_efs_file_system.shared",
+            "Provider": "AWS",
+            "Service": "efs",
+            "StartLine": 60,
+            "EndLine": 60,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 60,
+                  "Content": "resource \"aws_efs_file_system\" \"shared\" {}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_efs_file_system\"\u001b[0m \u001b[38;5;37m\"shared\"\u001b[0m {}",
+                  "FirstCause": true,
+                  "LastCause": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "examples/with-vpc",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 33,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/with-vpc-s3-endpoint",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 37,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "modules/docker-build/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0030",
+          "Title": "ECR repository has image scans disabled.",
+          "Description": "Repository image scans should be enabled to ensure vulnerable software can be discovered and remediated as soon as possible.\n",
+          "Message": "Image scanning is not enabled",
+          "Namespace": "builtin.aws.ecr.aws0030",
+          "Query": "data.builtin.aws.ecr.aws0030.deny",
+          "Resolution": "Enable ECR image scanning",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0030",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html",
+            "https://avd.aquasec.com/misconfig/aws-0030"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.docker_build",
+            "Provider": "AWS",
+            "Service": "ecr",
+            "StartLine": 46,
+            "EndLine": 46,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 38,
+                  "Content": "resource \"aws_ecr_repository\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_ecr_repository\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 39,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 46,
+                  "Content": "    scan_on_push = var.scan_on_push",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mscan_on_push\u001b[0m = \u001b[38;5;33mvar\u001b[0m.scan_on_push",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "image_scanning_configuration",
+                "Filename": "modules/docker-build/main.tf",
+                "Location": {
+                  "StartLine": 45,
+                  "EndLine": 47
+                }
+              },
+              {
+                "Resource": "aws_ecr_repository.this[0]",
+                "Filename": "modules/docker-build/main.tf",
+                "Location": {
+                  "StartLine": 38,
+                  "EndLine": 50
+                }
+              },
+              {
+                "Resource": "module.docker_build",
+                "Filename": "examples/container-image/main.tf",
+                "Location": {
+                  "StartLine": 69,
+                  "EndLine": 105
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_ecr_repository\" \"this\" {\n  image_scanning_configuration {\n    scan_on_push = false\n  }\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_ecr_repository\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  image_scanning_configuration {\n    \u001b[38;5;245mscan_on_push\u001b[0m = \u001b[38;5;166mfalse\n\u001b[0m  }\n}"
+            }
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0031",
+          "Title": "ECR images tags shouldn't be mutable.",
+          "Description": "ECR images should be set to IMMUTABLE to prevent code injection through image mutation.\nThis can be done by setting \u003ccode\u003eimage_tag_mutability\u003c/code\u003e to \u003ccode\u003eIMMUTABLE\u003c/code\u003e\n",
+          "Message": "Repository tags are mutable.",
+          "Namespace": "builtin.aws.ecr.aws0031",
+          "Query": "data.builtin.aws.ecr.aws0031.deny",
+          "Resolution": "Only use immutable images in ECR",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0031",
+          "References": [
+            "https://sysdig.com/blog/toctou-tag-mutability/",
+            "https://avd.aquasec.com/misconfig/aws-0031"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.docker_build",
+            "Provider": "AWS",
+            "Service": "ecr",
+            "StartLine": 43,
+            "EndLine": 43,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 38,
+                  "Content": "resource \"aws_ecr_repository\" \"this\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_ecr_repository\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 39,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 43,
+                  "Content": "  image_tag_mutability = var.image_tag_mutability",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mimage_tag_mutability\u001b[0m = \u001b[38;5;33mvar\u001b[0m.image_tag_mutability",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_ecr_repository.this[0]",
+                "Filename": "modules/docker-build/main.tf",
+                "Location": {
+                  "StartLine": 38,
+                  "EndLine": 50
+                }
+              },
+              {
+                "Resource": "module.docker_build",
+                "Filename": "examples/container-image/main.tf",
+                "Location": {
+                  "StartLine": 69,
+                  "EndLine": 105
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_ecr_repository\" \"this\" {\n  image_tag_mutability = \"MUTABLE\"\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_ecr_repository\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {\n  \u001b[38;5;245mimage_tag_mutability\u001b[0m = \u001b[38;5;37m\"MUTABLE\"\n\u001b[0m}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/s3-bucket/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0132",
+          "Title": "S3 encryption should use Customer Managed Keys",
+          "Description": "Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.\nNote that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.\n",
+          "Message": "Bucket does not encrypt data with a customer managed key.",
+          "Namespace": "builtin.aws.s3.aws0132",
+          "Query": "data.builtin.aws.s3.aws0132.deny",
+          "Resolution": "Use SSE-KMS with a customer managed key (CMK)",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0132",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0132"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.s3_bucket",
+            "Provider": "AWS",
+            "Service": "s3",
+            "StartLine": 45,
+            "EndLine": 57,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 45,
+                  "Content": "resource \"aws_s3_bucket\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_s3_bucket\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 46,
+                  "Content": "  count = local.create_bucket \u0026\u0026 !var.is_directory_bucket ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_bucket \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;245m!\u001b[0m\u001b[38;5;33mvar\u001b[0m.is_directory_bucket \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 47,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 48,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "  bucket           = var.bucket",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket\u001b[0m           = \u001b[38;5;33mvar\u001b[0m.bucket",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 51,
+                  "Content": "  bucket_prefix    = var.bucket_prefix",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_prefix\u001b[0m    = \u001b[38;5;33mvar\u001b[0m.bucket_prefix",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 52,
+                  "Content": "  bucket_namespace = var.bucket_namespace",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_namespace\u001b[0m = \u001b[38;5;33mvar\u001b[0m.bucket_namespace",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 54,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.s3_bucket",
+                "Filename": "examples/complete/main.tf",
+                "Location": {
+                  "StartLine": 463,
+                  "EndLine": 479
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0132",
+          "Title": "S3 encryption should use Customer Managed Keys",
+          "Description": "Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.\nNote that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.\n",
+          "Message": "Bucket does not encrypt data with a customer managed key.",
+          "Namespace": "builtin.aws.s3.aws0132",
+          "Query": "data.builtin.aws.s3.aws0132.deny",
+          "Resolution": "Use SSE-KMS with a customer managed key (CMK)",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0132",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0132"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.s3_bucket",
+            "Provider": "AWS",
+            "Service": "s3",
+            "StartLine": 224,
+            "EndLine": 249,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 224,
+                  "Content": "resource \"aws_s3_bucket_server_side_encryption_configuration\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_s3_bucket_server_side_encryption_configuration\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 225,
+                  "Content": "  count = local.create_bucket \u0026\u0026 length(keys(var.server_side_encryption_configuration)) \u003e 0 ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_bucket \u001b[38;5;245m\u0026\u0026\u001b[0m\u001b[38;5;33m length\u001b[0m(keys(\u001b[38;5;33mvar\u001b[0m.server_side_encryption_configuration)) \u001b[38;5;245m\u003e\u001b[0m \u001b[38;5;37m0\u001b[0m \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 226,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 227,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 228,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 229,
+                  "Content": "  bucket                = var.is_directory_bucket ? aws_s3_directory_bucket.this[0].bucket : aws_s3_bucket.this[0].id",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket\u001b[0m                = \u001b[38;5;33mvar\u001b[0m.is_directory_bucket \u001b[38;5;245m?\u001b[0m aws_s3_directory_bucket.this[\u001b[38;5;37m0\u001b[0m].bucket \u001b[38;5;245m:\u001b[0m aws_s3_bucket.this[\u001b[38;5;37m0\u001b[0m].id",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 230,
+                  "Content": "  expected_bucket_owner = var.expected_bucket_owner",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mexpected_bucket_owner\u001b[0m = \u001b[38;5;33mvar\u001b[0m.expected_bucket_owner",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 231,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 232,
+                  "Content": "  dynamic \"rule\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  dynamic \u001b[38;5;37m\"rule\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 233,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.s3_bucket",
+                "Filename": "examples/with-vpc-s3-endpoint/main.tf",
+                "Location": {
+                  "StartLine": 161,
+                  "EndLine": 190
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/vpc/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0102",
+          "Title": "An Network ACL rule allows ALL ports.",
+          "Description": "Ensure access to specific required ports is allowed, and nothing else.\n",
+          "Message": "Network ACL rule allows access using ALL ports.",
+          "Namespace": "builtin.aws.ec2.aws0102",
+          "Query": "data.builtin.aws.ec2.aws0102.deny",
+          "Resolution": "Set specific allowed ports",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0102",
+          "References": [
+            "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+            "https://avd.aquasec.com/misconfig/aws-0102"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.vpc",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 1039,
+            "EndLine": 1039,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 1025,
+                  "Content": "resource \"aws_network_acl_rule\" \"intra_outbound\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_network_acl_rule\"\u001b[0m \u001b[38;5;37m\"intra_outbound\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1026,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1039,
+                  "Content": "  protocol        = var.intra_outbound_acl_rules[count.index][\"protocol\"]",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mprotocol\u001b[0m        = \u001b[38;5;33mvar\u001b[0m.intra_outbound_acl_rules[\u001b[38;5;33mcount\u001b[0m.index][\u001b[38;5;37m\"protocol\"\u001b[0m]",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 1041,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1042,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_network_acl_rule.intra_outbound[0]",
+                "Filename": "terraform-aws-modules/vpc/aws/main.tf",
+                "Location": {
+                  "StartLine": 1025,
+                  "EndLine": 1042
+                }
+              },
+              {
+                "Resource": "module.vpc",
+                "Filename": "examples/with-vpc-s3-endpoint/main.tf",
+                "Location": {
+                  "StartLine": 60,
+                  "EndLine": 100
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_network_acl_rule\" \"intra_outbound\" {\n  protocol = \"-1\"\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_network_acl_rule\"\u001b[0m \u001b[38;5;37m\"intra_outbound\"\u001b[0m {\n  \u001b[38;5;245mprotocol\u001b[0m = \u001b[38;5;37m\"-1\"\n\u001b[0m}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/alias",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/deploy",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/docker-build",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

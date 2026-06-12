@@ -1,0 +1,30 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-31dd-7827-9196-585b4494595f",
+  "CreatedAt": "2026-06-12T21:23:45.757536663Z",
+  "ArtifactName": "corpus/terraform-aws-sqs",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/complete",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 21,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

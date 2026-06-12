@@ -1,0 +1,43 @@
+{
+  "results": {
+    "violations": [
+      {
+        "rule_name": "lambdaNotInVpc",
+        "description": "Lambda function does not include a VPC configuration.",
+        "rule_id": "AC_AWS_0486",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 41
+      },
+      {
+        "rule_name": "lambdaXRayTracingDisabled",
+        "description": "Lambda tracing is not enabled.",
+        "rule_id": "AC_AWS_0485",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_lambda_function",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 41
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-lambda",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:23:56.272519456 +0000 UTC",
+      "policies_validated": 8,
+      "violated_policies": 2,
+      "low": 2,
+      "medium": 0,
+      "high": 0
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-3637-72c8-866f-78ad6888ec0d",
+  "CreatedAt": "2026-06-12T21:23:46.871184039Z",
+  "ArtifactName": "corpus/terraform-aws-ecr",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/complete",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 20,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/repository-template",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0031",
+          "Title": "ECR images tags shouldn't be mutable.",
+          "Description": "ECR images should be set to IMMUTABLE to prevent code injection through image mutation.\nThis can be done by setting \u003ccode\u003eimage_tag_mutability\u003c/code\u003e to \u003ccode\u003eIMMUTABLE\u003c/code\u003e\n",
+          "Message": "Repository tags are mutable.",
+          "Namespace": "builtin.aws.ecr.aws0031",
+          "Query": "data.builtin.aws.ecr.aws0031.deny",
+          "Resolution": "Only use immutable images in ECR",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0031",
+          "References": [
+            "https://sysdig.com/blog/toctou-tag-mutability/",
+            "https://avd.aquasec.com/misconfig/aws-0031"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.ecr",
+            "Provider": "AWS",
+            "Service": "ecr",
+            "StartLine": 177,
+            "EndLine": 205,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 177,
+                  "Content": "resource \"aws_ecr_repository\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_ecr_repository\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 178,
+                  "Content": "  count = local.create_private_repository ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_private_repository \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 179,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 180,
+                  "Content": "  name                 = var.repository_name",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mname\u001b[0m                 = \u001b[38;5;33mvar\u001b[0m.repository_name",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 181,
+                  "Content": "  image_tag_mutability = var.repository_image_tag_mutability",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mimage_tag_mutability\u001b[0m = \u001b[38;5;33mvar\u001b[0m.repository_image_tag_mutability",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 182,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 183,
+                  "Content": "  encryption_configuration {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  encryption_configuration {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 184,
+                  "Content": "    encryption_type = var.repository_encryption_type",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mencryption_type\u001b[0m = \u001b[38;5;33mvar\u001b[0m.repository_encryption_type",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 185,
+                  "Content": "    kms_key         = var.repository_kms_key",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "    \u001b[38;5;245mkms_key\u001b[0m         = \u001b[38;5;33mvar\u001b[0m.repository_kms_key",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 186,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.ecr",
+                "Filename": "examples/complete/main.tf",
+                "Location": {
+                  "StartLine": 30,
+                  "EndLine": 75
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/repository-template",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

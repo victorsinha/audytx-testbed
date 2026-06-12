@@ -114,13 +114,28 @@ jobs:
 
       - name: Install KICS
         run: |
-          KICS_URL="https://github.com/Checkmarx/kics/releases/download/v2.1.20/kics_2.1.20_linux_amd64.tar.gz"
+          KICS_VERSION="2.1.20"
+          KICS_URL="https://github.com/Checkmarx/kics/releases/download/v${KICS_VERSION}/kics_${KICS_VERSION}_linux_amd64.tar.gz"
           wget -qO /tmp/kics.tar.gz "$KICS_URL" \
             || wget -qO /tmp/kics.tar.gz "https://github.com/Checkmarx/kics/releases/latest/download/kics_linux_amd64.tar.gz"
           tar -xzf /tmp/kics.tar.gz -C /usr/local/bin kics 2>/dev/null || tar -xzf /tmp/kics.tar.gz -C /usr/local/bin
           chmod +x /usr/local/bin/kics 2>/dev/null || true
           kics version 2>&1 | head -1 > bench-out/kics-version.txt || echo "kics install failed" > bench-out/kics-version.txt
           cat bench-out/kics-version.txt
+          # KICS 2.x needs its queries directory; download from source to /tmp/kics-queries
+          mkdir -p /tmp/kics-queries
+          wget -qO /tmp/kics-assets.tar.gz \
+            "https://github.com/Checkmarx/kics/releases/download/v${KICS_VERSION}/kics_${KICS_VERSION}_checksum.txt" \
+            2>/dev/null || true
+          # Clone just the assets/queries from the KICS repo at the pinned tag
+          # (shallow clone, sparse checkout for speed)
+          git clone --depth 1 --branch "v${KICS_VERSION}" \
+            --filter=blob:none --sparse \
+            https://github.com/Checkmarx/kics.git /tmp/kics-src 2>/dev/null \
+          && git -C /tmp/kics-src sparse-checkout set assets/queries \
+          && cp -r /tmp/kics-src/assets/queries /tmp/kics-queries/assets \
+          || echo "KICS queries download failed — will record DNF"
+          echo "KICS queries dir: $(ls /tmp/kics-queries/ 2>/dev/null || echo 'missing')"
 
       - name: Install Terrascan
         run: |
@@ -142,15 +157,17 @@ jobs:
             exit 0
           fi
           exit_code=0
-          timeout 300 checkov -d "$CORPUS_DIR" --framework terraform -o json \
-            --no-guide --quiet \
+          # -o json outputs to stdout; exit 1 = checks failed (normal), 0 = all pass
+          timeout 300 checkov -d "$CORPUS_DIR" --framework terraform \
+            --output json --compact \
             > bench-out/checkov.json 2>/tmp/checkov-stderr.txt || exit_code=$?
           if [ $exit_code -eq 124 ]; then
             echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"checkov","reason":"timeout_300s"}' \
               > bench-out/checkov.json
           elif [ $exit_code -ne 0 ] && [ $exit_code -ne 1 ]; then
-            # exit 1 = checks failed (normal); any other code = error
-            cat /tmp/checkov-stderr.txt >> bench-out/checkov.json || true
+            # exit 0/1 = normal; any other code = error
+            echo '{"status":"ERROR","exit_code":'"$exit_code"',"stderr":"'"$(head -3 /tmp/checkov-stderr.txt | tr '\n' ' ' | sed 's/"/\\"/g')"'"}' \
+              > bench-out/checkov.json
           fi
 
       - name: Run Trivy
@@ -179,11 +196,16 @@ jobs:
           fi
           mkdir -p /tmp/kics-out
           exit_code=0
+          KICS_QUERIES_ARG=""
+          if [ -d "/tmp/kics-queries/assets" ]; then
+            KICS_QUERIES_ARG="--queries-path /tmp/kics-queries/assets"
+          fi
           timeout 300 kics scan -p "$CORPUS_DIR" -t Terraform \
             --report-formats json \
             --output-path /tmp/kics-out \
             --no-progress \
             --ci \
+            $KICS_QUERIES_ARG \
             2>/tmp/kics-stderr.txt || exit_code=$?
           if [ $exit_code -eq 124 ]; then
             echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"kics","reason":"timeout_300s"}' \

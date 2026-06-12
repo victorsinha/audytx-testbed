@@ -1,0 +1,551 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.71.0"
+  },
+  "ReportID": "019ebdb8-2c67-72a0-8fee-ee4adbcf62b1",
+  "CreatedAt": "2026-06-12T21:23:44.359174137Z",
+  "ArtifactName": "corpus/terraform-aws-vpc",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "examples/block-public-access",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/complete",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/flow-log",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 37,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/flow-log/main.tf",
+      "Class": "config",
+      "Type": "terraform"
+    },
+    {
+      "Target": "examples/ipam",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/ipv6-dualstack",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/ipv6-only",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/issues",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/manage-default-vpc",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 31,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/network-acls",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 31,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/outpost",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/secondary-cidr-blocks",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/separate-route-tables",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples/simple",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 32,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0101",
+          "Title": "AWS best practice to not use the default VPC for workflows",
+          "Description": "Default VPC does not have a lot of the critical security features that standard VPC comes with, new resources should not be created in the default VPC and it should not be present in the Terraform.\n",
+          "Message": "Default VPC is used.",
+          "Namespace": "builtin.aws.ec2.aws0101",
+          "Query": "data.builtin.aws.ec2.aws0101.deny",
+          "Resolution": "Create a non-default vpc for resources to be created in",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0101",
+          "References": [
+            "https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html",
+            "https://avd.aquasec.com/misconfig/aws-0101"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.vpc",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 1388,
+            "EndLine": 1401,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 1388,
+                  "Content": "resource \"aws_default_vpc\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_default_vpc\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1389,
+                  "Content": "  count = var.manage_default_vpc ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = \u001b[38;5;33mvar\u001b[0m.manage_default_vpc \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1390,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1391,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1392,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1393,
+                  "Content": "  enable_dns_support   = var.default_vpc_enable_dns_support",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245menable_dns_support\u001b[0m   = \u001b[38;5;33mvar\u001b[0m.default_vpc_enable_dns_support",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1394,
+                  "Content": "  enable_dns_hostnames = var.default_vpc_enable_dns_hostnames",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245menable_dns_hostnames\u001b[0m = \u001b[38;5;33mvar\u001b[0m.default_vpc_enable_dns_hostnames",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1395,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 1396,
+                  "Content": "  tags = merge(",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mtags\u001b[0m =\u001b[38;5;33m merge\u001b[0m(",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 1397,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.vpc",
+                "Filename": "examples/manage-default-vpc/main.tf",
+                "Location": {
+                  "StartLine": 20,
+                  "EndLine": 30
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0102",
+          "Title": "An Network ACL rule allows ALL ports.",
+          "Description": "Ensure access to specific required ports is allowed, and nothing else.\n",
+          "Message": "Network ACL rule allows access using ALL ports.",
+          "Namespace": "builtin.aws.ec2.aws0102",
+          "Query": "data.builtin.aws.ec2.aws0102.deny",
+          "Resolution": "Set specific allowed ports",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0102",
+          "References": [
+            "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+            "https://avd.aquasec.com/misconfig/aws-0102"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.vpc",
+            "Provider": "AWS",
+            "Service": "ec2",
+            "StartLine": 893,
+            "EndLine": 893,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 879,
+                  "Content": "resource \"aws_network_acl_rule\" \"elasticache_inbound\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_network_acl_rule\"\u001b[0m \u001b[38;5;37m\"elasticache_inbound\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 880,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 893,
+                  "Content": "  protocol        = var.elasticache_inbound_acl_rules[count.index][\"protocol\"]",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mprotocol\u001b[0m        = \u001b[38;5;33mvar\u001b[0m.elasticache_inbound_acl_rules[\u001b[38;5;33mcount\u001b[0m.index][\u001b[38;5;37m\"protocol\"\u001b[0m]",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 895,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 896,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "aws_network_acl_rule.elasticache_inbound[0]",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 879,
+                  "EndLine": 896
+                }
+              },
+              {
+                "Resource": "module.vpc",
+                "Filename": "examples/network-acls/main.tf",
+                "Location": {
+                  "StartLine": 174,
+                  "EndLine": 209
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"aws_network_acl_rule\" \"elasticache_inbound\" {\n  protocol = \"-1\"\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_network_acl_rule\"\u001b[0m \u001b[38;5;37m\"elasticache_inbound\"\u001b[0m {\n  \u001b[38;5;245mprotocol\u001b[0m = \u001b[38;5;37m\"-1\"\n\u001b[0m}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "terraform-aws-modules/s3-bucket/aws/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AWS-0132",
+          "Title": "S3 encryption should use Customer Managed Keys",
+          "Description": "Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.\nNote that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.\n",
+          "Message": "Bucket does not encrypt data with a customer managed key.",
+          "Namespace": "builtin.aws.s3.aws0132",
+          "Query": "data.builtin.aws.s3.aws0132.deny",
+          "Resolution": "Use SSE-KMS with a customer managed key (CMK)",
+          "Severity": "HIGH",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/aws-0132",
+          "References": [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+            "https://avd.aquasec.com/misconfig/aws-0132"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.s3_bucket",
+            "Provider": "AWS",
+            "Service": "s3",
+            "StartLine": 45,
+            "EndLine": 57,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 45,
+                  "Content": "resource \"aws_s3_bucket\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"aws_s3_bucket\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 46,
+                  "Content": "  count = local.create_bucket \u0026\u0026 !var.is_directory_bucket ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m = local.create_bucket \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;245m!\u001b[0m\u001b[38;5;33mvar\u001b[0m.is_directory_bucket \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 47,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 48,
+                  "Content": "  region = var.region",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mregion\u001b[0m = \u001b[38;5;33mvar\u001b[0m.region",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 49,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 50,
+                  "Content": "  bucket           = var.bucket",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket\u001b[0m           = \u001b[38;5;33mvar\u001b[0m.bucket",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 51,
+                  "Content": "  bucket_prefix    = var.bucket_prefix",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_prefix\u001b[0m    = \u001b[38;5;33mvar\u001b[0m.bucket_prefix",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 52,
+                  "Content": "  bucket_namespace = var.bucket_namespace",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mbucket_namespace\u001b[0m = \u001b[38;5;33mvar\u001b[0m.bucket_namespace",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 53,
+                  "Content": "",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 54,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.s3_bucket",
+                "Filename": "examples/flow-log/main.tf",
+                "Location": {
+                  "StartLine": 101,
+                  "EndLine": 112
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "wrappers",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/flow-log",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "wrappers/vpc-endpoints",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 18,
+        "Failures": 0
+      }
+    }
+  ]
+}

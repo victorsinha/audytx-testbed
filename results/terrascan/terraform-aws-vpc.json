@@ -1,0 +1,30 @@
+{
+  "results": {
+    "violations": [
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "this",
+        "resource_type": "aws_vpc",
+        "module_name": "root",
+        "file": "main.tf",
+        "plan_root": "./",
+        "line": 28
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/home/runner/work/audytx-testbed/audytx-testbed/corpus/terraform-aws-vpc",
+      "iac_type": "terraform",
+      "scanned_at": "2026-06-12 21:23:48.34244929 +0000 UTC",
+      "policies_validated": 5,
+      "violated_policies": 1,
+      "low": 1,
+      "medium": 0,
+      "high": 0
+    }
+  }
+}
