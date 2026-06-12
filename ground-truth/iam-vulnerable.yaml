@@ -1,0 +1,556 @@
+# Ground-truth labels for the iam-vulnerable corpus
+#
+# Total documented privesc paths: 31
+# Source: BishopFox iam-vulnerable README
+#   https://github.com/BishopFox/iam-vulnerable (Seth Art, @sethsec)
+#   Upstream documents 31 paths — "Currently supported privilege escalation paths: 31"
+#   Original Rhino Security Labs catalog (Spencer Gietzen):
+#   https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
+#   https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/
+#
+# Corpus branch: bench/iam-vulnerable
+# Corpus commit: 85b0eee7a55a29005af5fc28a500c0707297d4af (2026-06-13)
+# Corpus path in testbed: corpus/iam-vulnerable/
+#
+# Each entry represents one intentional IAM privilege-escalation path.
+# terraform_resources lists the primary resource(s) that grant the dangerous
+# permission (the policy resource + the user/role it is attached to).
+# non_free_modules_required: paths that require a non-default (billed) module
+#   deployed to be fully exploitable at runtime — the IAM policy is still present
+#   in the free-resources module and is detectable at static scan time.
+#
+# Conflict of interest disclosure: this ground-truth file was authored by
+# the audytx team. All entries reference upstream BishopFox documentation.
+# The mapping from BishopFox path → Terraform resource name is derivable
+# mechanically from the resource name / description in each .tf file.
+
+paths:
+
+  # ── Category: IAM Permissions on Other Users ──────────────────────────────
+
+  - id: GT-001
+    method: "IAM-CreateNewPolicyVersion"
+    bishopfox_name: "IAM-CreateNewPolicyVersion"
+    rhino_method: "CreatePolicyVersion"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc1-CreateNewPolicyVersion"
+      - "aws_iam_user.privesc1-CreateNewPolicyVersion-user"
+      - "aws_iam_role.privesc1-CreateNewPolicyVersion-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc1-CreateNewPolicyVersion.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:CreatePolicyVersion with Resource:*. Allows overwriting
+      any managed policy's non-default version with an admin-granting version,
+      then setting it as the default.
+
+  - id: GT-002
+    method: "IAM-SetExistingDefaultPolicyVersion"
+    bishopfox_name: "IAM-SetExistingDefaultPolicyVersion"
+    rhino_method: "SetDefaultPolicyVersion"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc2-SetExistingDefaultPolicyVersion"
+      - "aws_iam_user.privesc2-SetExistingDefaultPolicyVersion-user"
+      - "aws_iam_role.privesc2-SetExistingDefaultPolicyVersion-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc2-SetExistingDefaultPolicyVersion.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:SetDefaultPolicyVersion with Resource:*. Exploitable only
+      if a policy with a previously created admin version exists in the account.
+      The upstream comment in the TF file notes this limitation explicitly.
+
+  - id: GT-003
+    method: "IAM-CreateAccessKey"
+    bishopfox_name: "IAM-CreateAccessKey"
+    rhino_method: "CreateAccessKey"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc4-CreateAccessKey"
+      - "aws_iam_user.privesc4-CreateAccessKey-user"
+      - "aws_iam_role.privesc4-CreateAccessKey-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc4-CreateAccessKey.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:CreateAccessKey with Resource:*. Allows creating access
+      keys for any other user (including admins) and authenticating as them.
+
+  - id: GT-004
+    method: "IAM-CreateLoginProfile"
+    bishopfox_name: "IAM-CreateLoginProfile"
+    rhino_method: "CreateLoginProfile"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc5-CreateLoginProfile"
+      - "aws_iam_user.privesc5-CreateLoginProfile-user"
+      - "aws_iam_role.privesc5-CreateLoginProfile-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc5-CreateLoginProfile.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:CreateLoginProfile with Resource:*. Allows setting a
+      console password on any existing user that has no login profile yet.
+
+  - id: GT-005
+    method: "IAM-UpdateLoginProfile"
+    bishopfox_name: "IAM-UpdateLoginProfile"
+    rhino_method: "UpdateLoginProfile"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc6-UpdateLoginProfile"
+      - "aws_iam_user.privesc6-UpdateLoginProfile-user"
+      - "aws_iam_role.privesc6-UpdateLoginProfile-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc6-UpdateLoginProfile.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:UpdateLoginProfile with Resource:*. Allows resetting the
+      console password for any user that already has a login profile.
+
+  # ── Category: Permissions on Policies ─────────────────────────────────────
+
+  - id: GT-006
+    method: "IAM-AttachUserPolicy"
+    bishopfox_name: "IAM-AttachUserPolicy"
+    rhino_method: "AttachUserPolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc7-AttachUserPolicy"
+      - "aws_iam_user.privesc7-AttachUserPolicy-user"
+      - "aws_iam_role.privesc7-AttachUserPolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc7-AttachUserPolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:AttachUserPolicy with Resource:*. Allows attaching any
+      managed policy (including AdministratorAccess) to any user.
+
+  - id: GT-007
+    method: "IAM-AttachGroupPolicy"
+    bishopfox_name: "IAM-AttachGroupPolicy"
+    rhino_method: "AttachGroupPolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc8-AttachGroupPolicy"
+      - "aws_iam_user.privesc8-AttachGroupPolicy-user"
+      - "aws_iam_role.privesc8-AttachGroupPolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc8-AttachGroupPolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:AttachGroupPolicy with Resource:*. Allows attaching any
+      managed policy to any group the attacker belongs to.
+
+  - id: GT-008
+    method: "IAM-AttachRolePolicy"
+    bishopfox_name: "IAM-AttachRolePolicy"
+    rhino_method: "AttachRolePolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc9-AttachRolePolicy"
+      - "aws_iam_user.privesc9-AttachRolePolicy-user"
+      - "aws_iam_role.privesc9-AttachRolePolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc9-AttachRolePolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:AttachRolePolicy with Resource:*. Allows attaching any
+      managed policy to any role (including an assumable escalation role).
+
+  - id: GT-009
+    method: "IAM-PutUserPolicy"
+    bishopfox_name: "IAM-PutUserPolicy"
+    rhino_method: "PutUserPolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc10-PutUserPolicy"
+      - "aws_iam_user.privesc10-PutUserPolicy-user"
+      - "aws_iam_role.privesc10-PutUserPolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc10-PutUserPolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:PutUserPolicy with Resource:*. Allows writing an inline
+      policy granting arbitrary permissions to any IAM user.
+
+  - id: GT-010
+    method: "IAM-PutGroupPolicy"
+    bishopfox_name: "IAM-PutGroupPolicy"
+    rhino_method: "PutGroupPolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc11-PutGroupPolicy"
+      - "aws_iam_user.privesc11-PutGroupPolicy-user"
+      - "aws_iam_role.privesc11-PutGroupPolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc11-PutGroupPolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:PutGroupPolicy with Resource:*. Allows writing an inline
+      policy granting arbitrary permissions to any IAM group.
+
+  - id: GT-011
+    method: "IAM-PutRolePolicy"
+    bishopfox_name: "IAM-PutRolePolicy"
+    rhino_method: "PutRolePolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc12-PutRolePolicy"
+      - "aws_iam_user.privesc12-PutRolePolicy-user"
+      - "aws_iam_role.privesc12-PutRolePolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc12-PutRolePolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:PutRolePolicy with Resource:*. Allows writing an inline
+      policy granting arbitrary permissions to any IAM role.
+
+  - id: GT-012
+    method: "IAM-AddUserToGroup"
+    bishopfox_name: "IAM-AddUserToGroup"
+    rhino_method: "AddUserToGroup"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc13-AddUserToGroup"
+      - "aws_iam_user.privesc13-AddUserToGroup-user"
+      - "aws_iam_role.privesc13-AddUserToGroup-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc13-AddUserToGroup.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:AddUserToGroup with Resource:*. Allows adding the
+      attacker's own user into any IAM group (including admin groups).
+
+  # ── Category: Updating an AssumeRole Policy ───────────────────────────────
+
+  - id: GT-013
+    method: "IAM-UpdatingAssumeRolePolicy"
+    bishopfox_name: "IAM-UpdatingAssumeRolePolicy"
+    rhino_method: "UpdateAssumeRolePolicy"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc14-UpdatingAssumeRolePolicy"
+      - "aws_iam_user.privesc14-UpdatingAssumeRolePolicy-user"
+      - "aws_iam_role.privesc14-UpdatingAssumeRolePolicy-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc14-UpdatingAssumeRolePolicy.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:UpdateAssumeRolePolicy with Resource:*. Allows modifying
+      the trust policy of any role to allow the attacker to assume it.
+
+  # ── Category: PassRole to Service ─────────────────────────────────────────
+
+  - id: GT-014
+    method: "EC2-CreateInstanceWithExistingProfile"
+    bishopfox_name: "EC2-CreateInstanceWithExistingProfile"
+    rhino_method: "EC2-CreateInstanceWithExistingInstanceProfile"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc3-CreateEC2WithExistingInstanceProfile"
+      - "aws_iam_user.privesc3-CreateEC2WithExistingIP-user"
+      - "aws_iam_role.privesc3-CreateEC2WithExistingIP-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc3-CreateEC2WithExistingIP.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants ec2:RunInstances and iam:PassRole with Resource:*. Allows
+      launching an EC2 instance with an existing high-privilege instance profile
+      and extracting credentials from the metadata service.
+
+  - id: GT-015
+    method: "Lambda-PassExistingRoleToNewLambdaThenInvoke"
+    bishopfox_name: "Lambda-PassExistingRoleToNewLambdaThenInvoke"
+    rhino_method: "PassExistingRoleToNewLambdaThenInvoke"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc15-PassExistingRoleToNewLambdaThenInvoke"
+      - "aws_iam_user.privesc15-PassExistingRoleToNewLambdaThenInvoke-user"
+      - "aws_iam_role.privesc15-PassExistingRoleToNewLambdaThenInvoke-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc15-PassExistingRoleToNewLambdaThenInvoke.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants lambda:CreateFunction, lambda:InvokeFunction, and iam:PassRole
+      with Resource:*. Allows creating a Lambda with a privileged execution role
+      and invoking it to exfiltrate credentials or perform privileged actions.
+
+  - id: GT-016
+    method: "Lambda-PassRoleToNewLambdaThenTriggerWithNewDynamo"
+    bishopfox_name: "Lambda-PassRoleToNewLambdaThenTrigger"
+    rhino_method: "PassExistingRoleToNewLambdaThenTriggerWithExistingDynamoDB"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc16-PassRoleToNewLambdaThenTriggerWithNewDynamo"
+      - "aws_iam_user.privesc16-PassRoleToNewLambdaThenTriggerWithNewDynamo-user"
+      - "aws_iam_role.privesc16-PassRoleToNewLambdaThenTriggerWithNewDynamo-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc16-PassRoleToNewLambdaThenTriggerWithNewDynamo.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants lambda:CreateFunction, lambda:CreateEventSourceMapping,
+      dynamodb:CreateTable, dynamodb:PutItem, and iam:PassRole with Resource:*.
+      Allows creating a Lambda triggered by DynamoDB writes to execute privileged code.
+
+  - id: GT-017
+    method: "Lambda-EditExistingLambdaFunctionWithRole"
+    bishopfox_name: "Lambda-EditExistingLambdaFunctionWithRole"
+    rhino_method: "EditExistingLambdaFunctionWithRole"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc17-EditExistingLambdaFunctionWithRole"
+      - "aws_iam_user.privesc17-EditExistingLambdaFunctionWithRole-user"
+      - "aws_iam_role.privesc17-EditExistingLambdaFunctionWithRole-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc17-EditExistingLambdaFunctionWithRole.tf"
+    non_free_modules_required: [lambda]
+    notes: >
+      Policy grants lambda:UpdateFunctionCode with Resource:*. Requires an
+      existing Lambda with a privileged execution role (the non-free Lambda module).
+      The IAM policy granting the dangerous permission is in the free module.
+
+  - id: GT-018
+    method: "Glue-PassExistingRoleToNewGlueDevEndpoint"
+    bishopfox_name: "Glue-PassExistingRoleToNewGlueDevEndpoint"
+    rhino_method: "PassExistingRoleToNewGlueDevEndpoint"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc18-PassExistingRoleToNewGlueDevEndpoint"
+      - "aws_iam_user.privesc18-PassExistingRoleToNewGlueDevEndpoint-user"
+      - "aws_iam_role.privesc18-PassExistingRoleToNewGlueDevEndpoint-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc18-PassExistingRoleToNewGlueDevEndpoint.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants glue:CreateDevEndpoint, glue:GetDevEndpoint, and iam:PassRole
+      with Resource:*. Allows creating a Glue dev endpoint with a privileged role
+      to access the execution environment.
+
+  - id: GT-019
+    method: "Glue-UpdateExistingGlueDevEndpoint"
+    bishopfox_name: "Glue-UpdateExistingGlueDevEndpoint"
+    rhino_method: "UpdateExistingGlueDevEndpoint"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc19-UpdateExistingGlueDevEndpoint"
+      - "aws_iam_user.privesc19-UpdateExistingGlueDevEndpoint-user"
+      - "aws_iam_role.privesc19-UpdateExistingGlueDevEndpoint-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc19-UpdateExistingGlueDevEndpoint.tf"
+    non_free_modules_required: [glue]
+    notes: >
+      Policy grants glue:UpdateDevEndpoint and glue:GetDevEndpoint with Resource:*.
+      Requires an existing Glue dev endpoint (the non-free Glue module).
+      The IAM policy granting the dangerous permission is in the free module.
+
+  - id: GT-020
+    method: "CloudFormation-PassExistingRoleToCloudFormation"
+    bishopfox_name: "CloudFormation-PassExistingRoleToCloudFormation"
+    rhino_method: "PassExistingRoleToCloudFormation"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc20-PassExistingRoleToCloudFormation"
+      - "aws_iam_user.privesc20-PassExistingRoleToCloudFormation-user"
+      - "aws_iam_role.privesc20-PassExistingRoleToCloudFormation-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc20-PassExistingRoleToCloudFormation.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:PassRole, cloudformation:CreateStack, and
+      cloudformation:DescribeStacks with Resource:*. Allows deploying a
+      CloudFormation stack that executes arbitrary actions using a privileged role.
+
+  - id: GT-021
+    method: "DataPipeline-PassExistingRoleToNewDataPipeline"
+    bishopfox_name: "DataPipeline-PassExistingRoleToNewDataPipeline"
+    rhino_method: "PassExistingRoleToNewDataPipeline"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/"
+    terraform_resources:
+      - "aws_iam_policy.privesc21-PassExistingRoleToNewDataPipeline"
+      - "aws_iam_user.privesc21-PassExistingRoleToNewDataPipeline-user"
+      - "aws_iam_role.privesc21-PassExistingRoleToNewDataPipeline-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc21-PassExistingRoleToNewDataPipeline.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants iam:PassRole, datapipeline:CreatePipeline,
+      datapipeline:PutPipelineDefinition, and datapipeline:ActivatePipeline with
+      Resource:*. Allows running arbitrary code via a Data Pipeline with a
+      privileged role.
+
+  - id: GT-022
+    method: "SageMaker-CreateNotebookPassRole"
+    bishopfox_name: "SageMaker-CreateNotebookPassRole"
+    rhino_method: "SageMaker-CreateNotebookPassRole"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/"
+    terraform_resources:
+      - "aws_iam_policy.privesc-sageMakerCreateNotebookPassRole-policy"
+      - "aws_iam_user.privesc-sageMakerCreateNotebookPassRole-user"
+      - "aws_iam_role.privesc-sageMakerCreateNotebookPassRole-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateNotebookPassRole.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants sagemaker:CreateNotebookInstance and iam:PassRole with
+      Resource:*. Allows creating a SageMaker notebook with a privileged execution
+      role and accessing it via the notebook URL.
+
+  - id: GT-023
+    method: "SageMaker-CreateTrainingJobPassRole"
+    bishopfox_name: "SageMaker-CreateTrainingJobPassRole"
+    rhino_method: "SageMaker-CreateTrainingJobPassRole"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/"
+    terraform_resources:
+      - "aws_iam_policy.privesc-sageMakerCreateTrainingJobPassRole-policy"
+      - "aws_iam_user.privesc-sageMakerCreateTrainingJobPassRole-user"
+      - "aws_iam_role.privesc-sageMakerCreateTrainingJobPassRole-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateTrainingJob.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants sagemaker:CreateTrainingJob and iam:PassRole with Resource:*.
+      Allows running a training job with a privileged execution role to exfiltrate
+      credentials or perform privileged actions.
+
+  - id: GT-024
+    method: "SageMaker-CreateProcessingJobPassRole"
+    bishopfox_name: "SageMaker-CreateProcessingJobPassRole"
+    rhino_method: "SageMaker-CreateProcessingJobPassRole"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/"
+    terraform_resources:
+      - "aws_iam_policy.privesc-sageMakerCreateProcessingJobPassRole-policy"
+      - "aws_iam_user.privesc-sageMakerCreateProcessingJobPassRole-user"
+      - "aws_iam_role.privesc-sageMakerCreateProcessingJobPassRole-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreateProcessingJob.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants sagemaker:CreateProcessingJob and iam:PassRole with Resource:*.
+      Allows running a processing job with a privileged execution role.
+
+  - id: GT-025
+    method: "CodeBuild-CreateProjectPassRole"
+    bishopfox_name: "CodeBuild-CreateProjectPassRole"
+    rhino_method: "CodeBuild-CreateProjectPassRole"
+    source: "https://github.com/BishopFox/iam-vulnerable"
+    terraform_resources:
+      - "aws_iam_policy.privesc-codeBuildCreateProjectPassRole-policy"
+      - "aws_iam_user.privesc-codeBuildCreateProjectPassRole-user"
+      - "aws_iam_role.privesc-codeBuildCreateProjectPassRole-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-codeBuildCreateProjectPassRole.tf"
+    non_free_modules_required: []
+    notes: >
+      Policy grants codebuild:CreateProject and iam:PassRole with Resource:*.
+      Allows creating a CodeBuild project with a privileged service role to execute
+      arbitrary build commands in that role's context.
+
+  # ── Category: Privilege Escalation using AWS Services ─────────────────────
+
+  - id: GT-026
+    method: "STS-AssumeRole"
+    bishopfox_name: "STS-AssumeRole"
+    rhino_method: "AssumeRole"
+    source: "https://pswalia2u.medium.com/aws-iam-privilege-escalation-paths-cba36be1aa9e"
+    terraform_resources:
+      - "aws_iam_policy.privesc-AssumeRole-high-priv-policy"
+      - "aws_iam_role.privesc-AssumeRole-starting-role"
+      - "aws_iam_role.privesc-AssumeRole-intermediate-role"
+      - "aws_iam_role.privesc-AssumeRole-ending-role"
+      - "aws_iam_user.privesc-AssumeRole-start-user"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-AssumeRole.tf"
+    non_free_modules_required: []
+    notes: >
+      Multi-hop role chain: starting-role → intermediate-role → ending-role. The
+      ending role has Action:* Resource:*. The chain is traversable by following
+      trust policies. This is the multi-hop AssumeRole pattern audytx models with
+      AWS_IAM_022 (role-chaining).
+
+  - id: GT-027
+    method: "CloudFormation-UpdateStack"
+    bishopfox_name: "CloudFormation-UpdateStack"
+    rhino_method: "CloudFormation-UpdateStack"
+    source: "https://pswalia2u.medium.com/aws-iam-privilege-escalation-paths-cba36be1aa9e"
+    terraform_resources:
+      - "aws_iam_policy.privesc-CloudFormationUpdateStack"
+      - "aws_iam_user.privesc-cloudFormationUpdateStack-user"
+      - "aws_iam_role.privesc-cloudFormationUpdateStack-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-cloudFormationUpdateStack.tf"
+    non_free_modules_required: [cloudformation]
+    notes: >
+      Policy grants cloudformation:UpdateStack with Resource:*. Requires an
+      existing CloudFormation stack (the non-free CloudFormation module) to update
+      with a malicious template. The IAM policy is in the free module.
+
+  - id: GT-028
+    method: "SageMaker-CreatePresignedNotebookURL"
+    bishopfox_name: "SageMakerCreatePresignedNotebookURL"
+    rhino_method: "SageMakerCreatePresignedNotebookURL"
+    source: "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2/"
+    terraform_resources:
+      - "aws_iam_policy.privesc-sageMakerCreatePresignedNotebookURL-policy"
+      - "aws_iam_user.privesc-sageMakerCreatePresignedNotebookURL-user"
+      - "aws_iam_role.privesc-sageMakerCreatePresignedNotebookURL-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-sageMakerCreatePresignedNotebookURL.tf"
+    non_free_modules_required: [sagemaker]
+    notes: >
+      Policy grants sagemaker:CreatePresignedNotebookInstanceUrl with Resource:*.
+      Requires an existing SageMaker notebook (the non-free SageMaker module) to
+      generate a presigned URL for direct kernel access.
+
+  - id: GT-029
+    method: "SSM-SendCommand"
+    bishopfox_name: "SSM-SendCommand"
+    rhino_method: "SSM-SendCommand"
+    source: "https://pswalia2u.medium.com/aws-iam-privilege-escalation-paths-cba36be1aa9e"
+    terraform_resources:
+      - "aws_iam_policy.privesc-ssmSendCommand-policy"
+      - "aws_iam_user.privesc-ssmSendCommand-user"
+      - "aws_iam_role.privesc-ssmSendCommand-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ssmSendCommand.tf"
+    non_free_modules_required: [ec2]
+    notes: >
+      Policy grants ssm:SendCommand with Resource:*. Requires an existing EC2
+      instance with SSM agent and a privileged instance role (the non-free EC2
+      module). The IAM policy is in the free module.
+
+  - id: GT-030
+    method: "SSM-StartSession"
+    bishopfox_name: "SSM-StartSession"
+    rhino_method: "SSM-StartSession"
+    source: "https://pswalia2u.medium.com/aws-iam-privilege-escalation-paths-cba36be1aa9e"
+    terraform_resources:
+      - "aws_iam_policy.privesc-ssmStartSession-policy"
+      - "aws_iam_user.privesc-ssmStartSession-user"
+      - "aws_iam_role.privesc-ssmStartSession-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ssmStartSession.tf"
+    non_free_modules_required: [ec2]
+    notes: >
+      Policy grants ssm:StartSession with Resource:*. Requires an existing EC2
+      instance with SSM agent and network access (the non-free EC2 module).
+      The IAM policy is in the free module.
+
+  - id: GT-031
+    method: "EC2InstanceConnect-SendSSHPublicKey"
+    bishopfox_name: "EC2InstanceConnect-SendSSHPublicKey"
+    rhino_method: "EC2InstanceConnect-SendSSHPublicKey"
+    source: "https://pswalia2u.medium.com/aws-iam-privilege-escalation-paths-cba36be1aa9e"
+    terraform_resources:
+      - "aws_iam_policy.privesc-ec2InstanceConnect-policy"
+      - "aws_iam_user.privesc-ec2InstanceConnect-user"
+      - "aws_iam_role.privesc-ec2InstanceConnect-role"
+    files:
+      - "corpus/iam-vulnerable/modules/free-resources/privesc-paths/privesc-ec2InstanceConnect.tf"
+    non_free_modules_required: [ec2]
+    notes: >
+      Policy grants ec2-instance-connect:SendSSHPublicKey with Resource:*.
+      Requires an EC2 instance with a public IP and network access (the non-free
+      EC2 module). The IAM policy is in the free module.

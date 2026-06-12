@@ -1,0 +1,228 @@
+# Competitor benchmark harness for audytx-testbed
+#
+# Runs Checkov, Trivy, KICS, and Terrascan against each corpus in
+# bench-corpora.json with pinned versions. Output is uploaded as artifacts
+# and can be downloaded + committed to results/ for reproducible scoring.
+#
+# Trigger: manual only (workflow_dispatch). One run = one scorecard snapshot.
+#
+# Pinned versions (same as June 2026 benchmark run):
+#   Checkov:  3.2.520
+#   Trivy:    0.71.0
+#   KICS:     2.1.20
+#   Terrascan: 1.19.9
+#
+# If a pinned version is uninstallable, the step records the actual installed
+# version in a <tool>-version.txt artifact sidecar — the scoring script reads
+# this and includes it in output metadata.
+#
+# Each tool has a 5-minute per-corpus timeout. Timeout = DNF, recorded as
+# {"status":"DNF","corpus":"<name>","tool":"<tool>","reason":"timeout_300s"}
+# in the artifact.
+#
+# Artifacts: one artifact bundle per corpus, named bench-<corpus>, containing:
+#   checkov.json  trivy.json  kics.json  terrascan.json
+#   checkov-version.txt  trivy-version.txt  kics-version.txt  terrascan-version.txt
+#   meta.json  (run timestamp, runner OS, commit SHA, branch)
+#
+# After running, download all artifacts and reorganise into results/:
+#   gh run download <run-id> -D /tmp/bench-artifacts
+#   Then: python3 scripts/organise-artifacts.py /tmp/bench-artifacts results/
+# Or use the manual steps in the Phase 2 progress log.
+
+name: Benchmark competitor tools
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Phase 1: read bench-corpora.json from main and emit the matrix
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - id: set-matrix
+        run: |
+          matrix=$(cat bench-corpora.json)
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
+  # Phase 2: one job per corpus × all 4 tools
+  scan:
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
+
+    steps:
+      # ------------------------------------------------------------------
+      # 1. Check out the bench branch to get the corpus files
+      # ------------------------------------------------------------------
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          fetch-depth: 1
+
+      # ------------------------------------------------------------------
+      # 2. Record metadata (commit SHA, branch, runner)
+      # ------------------------------------------------------------------
+      - name: Write meta.json
+        run: |
+          mkdir -p bench-out
+          cat > bench-out/meta.json <<EOF
+          {
+            "corpus": "${{ matrix.corpus }}",
+            "branch": "${{ matrix.branch }}",
+            "role": "${{ matrix.role }}",
+            "corpus_commit": "$(git rev-parse HEAD)",
+            "runner_os": "${{ runner.os }}",
+            "run_id": "${{ github.run_id }}",
+            "workflow_triggered_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+
+      # ------------------------------------------------------------------
+      # 3. Install tools
+      # ------------------------------------------------------------------
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Checkov
+        run: |
+          pip install --quiet checkov==3.2.520 || pip install --quiet checkov
+          checkov --version 2>&1 | head -1 > bench-out/checkov-version.txt || echo "checkov install failed" > bench-out/checkov-version.txt
+          cat bench-out/checkov-version.txt
+
+      - name: Install Trivy
+        run: |
+          wget -qO /tmp/trivy.tar.gz https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_Linux-64bit.tar.gz \
+            || wget -qO /tmp/trivy.tar.gz https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.tar.gz
+          tar -xzf /tmp/trivy.tar.gz -C /usr/local/bin trivy
+          trivy --version 2>&1 | head -1 > bench-out/trivy-version.txt || echo "trivy install failed" > bench-out/trivy-version.txt
+          cat bench-out/trivy-version.txt
+
+      - name: Install KICS
+        run: |
+          KICS_URL="https://github.com/Checkmarx/kics/releases/download/v2.1.20/kics_2.1.20_linux_amd64.tar.gz"
+          wget -qO /tmp/kics.tar.gz "$KICS_URL" \
+            || wget -qO /tmp/kics.tar.gz "https://github.com/Checkmarx/kics/releases/latest/download/kics_linux_amd64.tar.gz"
+          tar -xzf /tmp/kics.tar.gz -C /usr/local/bin kics 2>/dev/null || tar -xzf /tmp/kics.tar.gz -C /usr/local/bin
+          chmod +x /usr/local/bin/kics 2>/dev/null || true
+          kics version 2>&1 | head -1 > bench-out/kics-version.txt || echo "kics install failed" > bench-out/kics-version.txt
+          cat bench-out/kics-version.txt
+
+      - name: Install Terrascan
+        run: |
+          TERRASCAN_URL="https://github.com/tenable/terrascan/releases/download/v1.19.9/terrascan_1.19.9_Linux_x86_64.tar.gz"
+          wget -qO /tmp/terrascan.tar.gz "$TERRASCAN_URL" \
+            || wget -qO /tmp/terrascan.tar.gz "https://github.com/tenable/terrascan/releases/latest/download/terrascan_Linux_x86_64.tar.gz"
+          tar -xzf /tmp/terrascan.tar.gz -C /usr/local/bin terrascan
+          terrascan version 2>&1 | head -1 > bench-out/terrascan-version.txt || echo "terrascan install failed" > bench-out/terrascan-version.txt
+          cat bench-out/terrascan-version.txt
+
+      # ------------------------------------------------------------------
+      # 4. Run each tool with 5-minute timeout; record DNF on timeout
+      # ------------------------------------------------------------------
+      - name: Run Checkov
+        run: |
+          CORPUS_DIR="corpus/${{ matrix.corpus }}"
+          if [ ! -d "$CORPUS_DIR" ]; then
+            echo '{"status":"ERROR","reason":"corpus_dir_not_found","corpus_dir":"'"$CORPUS_DIR"'"}' > bench-out/checkov.json
+            exit 0
+          fi
+          exit_code=0
+          timeout 300 checkov -d "$CORPUS_DIR" --framework terraform -o json \
+            --no-guide --quiet \
+            > bench-out/checkov.json 2>/tmp/checkov-stderr.txt || exit_code=$?
+          if [ $exit_code -eq 124 ]; then
+            echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"checkov","reason":"timeout_300s"}' \
+              > bench-out/checkov.json
+          elif [ $exit_code -ne 0 ] && [ $exit_code -ne 1 ]; then
+            # exit 1 = checks failed (normal); any other code = error
+            cat /tmp/checkov-stderr.txt >> bench-out/checkov.json || true
+          fi
+
+      - name: Run Trivy
+        run: |
+          CORPUS_DIR="corpus/${{ matrix.corpus }}"
+          if [ ! -d "$CORPUS_DIR" ]; then
+            echo '{"status":"ERROR","reason":"corpus_dir_not_found","corpus_dir":"'"$CORPUS_DIR"'"}' > bench-out/trivy.json
+            exit 0
+          fi
+          exit_code=0
+          timeout 300 trivy config "$CORPUS_DIR" \
+            --format json --exit-code 0 \
+            --severity HIGH,CRITICAL \
+            > bench-out/trivy.json 2>/tmp/trivy-stderr.txt || exit_code=$?
+          if [ $exit_code -eq 124 ]; then
+            echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"trivy","reason":"timeout_300s"}' \
+              > bench-out/trivy.json
+          fi
+
+      - name: Run KICS
+        run: |
+          CORPUS_DIR="corpus/${{ matrix.corpus }}"
+          if [ ! -d "$CORPUS_DIR" ]; then
+            echo '{"status":"ERROR","reason":"corpus_dir_not_found","corpus_dir":"'"$CORPUS_DIR"'"}' > bench-out/kics.json
+            exit 0
+          fi
+          mkdir -p /tmp/kics-out
+          exit_code=0
+          timeout 300 kics scan -p "$CORPUS_DIR" -t Terraform \
+            --report-formats json \
+            --output-path /tmp/kics-out \
+            --no-progress \
+            --ci \
+            2>/tmp/kics-stderr.txt || exit_code=$?
+          if [ $exit_code -eq 124 ]; then
+            echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"kics","reason":"timeout_300s"}' \
+              > bench-out/kics.json
+          else
+            # KICS writes to a file like results.json in the output path
+            KICS_RESULT=$(find /tmp/kics-out -name "*.json" | head -1)
+            if [ -n "$KICS_RESULT" ]; then
+              cp "$KICS_RESULT" bench-out/kics.json
+            else
+              echo '{"status":"ERROR","reason":"no_output_file","stderr_excerpt":"'"$(head -5 /tmp/kics-stderr.txt | tr '\n' ' ')"'"}' \
+                > bench-out/kics.json
+            fi
+          fi
+
+      - name: Run Terrascan
+        run: |
+          CORPUS_DIR="corpus/${{ matrix.corpus }}"
+          if [ ! -d "$CORPUS_DIR" ]; then
+            echo '{"status":"ERROR","reason":"corpus_dir_not_found","corpus_dir":"'"$CORPUS_DIR"'"}' > bench-out/terrascan.json
+            exit 0
+          fi
+          exit_code=0
+          timeout 300 terrascan scan -i terraform -d "$CORPUS_DIR" \
+            --output json \
+            --non-recursive \
+            2>/tmp/terrascan-stderr.txt \
+            > bench-out/terrascan.json || exit_code=$?
+          if [ $exit_code -eq 124 ]; then
+            echo '{"status":"DNF","corpus":"${{ matrix.corpus }}","tool":"terrascan","reason":"timeout_300s"}' \
+              > bench-out/terrascan.json
+          fi
+          # Terrascan exits 3 if violations found — that's normal (not an error)
+
+      # ------------------------------------------------------------------
+      # 5. Upload the artifact bundle for this corpus
+      # ------------------------------------------------------------------
+      - name: Upload artifact bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-${{ matrix.corpus }}
+          path: bench-out/
+          retention-days: 30

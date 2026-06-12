@@ -1,0 +1,32 @@
+{
+  "include": [
+    {"corpus": "KaiMonkey",                            "branch": "bench/KaiMonkey",                            "role": "recall"},
+    {"corpus": "cloudposse-s3-bucket",                 "branch": "bench/cloudposse-s3-bucket",                 "role": "precision"},
+    {"corpus": "iam-role-chain",                       "branch": "bench/iam-role-chain",                       "role": "recall"},
+    {"corpus": "iam-vulnerable",                       "branch": "bench/iam-vulnerable",                       "role": "recall"},
+    {"corpus": "learn-terraform-provision-eks-cluster","branch": "bench/learn-terraform-provision-eks-cluster","role": "recall"},
+    {"corpus": "sadcloud",                             "branch": "bench/sadcloud",                             "role": "recall"},
+    {"corpus": "terraform-aws-alb",                    "branch": "bench/terraform-aws-alb",                    "role": "precision"},
+    {"corpus": "terraform-aws-apigateway-v2",          "branch": "bench/terraform-aws-apigateway-v2",          "role": "precision"},
+    {"corpus": "terraform-aws-autoscaling",            "branch": "bench/terraform-aws-autoscaling",            "role": "precision"},
+    {"corpus": "terraform-aws-cloudfront",             "branch": "bench/terraform-aws-cloudfront",             "role": "precision"},
+    {"corpus": "terraform-aws-ecr",                    "branch": "bench/terraform-aws-ecr",                    "role": "precision"},
+    {"corpus": "terraform-aws-ecs",                    "branch": "bench/terraform-aws-ecs",                    "role": "precision"},
+    {"corpus": "terraform-aws-eks",                    "branch": "bench/terraform-aws-eks",                    "role": "precision"},
+    {"corpus": "terraform-aws-eks-blueprints",         "branch": "bench/terraform-aws-eks-blueprints",         "role": "recall"},
+    {"corpus": "terraform-aws-eventbridge",            "branch": "bench/terraform-aws-eventbridge",            "role": "precision"},
+    {"corpus": "terraform-aws-iam",                    "branch": "bench/terraform-aws-iam",                    "role": "precision"},
+    {"corpus": "terraform-aws-kms",                    "branch": "bench/terraform-aws-kms",                    "role": "precision"},
+    {"corpus": "terraform-aws-lambda",                 "branch": "bench/terraform-aws-lambda",                 "role": "precision"},
+    {"corpus": "terraform-aws-rds",                    "branch": "bench/terraform-aws-rds",                    "role": "precision"},
+    {"corpus": "terraform-aws-s3-bucket",              "branch": "bench/terraform-aws-s3-bucket",              "role": "precision"},
+    {"corpus": "terraform-aws-secure-baseline",        "branch": "bench/terraform-aws-secure-baseline",        "role": "precision"},
+    {"corpus": "terraform-aws-security-group",         "branch": "bench/terraform-aws-security-group",         "role": "precision"},
+    {"corpus": "terraform-aws-sns",                    "branch": "bench/terraform-aws-sns",                    "role": "precision"},
+    {"corpus": "terraform-aws-sqs",                    "branch": "bench/terraform-aws-sqs",                    "role": "precision"},
+    {"corpus": "terraform-aws-step-functions",         "branch": "bench/terraform-aws-step-functions",         "role": "precision"},
+    {"corpus": "terraform-aws-vpc",                    "branch": "bench/terraform-aws-vpc",                    "role": "precision"},
+    {"corpus": "terragoat",                            "branch": "bench/terragoat",                            "role": "recall"},
+    {"corpus": "trussworks-s3-private",                "branch": "bench/trussworks-s3-private",                "role": "precision"}
+  ]
+}

@@ -1,0 +1,314 @@
+# Ground-truth labels for the 21 clean production modules
+#
+# These are well-maintained Terraform modules from terraform-aws-modules/,
+# cloudposse/, trussworks/, and nozaq/ that thousands of teams run in
+# production. The claim being measured: a high-severity alert on any of
+# these is a false positive (or a genuine finding in example/test code, not
+# in production usage of the module).
+#
+# expected_high_severity_findings: 0 for every module — the expected result
+# for a correctly calibrated scanner on production-grade code.
+#
+# known_exceptions: findings that audytx currently emits on this module that
+# have a documented justification. Each exception MUST have:
+#   - rule_id: the audytx rule that fires
+#   - justification: why the finding is acceptable/expected here
+#   - location: "example_code" | "module_variable" | "design_choice"
+#   - calibration_action: "SUPPRESS" | "INVESTIGATE" | "ACCEPTED"
+#
+# Exception locations:
+#   example_code: finding is in the module's examples/ or test fixtures,
+#                 not in the reusable module code itself. Users who call
+#                 the module with production values would not trigger this.
+#   module_variable: the concerning attribute is exposed as a module
+#                    variable; absence of a default isn't a missing value —
+#                    callers supply it.
+#   design_choice: the module intentionally configures something this way
+#                  (e.g., EKS intra-cluster SGs open on all ports).
+#
+# Conflict of interest disclosure: audytx authored this file.
+# Exceptions were derived from the v0.3.9 benchmark run and the calibration
+# notes in docs/benchmark-2026-06-10.md. SARIF-level finding IDs will be
+# filled in during Step 3 (audytx SARIF re-pull).
+#
+# Source branches: bench/terraform-aws-*, bench/cloudposse-s3-bucket,
+#                  bench/trussworks-s3-private
+# Audytx version at last check: v0.3.26 (will be re-verified in Step 3)
+
+modules:
+
+  - name: terraform-aws-vpc
+    repo: "terraform-aws-modules/terraform-aws-vpc"
+    bench_branch: "bench/terraform-aws-vpc"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-s3-bucket
+    repo: "terraform-aws-modules/terraform-aws-s3-bucket"
+    bench_branch: "bench/terraform-aws-s3-bucket"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          One high-severity finding remained after the v0.3.3→v0.3.9 improvement
+          (-1 from 2). Specific rule and location to be confirmed from SARIF in
+          Step 3. If it is in example code (the module's examples/ use
+          server-side encryption demos), it belongs here as an example_code
+          exception; if in the module core, it is a genuine calibration item.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-secure-baseline
+    repo: "nozaq/terraform-aws-secure-baseline"
+    bench_branch: "bench/terraform-aws-secure-baseline"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          One high-severity finding. Secure-baseline is a compliance module
+          that explicitly hardens accounts — any finding here is high-value
+          signal if real or a calibration issue if not. To be verified from
+          SARIF in Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-eks
+    repo: "terraform-aws-modules/terraform-aws-eks"
+    bench_branch: "bench/terraform-aws-eks"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 6
+    known_exceptions:
+      - rule_id: "AWS_VPC_006"
+        justification: >
+          AWS_VPC_006 (all-ports-open security group) fires on the EKS module's
+          node-group security groups and the cluster SG examples. EKS node groups
+          routinely allow all ports intra-cluster (the SG restricts by source SG,
+          not by port), and the module's example configurations use
+          from_port=0/to_port=65535 to demonstrate this. The rule should require
+          the offending rule to also allow traffic from 0.0.0.0/0 before firing
+          at High; an intra-cluster SG without an internet-sourced ingress rule
+          is not a public exposure. Tracked for suppression via the
+          sg_eks_identity context axis (add structural signal: source_security_group_id
+          is set on the ingress rule → suppress).
+        location: "design_choice"
+        calibration_action: "SUPPRESS"
+
+  - name: terraform-aws-rds
+    repo: "terraform-aws-modules/terraform-aws-rds"
+    bench_branch: "bench/terraform-aws-rds"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "AWS_CRED_003"
+        justification: >
+          AWS_CRED_003 fires on a hardcoded example password in the module's
+          examples/complete/ directory (a demo value like "YourPwdShouldBeLongAndComplex!").
+          This is example code with a visible placeholder; production callers
+          pass a real secret via variable. Example passwords in documented
+          examples are a known false-positive class for credential-pattern rules.
+        location: "example_code"
+        calibration_action: "ACCEPTED"
+
+  - name: terraform-aws-lambda
+    repo: "terraform-aws-modules/terraform-aws-lambda"
+    bench_branch: "bench/terraform-aws-lambda"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 3
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          3 high-severity findings (stable since v0.3.3). Specific rule IDs and
+          locations to be confirmed from SARIF in Step 3. Lambda module examples
+          often include permissive execution role policies to demonstrate all
+          module features; if findings are in examples/ they are example_code
+          exceptions. If in the module core, requires investigation.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-iam
+    repo: "terraform-aws-modules/terraform-aws-iam"
+    bench_branch: "bench/terraform-aws-iam"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 2
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          2 high-severity findings (stable since v0.3.3). The IAM module contains
+          examples of permissive IAM configurations by design (it's an IAM
+          management module whose examples demonstrate creating policies). Specific
+          rule IDs to be confirmed from SARIF in Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-alb
+    repo: "terraform-aws-modules/terraform-aws-alb"
+    bench_branch: "bench/terraform-aws-alb"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 5
+    known_exceptions:
+      - rule_id: "ATTACK_PATH_002"
+        justification: >
+          ATTACK_PATH_002 (internet-facing ALB fronting an ECS task with an
+          escalation-capable execution role) fires on the ALB module examples.
+          The module's complete example wires an ALB to an ECS service with a
+          permissive execution role to demonstrate all integration points.
+          This is a cross-resource finding in example code — in production,
+          callers supply a least-privilege execution role. The finding class is
+          correct in principle; the module's examples trigger it by demonstrating
+          everything together.
+        location: "example_code"
+        calibration_action: "ACCEPTED"
+      - rule_id: "TBD — additional findings; verify from SARIF in Step 3"
+        justification: >
+          4 of the 5 findings need SARIF-level verification. ATTACK_PATH_002
+          is confirmed above; the remaining findings are to be identified in
+          Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-cloudfront
+    repo: "terraform-aws-modules/terraform-aws-cloudfront"
+    bench_branch: "bench/terraform-aws-cloudfront"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-sqs
+    repo: "terraform-aws-modules/terraform-aws-sqs"
+    bench_branch: "bench/terraform-aws-sqs"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-kms
+    repo: "terraform-aws-modules/terraform-aws-kms"
+    bench_branch: "bench/terraform-aws-kms"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-ecr
+    repo: "terraform-aws-modules/terraform-aws-ecr"
+    bench_branch: "bench/terraform-aws-ecr"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          1 high-severity finding (stable). ECR module has examples with
+          public repository policies for demonstrating access patterns.
+          Specific rule ID and location to be confirmed from SARIF in Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-autoscaling
+    repo: "terraform-aws-modules/terraform-aws-autoscaling"
+    bench_branch: "bench/terraform-aws-autoscaling"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-security-group
+    repo: "terraform-aws-modules/terraform-aws-security-group"
+    bench_branch: "bench/terraform-aws-security-group"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 2
+    known_exceptions:
+      - rule_id: "AWS_VPC_006"
+        justification: >
+          AWS_VPC_006 fires on the security-group module's own example
+          configurations that deliberately show wide-open groups (from_port=0,
+          to_port=65535, cidr_blocks=["0.0.0.0/0"]) to demonstrate the module's
+          capability to express any SG rule. These are documentation examples,
+          not production defaults. The module itself is a generic SG factory —
+          it cannot be hardened by default without breaking its purpose.
+          "Legitimate finding on the examples but module itself is correct"
+          (benchmark-2026-06-10.md).
+        location: "example_code"
+        calibration_action: "ACCEPTED"
+
+  - name: terraform-aws-ecs
+    repo: "terraform-aws-modules/terraform-aws-ecs"
+    bench_branch: "bench/terraform-aws-ecs"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 3
+    known_exceptions:
+      - rule_id: "AWS_ECS_006"
+        justification: >
+          AWS_ECS_006 (missing task_role_arn) fires on ECS task definitions in
+          the module where task_role_arn is declared as a module variable with no
+          default. The module intentionally leaves this configurable; absence of
+          a default value does not mean production callers omit a role — it means
+          callers must supply one. A suppression via module_variable detection
+          (task_role_arn = var.*) would eliminate this class of false positive.
+          Tracked in benchmark-2026-06-10.md calibration notes.
+        location: "module_variable"
+        calibration_action: "SUPPRESS"
+
+  - name: terraform-aws-eventbridge
+    repo: "terraform-aws-modules/terraform-aws-eventbridge"
+    bench_branch: "bench/terraform-aws-eventbridge"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          1 high-severity finding (down from 10 in v0.3.1 after AWS_SQS_001
+          recalibration). Likely in the eventbridge examples that wire SQS queues
+          as targets. Specific rule ID to be confirmed from SARIF in Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: terraform-aws-apigateway-v2
+    repo: "terraform-aws-modules/terraform-aws-apigateway-v2"
+    bench_branch: "bench/terraform-aws-apigateway-v2"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-step-functions
+    repo: "terraform-aws-modules/terraform-aws-step-functions"
+    bench_branch: "bench/terraform-aws-step-functions"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: terraform-aws-sns
+    repo: "terraform-aws-modules/terraform-aws-sns"
+    bench_branch: "bench/terraform-aws-sns"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 0
+    known_exceptions: []
+
+  - name: cloudposse-s3-bucket
+    repo: "cloudposse/terraform-aws-s3-bucket"
+    bench_branch: "bench/cloudposse-s3-bucket"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          1 high-severity finding (stable). CloudPosse modules are generally
+          well-hardened; if this fires it is likely on an example configuration.
+          Specific rule ID to be confirmed from SARIF in Step 3.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
+
+  - name: trussworks-s3-private
+    repo: "trussworks/terraform-aws-s3-private-bucket"
+    bench_branch: "bench/trussworks-s3-private"
+    expected_high_severity_findings: 0
+    v0_3_9_actual: 1
+    known_exceptions:
+      - rule_id: "TBD — verify from SARIF in Step 3"
+        justification: >
+          1 high-severity finding (stable). Trussworks' S3 private bucket module
+          is specifically designed for secure S3 usage; any finding here is
+          important to verify. Specific rule ID and location to be confirmed from
+          SARIF in Step 3. If in example code, it's an example_code exception;
+          if in the module core, it requires investigation as a potential FP.
+        location: "example_code"
+        calibration_action: "INVESTIGATE"
