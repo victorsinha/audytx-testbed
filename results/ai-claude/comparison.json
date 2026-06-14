@@ -1,0 +1,61 @@
+{
+  "terragoat_aws": {
+    "label": "terragoat (aws)",
+    "leaf_dirs": 1,
+    "resources": 55,
+    "findings": 148,
+    "suppressed": 3,
+    "security_findings": 72,
+    "findings_per_100": 269.1,
+    "security_findings_per_100": 130.9,
+    "high_plus_crit": 52,
+    "by_severity": {
+      "CRITICAL": 14,
+      "HIGH": 38,
+      "MEDIUM": 57,
+      "LOW": 34,
+      "INFO": 5
+    }
+  },
+  "clean_modules": {
+    "label": "clean modules (21, aggregate)",
+    "leaf_dirs": 338,
+    "resources": 882,
+    "findings": 460,
+    "suppressed": 29,
+    "security_findings": 87,
+    "findings_per_100": 52.2,
+    "security_findings_per_100": 9.9,
+    "high_plus_crit": 27,
+    "by_severity": {
+      "LOW": 281,
+      "INFO": 22,
+      "HIGH": 25,
+      "MEDIUM": 130,
+      "CRITICAL": 2
+    },
+    "per_module_leaf_count": {
+      "terraform-aws-vpc": 19,
+      "terraform-aws-s3-bucket": 22,
+      "terraform-aws-secure-baseline": 17,
+      "terraform-aws-eks": 19,
+      "terraform-aws-rds": 26,
+      "terraform-aws-lambda": 24,
+      "terraform-aws-iam": 24,
+      "terraform-aws-alb": 7,
+      "terraform-aws-cloudfront": 6,
+      "terraform-aws-sqs": 3,
+      "terraform-aws-kms": 3,
+      "terraform-aws-ecr": 6,
+      "terraform-aws-autoscaling": 3,
+      "terraform-aws-security-group": 110,
+      "terraform-aws-ecs": 16,
+      "terraform-aws-eventbridge": 12,
+      "terraform-aws-apigateway-v2": 5,
+      "terraform-aws-step-functions": 2,
+      "terraform-aws-sns": 3,
+      "cloudposse-s3-bucket": 2,
+      "trussworks-s3-private": 9
+    }
+  }
+}

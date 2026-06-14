@@ -1,0 +1,7 @@
+{
+  "id": "multienv-05",
+  "valid": false,
+  "stage": "init",
+  "error_count": 1,
+  "init_log": "\nError: Terraform encountered problems during initialisation, including problems\nwith the configuration, described below.\n\nThe Terraform configuration must be valid before initialization so that\nTerraform can determine which modules and providers need to be installed.\n\n\nError: Unsupported argument\n\n  on terraform.tfvars.example.tf line 20:\n  20: environment  = \"dev\"\n\nAn argument named \"environment\" is not expected here.\n\nError: Unsupported argument\n\n  on terraform.tfvars.example.tf line 21:\n  21: project_name = \"mysite\"\n\nAn argument named \"project_name\" is not expected here.\n\nError: Unsupported argument\n\n  on terraform.tfvars.example.tf line 22:\n  22: aws_region   = \"us-east-1\"\n\nAn argument named \"aws_region\" is not expected here.\n"
+}

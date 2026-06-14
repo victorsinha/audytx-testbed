@@ -1,0 +1,7 @@
+{
+  "total": 50,
+  "valid": 43,
+  "invalid": 7,
+  "hallucination_rate": 0.14,
+  "terraform_version": "1.9.8"
+}

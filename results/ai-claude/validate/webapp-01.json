@@ -1,0 +1,35 @@
+{
+  "id": "webapp-01",
+  "valid": false,
+  "stage": "validate",
+  "error_count": 1,
+  "warning_count": 0,
+  "diagnostics": [
+    {
+      "severity": "error",
+      "summary": "Unsupported argument",
+      "detail": "An argument named \"storage_encrypted_kms_key_id\" is not expected here.",
+      "range": {
+        "filename": "database.tf",
+        "start": {
+          "line": 62,
+          "column": 3,
+          "byte": 1932
+        },
+        "end": {
+          "line": 62,
+          "column": 31,
+          "byte": 1960
+        }
+      },
+      "snippet": {
+        "context": "resource \"aws_db_instance\" \"main\"",
+        "code": "  storage_encrypted_kms_key_id = aws_kms_key.data.arn",
+        "start_line": 62,
+        "highlight_start_offset": 2,
+        "highlight_end_offset": 30,
+        "values": []
+      }
+    }
+  ]
+}
