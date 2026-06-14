@@ -1,0 +1,35 @@
+{
+  "id": "pipeline-04",
+  "valid": false,
+  "stage": "validate",
+  "error_count": 1,
+  "warning_count": 0,
+  "diagnostics": [
+    {
+      "severity": "error",
+      "summary": "Unsupported argument",
+      "detail": "An argument named \"require_ssl\" is not expected here.",
+      "range": {
+        "filename": "redshift.tf",
+        "start": {
+          "line": 92,
+          "column": 3,
+          "byte": 2959
+        },
+        "end": {
+          "line": 92,
+          "column": 14,
+          "byte": 2970
+        }
+      },
+      "snippet": {
+        "context": "resource \"aws_redshift_cluster\" \"this\"",
+        "code": "  require_ssl                         = true",
+        "start_line": 92,
+        "highlight_start_offset": 2,
+        "highlight_end_offset": 13,
+        "values": []
+      }
+    }
+  ]
+}

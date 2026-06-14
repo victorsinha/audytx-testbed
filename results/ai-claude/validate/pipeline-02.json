@@ -1,0 +1,36 @@
+{
+  "id": "pipeline-02",
+  "valid": true,
+  "stage": "validate",
+  "error_count": 0,
+  "warning_count": 1,
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "summary": "Argument is deprecated",
+      "detail": "logging is deprecated. Use the aws_redshift_logging resource instead. This argument will be removed in a future major version.",
+      "address": "aws_redshift_cluster.this",
+      "range": {
+        "filename": "main.tf",
+        "start": {
+          "line": 390,
+          "column": 40,
+          "byte": 12055
+        },
+        "end": {
+          "line": 390,
+          "column": 41,
+          "byte": 12056
+        }
+      },
+      "snippet": {
+        "context": "resource \"aws_redshift_cluster\" \"this\"",
+        "code": "resource \"aws_redshift_cluster\" \"this\" {",
+        "start_line": 390,
+        "highlight_start_offset": 39,
+        "highlight_end_offset": 40,
+        "values": []
+      }
+    }
+  ]
+}

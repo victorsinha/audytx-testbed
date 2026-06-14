@@ -1,0 +1,35 @@
+{
+  "id": "pipeline-03",
+  "valid": false,
+  "stage": "validate",
+  "error_count": 1,
+  "warning_count": 0,
+  "diagnostics": [
+    {
+      "severity": "error",
+      "summary": "Unsupported argument",
+      "detail": "An argument named \"require_tls\" is not expected here.",
+      "range": {
+        "filename": "redshift.tf",
+        "start": {
+          "line": 71,
+          "column": 3,
+          "byte": 2404
+        },
+        "end": {
+          "line": 71,
+          "column": 14,
+          "byte": 2415
+        }
+      },
+      "snippet": {
+        "context": "resource \"aws_redshift_cluster\" \"analytics\"",
+        "code": "  require_tls                         = true",
+        "start_line": 71,
+        "highlight_start_offset": 2,
+        "highlight_end_offset": 13,
+        "values": []
+      }
+    }
+  ]
+}
