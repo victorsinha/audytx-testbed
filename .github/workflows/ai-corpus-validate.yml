@@ -1,0 +1,93 @@
+# AI-corpus validity check (Phase 5, Step 3).
+# For each corpus/ai-claude/<id>/ dir: terraform init -backend=false + validate,
+# emit results/ai-claude/validate/<id>.json (pass/fail + diagnostics). The
+# hallucination rate = invalid / total. Dispatch on the bench/ai-claude ref
+# (where the corpus lives):
+#   gh workflow run ai-corpus-validate.yml --ref bench/ai-claude
+name: ai-corpus-validate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      # Pinned Terraform — recorded in the manifest for reproducibility.
+      TF_VERSION: "1.9.8"
+      # Shared provider cache so the AWS provider downloads once, not per-dir.
+      TF_PLUGIN_CACHE_DIR: /tmp/tf-plugin-cache
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+          terraform_wrapper: false
+
+      - name: Validate each corpus dir
+        run: |
+          set -u
+          mkdir -p results/ai-claude/validate "$TF_PLUGIN_CACHE_DIR"
+          shopt -s nullglob
+          total=0; pass=0; fail=0
+
+          if [ ! -d corpus/ai-claude ]; then
+            echo "::error::corpus/ai-claude not found on this ref — dispatch with --ref bench/ai-claude"
+            exit 1
+          fi
+
+          for dir in corpus/ai-claude/*/; do
+            id=$(basename "$dir")
+            total=$((total+1))
+            out="results/ai-claude/validate/$id.json"
+            echo "==================== $id ===================="
+
+            # No .tf at all → the generation produced nothing parseable.
+            tfcount=$(ls "$dir"*.tf 2>/dev/null | wc -l | tr -d ' ')
+            if [ "$tfcount" = "0" ]; then
+              jq -n --arg id "$id" '{id:$id, valid:false, stage:"no-files", error_count:1, diagnostics:[]}' > "$out"
+              fail=$((fail+1)); echo "no .tf files"; continue
+            fi
+
+            # init (no backend, no creds needed). Failure here = bad provider/module
+            # reference — a hallucination class. Capture the log.
+            if ! ( cd "$dir" && terraform init -backend=false -input=false -no-color ) > /tmp/init.log 2>&1; then
+              jq -n --arg id "$id" --rawfile log /tmp/init.log \
+                '{id:$id, valid:false, stage:"init", error_count:1, init_log:$log}' > "$out"
+              fail=$((fail+1)); echo "init FAILED"; sed 's/^/  /' /tmp/init.log | tail -20; continue
+            fi
+
+            # validate -json emits JSON whether or not validation passes.
+            ( cd "$dir" && terraform validate -json -no-color ) > "/tmp/$id.v.json" 2>/tmp/v.err || true
+            if ! jq -e . "/tmp/$id.v.json" >/dev/null 2>&1; then
+              # validate didn't even emit JSON (rare) — record the stderr.
+              jq -n --arg id "$id" --rawfile log /tmp/v.err \
+                '{id:$id, valid:false, stage:"validate-crash", error_count:1, validate_err:$log}' > "$out"
+              fail=$((fail+1)); echo "validate crashed"; continue
+            fi
+
+            valid=$(jq -r '.valid' "/tmp/$id.v.json")
+            errc=$(jq -r '[.diagnostics[]? | select(.severity=="error")] | length' "/tmp/$id.v.json")
+            jq -n --arg id "$id" --slurpfile v "/tmp/$id.v.json" \
+              '{id:$id, valid:$v[0].valid, stage:"validate",
+                error_count:([$v[0].diagnostics[]? | select(.severity=="error")] | length),
+                warning_count:([$v[0].diagnostics[]? | select(.severity=="warning")] | length),
+                diagnostics:$v[0].diagnostics}' > "$out"
+            if [ "$valid" = "true" ]; then pass=$((pass+1)); echo "valid ($errc errors)"; else fail=$((fail+1)); echo "INVALID ($errc errors)"; fi
+          done
+
+          echo "==================== summary ===================="
+          echo "total=$total valid=$pass invalid=$fail"
+          jq -n --argjson total "$total" --argjson valid "$pass" --argjson invalid "$fail" --arg tf "$TF_VERSION" \
+            '{total:$total, valid:$valid, invalid:$invalid, hallucination_rate: (if $total>0 then ($invalid/$total) else 0 end), terraform_version:$tf}' \
+            > results/ai-claude/validate/_summary.json
+          cat results/ai-claude/validate/_summary.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ai-corpus-validate
+          path: results/ai-claude/validate/
