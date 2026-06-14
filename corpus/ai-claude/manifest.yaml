@@ -1,0 +1,257 @@
+# AI-corpus generation manifest (Phase 5, Step 2) — frozen reproducibility record.
+# Model: claude-opus-4-8  |  Date: 2026-06-14  |  Generator: workflow ai-corpus-generate (one shot per prompt, no quality retries).
+# Each entry: prompt id, model, date, sha256(prompt), file count.
+model: claude-opus-4-8
+generated_date: "2026-06-14"
+generation: "one shot per prompt; prompt verbatim + 'Write the Terraform. Output only HCL files.'; no security/quality guidance; agents isolated from the repo"
+entries:
+  - id: webapp-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "2794a080c64c2992"
+    file_count: 10
+  - id: webapp-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "9cc8c094c821e5cb"
+    file_count: 10
+  - id: webapp-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "528d703b97fbdea9"
+    file_count: 8
+  - id: webapp-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "0e1440dead074412"
+    file_count: 9
+  - id: webapp-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "2d9a7849e118472c"
+    file_count: 10
+  - id: webapp-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "b1e5c219275158b1"
+    file_count: 10
+  - id: webapp-07
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "69f8cfcf7f0ec8a3"
+    file_count: 8
+  - id: serverless-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "95edefe028dad773"
+    file_count: 8
+  - id: serverless-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "ab76510428f168ae"
+    file_count: 7
+  - id: serverless-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "1ff8cf30f165826b"
+    file_count: 7
+  - id: serverless-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "73660eb2af4ff3a8"
+    file_count: 4
+  - id: serverless-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "0a675cf9738381a2"
+    file_count: 7
+  - id: serverless-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "51e8498d2a69733d"
+    file_count: 10
+  - id: serverless-07
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "319613eb8481714f"
+    file_count: 8
+  - id: pipeline-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "137fa39cf56eea48"
+    file_count: 3
+  - id: pipeline-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "04d5f82682d2aa72"
+    file_count: 4
+  - id: pipeline-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "3e12351109d299ee"
+    file_count: 7
+  - id: pipeline-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "cd157c750e1e1d8f"
+    file_count: 8
+  - id: pipeline-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "13d5e481d72cd50d"
+    file_count: 4
+  - id: pipeline-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "4997a30228614520"
+    file_count: 3
+  - id: k8s-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "c54291525bcc05dc"
+    file_count: 9
+  - id: k8s-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "895e830859276360"
+    file_count: 10
+  - id: k8s-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "e97f7c8f600b904a"
+    file_count: 7
+  - id: k8s-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "440e710aae0e4e48"
+    file_count: 8
+  - id: k8s-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "8d315535059f5cbe"
+    file_count: 7
+  - id: k8s-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "c5c6b01ba84312d3"
+    file_count: 9
+  - id: static-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "04fb017133874e44"
+    file_count: 5
+  - id: static-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "1ddfad205a7791d1"
+    file_count: 11
+  - id: static-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "1f834c64729375f9"
+    file_count: 3
+  - id: static-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "e2b6fd1d9c510056"
+    file_count: 7
+  - id: static-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "d8d6e9ecc5cd7573"
+    file_count: 4
+  - id: static-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "d1535d8ae8dc008d"
+    file_count: 4
+  - id: worker-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "b70e0604f07a0cbd"
+    file_count: 3
+  - id: worker-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "b70461ad52b2d39a"
+    file_count: 4
+  - id: worker-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "8bf6193358ececdd"
+    file_count: 3
+  - id: worker-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "8ffed8d13e55255c"
+    file_count: 5
+  - id: worker-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "093b088eb7b54e66"
+    file_count: 3
+  - id: worker-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "e8bb33a9203772ef"
+    file_count: 3
+  - id: multienv-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "ed49ddf953eecce9"
+    file_count: 7
+  - id: multienv-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "cb962c1c0b2c3bde"
+    file_count: 12
+  - id: multienv-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "be1229b96b22dac7"
+    file_count: 9
+  - id: multienv-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "1aaf95db1fb9b295"
+    file_count: 7
+  - id: multienv-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "5f48a10682bfdeeb"
+    file_count: 9
+  - id: multienv-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "638a4fb520dc8a66"
+    file_count: 6
+  - id: vibe-01
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "152e7a7091570824"
+    file_count: 6
+  - id: vibe-02
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "82331ca99a36e20f"
+    file_count: 5
+  - id: vibe-03
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "997e2b98bac95eab"
+    file_count: 13
+  - id: vibe-04
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "29f137e101e7ca84"
+    file_count: 14
+  - id: vibe-05
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "454e7b188c035ecf"
+    file_count: 10
+  - id: vibe-06
+    model: claude-opus-4-8
+    date: "2026-06-14"
+    prompt_sha256_16: "51ce610dd39ea50f"
+    file_count: 4
